@@ -1,0 +1,55 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 31-292 sediments. doi:10.1594/PANGAEA.718952, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 15.818500 * LONGITUDE: 124.650800
+	MINIMUM DEPTH, sediment: 311.5 m * MAXIMUM DEPTH, sediment: 363.0 m
+Event(s):	31-292 * LATITUDE: 15.818500 * LONGITUDE: 124.650800 * DATE/TIME: 1973-06-26T00:00:00 * ELEVATION: -2943.0 m * RECOVERY: 242.80 m * PENETRATION: 443.50 m * LOCATION: North Pacific/Philippine Sea/CONT RISE * CAMPAIGN: Leg31 (URI: doi:10.2973/dsdp.proc.31.1975) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 46 cores; 434 m cored; 9.5 m drilled; 56 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Oridorsalis tener, d18O [per mil PDB] (O. tener d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Oridorsalis tener, d13C [per mil PDB] (O. tener d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Pseudohastigerina spp., d18O [per mil PDB] (Pseudohastigerina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Pseudohastigerina spp., d13C [per mil PDB] (Pseudohastigerina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Pseudohastigerina spp., d18O [per mil PDB] (Pseudohastigerina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-180 µm
+	Pseudohastigerina spp., d13C [per mil PDB] (Pseudohastigerina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-180 µm
+	Chiloguembelina cubensis, d18O [per mil PDB] (C. cubensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Chiloguembelina cubensis, d13C [per mil PDB] (C. cubensis d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Chiloguembelina spp., d18O [per mil PDB] (Chiloguembelina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Chiloguembelina spp., d13C [per mil PDB] (Chiloguembelina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Globigerina ampliapertura, d18O [per mil PDB] (G. ampliapertura d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Globigerina ampliapertura, d13C [per mil PDB] (G. ampliapertura d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Hantkenina spp., d18O [per mil PDB] (Hantkenina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >180 µm
+	Hantkenina spp., d13C [per mil PDB] (Hantkenina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >180 µm
+	Globorotalia cerroazulensis, d18O [per mil PDB] (G. cerroazulensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >300 µm
+	Globorotalia cerroazulensis, d13C [per mil PDB] (G. cerroazulensis d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >300 µm
+	Catapsydrax unicavus, d18O [per mil PDB] (C. unicavus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-180 µm
+	Catapsydrax unicavus, d13C [per mil PDB] (C. unicavus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-180 µm
+	Catapsydrax unicavus, d18O [per mil PDB] (C. unicavus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Catapsydrax unicavus, d13C [per mil PDB] (C. unicavus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	158 data points
+*/
+Depth [m]	Label	O. tener d18O [per mil PDB]	O. tener d13C [per mil PDB]	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]	Pseudohastigerina d18O [per mil PDB] (<124 µm)	Pseudohastigerina d13C [per mil PDB] (<124 µm)	Pseudohastigerina d18O [per mil PDB] (124-180 µm)	Pseudohastigerina d13C [per mil PDB] (124-180 µm)	C. cubensis d18O [per mil PDB]	C. cubensis d13C [per mil PDB]	Chiloguembelina d18O [per mil PDB]	Chiloguembelina d13C [per mil PDB]	G. ampliapertura d18O [per mil PDB]	G. ampliapertura d13C [per mil PDB]	Hantkenina d18O [per mil PDB]	Hantkenina d13C [per mil PDB]	G. cerroazulensis d18O [per mil PDB]	G. cerroazulensis d13C [per mil PDB]	C. unicavus d18O [per mil PDB] (124-180 µm)	C. unicavus d13C [per mil PDB] (124-180 µm)	C. unicavus d18O [per mil PDB] (180-300 µm)	C. unicavus d13C [per mil PDB] (180-300 µm)
+311.49	31-292-34-1,99					-0.61	0.82			-0.81	1.18												
+311.98	31-292-34-1,148					-0.64	0.92			-0.80	1.09									1.02	1.26	1.15	1.58
+312.50	31-292-34-2,50					-0.52	1.38			-0.66	1.58			-0.74	2.07					1.28	1.36	0.61	1.75
+312.99	31-292-34-2,99					-0.61	1.46			-0.61	1.67			-0.70	2.31					1.37	1.45	0.66	1.91
+313.48	31-292-34-2,148					-0.64	1.36			-0.77	1.65			-1.00	1.97					1.37	1.25	0.98	1.58
+320.87	31-292-35-1,87			0.96	1.28	-0.85	1.03			-0.64	1.31			-1.00	1.78					0.33	1.44	0.47	1.32
+320.99	31-292-35-1,99					-0.99	0.99																
+321.86	31-292-35-2,36					-0.96	0.96																
+322.51	31-292-35-2,101					-0.95	0.91																
+322.91	31-292-35-2,141					-0.75	1.11	-0.89	1.08			-1.33	0.72	-1.01	1.32	-0.92	1.41						
+323.95	31-292-35-3,95					-0.91	0.76	-0.98	0.86			-0.88	0.79	-0.99	1.10	-1.19	1.18						
+324.47	31-292-35-3,147					-0.63	0.85	-0.75	1.07	-0.81	0.83	-0.68	1.05	-0.93	1.20	-0.87	1.23	-0.89	1.44	0.65	0.91	0.52	1.05
+330.39	31-292-36-1,89					-0.67	1.15	-0.74	1.39	-0.82	1.28			-1.08	1.53	-0.54	1.75	-0.74	1.58	0.70	0.97		
+330.95	31-292-36-1,145					-0.59	1.27	-0.56	1.46	-0.83	1.26			-0.85	1.55	-0.85	1.86	-0.69	1.60	0.59	0.83		
+331.89	31-292-36-2,89													-1.20	1.20								
+358.89	31-292-39-1,89	0.80	0.19																				
+359.86	31-292-39-2,36	0.93	0.13																				
+361.53	31-292-39-3,53	0.80	0.15																				
+362.07	31-292-39-3,107	0.92	0.18																				
+363.00	31-292-39-CC	0.96	0.23																				

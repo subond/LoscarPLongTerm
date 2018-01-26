@@ -1,0 +1,157 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table S1) Nannofossil abundances at DSDP Hole 86-577. doi:10.1594/PANGAEA.809113, 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Related to:	Backman, Jan (1986): Late Paleocene to middle Eocene calcareous nannofossil biochronology from the Shatsky Rise, Walvis Ridge and Italy. Palaeogeography, Palaeoclimatology, Palaeoecology, 57(1), 43-59, doi:10.1016/0031-0182(86)90005-2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 32.441800 * LONGITUDE: 157.723300
+	MINIMUM DEPTH, sediment/rock: 67.1 m * MAXIMUM DEPTH, sediment/rock: 101.3 m
+Event(s):	86-577 * LATITUDE: 32.441800 * LONGITUDE: 157.723300 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 111.10 m * PENETRATION: 118.80 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 118.8 m cored; 0 m drilled; 93.5 % recovery
+Comment:	DEPTH, sediment is given in mbsf. Most data from Backman (1986).
+Parameter(s):	Sample code/label (Label) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001) * COMMENT: core-catcher (CC) samples have been assigned section 8 for math; given in brackets
+	Depth, top/min [m] (Depth top) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: core top depth [mbsf]
+	Void correction [m] (Void corr) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	DEPTH, sediment/rock [m] (Depth) * Geocode
+	Offset [m] (Offset) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: offset from Table 2
+	Depth, composite [mcd] (Depth c) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: adjusted
+	Discoaster sublodoensis [#/mm**2] (D. sublodoensis) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster lodoensis [#/mm**2] (D. lodoensis) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Sphenolithus radians [#/mm**2] (S. radians) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Tribrachiatus orthostylus [#/mm**2] (T. orthostylus) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: <1 = R (rare, 0-1 specimen per field of view, >1 = F (few, 1-2 specimens f/v)
+	Tribrachiatus contortus [#/mm**2] (T. contortus) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster falcatus [#/mm**2] (D. falcatus) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster diastypus [#/mm**2] (D. diastypus) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster multiradiatus [#/mm**2] (D. multiradiatus) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Ellipsolithus macellus [#/mm**2] (E. macellus) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster mohleri [#/mm**2] (D. mohleri) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster nobilis [#/mm**2] (D. nobilis) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster okadai [#/mm**2] (D. okadai) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Heliolithus kleinpellii [#/mm**2] (H. kleinpellii) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Discoaster bramlettei [#/mm**2] (D. bramlettei) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Fasciculithus pileatus [#/mm**2] (F. pileatus) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Fasciculithus spp. [#/mm**2] (Fasciculithus spp.) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: <1 = R
+	Sphenolithus spp. [#/mm**2] (Sphenolithus spp.) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Ellipsolithus robusta (E. robusta) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: R = rare (0-1 specimen per field of view), F = few (1-2 specimens f/v), C = common (5-10 specimens f/v), A = abundant (>10 specimens f/v), - = not present
+	Nannofossils, downhole contamination [#/mm**2] (Nannos cont) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	1129 data points
+*/
+Label	Depth top [m]	Void corr [m]	Depth [m]	Offset [m]	Depth c [mcd]	D. sublodoensis [#/mm**2]	D. lodoensis [#/mm**2]	S. radians [#/mm**2]	T. orthostylus [#/mm**2]	T. contortus [#/mm**2]	D. falcatus [#/mm**2]	D. diastypus [#/mm**2]	D. multiradiatus [#/mm**2]	E. macellus [#/mm**2]	D. mohleri [#/mm**2]	D. nobilis [#/mm**2]	D. okadai [#/mm**2]	H. kleinpellii [#/mm**2]	D. bramlettei [#/mm**2]	F. pileatus [#/mm**2]	Fasciculithus spp. [#/mm**2]	Sphenolithus spp. [#/mm**2]	E. robusta	Nannos cont [#/mm**2]	Comment
+86-577-8H-3,30-31	63.8	0.00	67.11	-2.60	64.51	10.4	211.8																		
+86-577-8H-3,60-61	63.8	0.00	67.41	-2.60	64.81	8.0	185.3				0.0														
+86-577-8H-3,90-91	63.8	0.00	67.71	-2.60	65.11	2.4	104.7		0.0		0.0														
+86-577-8H-3,120-121	63.8	0.00	68.01	-2.60	65.41	65.8	169.7		0.0		0.0														
+86-577-8H-4,0-1	63.8	0.00	68.31	-2.60	65.71	0.8	160.1		0.0		2.4														
+86-577-8H-4,30-31	63.8	0.00	68.61	-2.60	66.01	0.0	233.5		0.0		1.2														
+86-577-8H-4,60-61	63.8	0.00	68.91	-2.60	66.31	2.4	158.9		0.8		1.2														
+86-577-8H-4,90-91	63.8	0.00	69.21	-2.60	66.61	0.0	185.3		0.0		0.0														
+86-577-8H-4,120-121	63.8	0.00	69.51	-2.60	66.91	0.0	204.6		0.0		3.6														
+86-577-8H-5,0-1	63.8	0.00	69.81	-2.60	67.21	0.0	250.3		0.0		1.2														
+86-577-8H-5,30-31	63.8	0.00	70.11	-2.60	67.51	0.0	204.6		0.0		0.0														
+86-577-8H-5,60-61	63.8	0.00	70.41	-2.60	67.81	0.8	268.4		0.0		0.0														
+86-577-8H-5,90-91	63.8	0.00	70.71	-2.60	68.11	0.0	125.2		0.0		0.0														
+86-577-8H-5,120-121	63.8	0.00	71.01	-2.60	68.41	0.0	217.8		0.0		0.0														
+86-577-8H-6,0-1	63.8	0.00	71.31	-2.60	68.71	0.0	256.0		0.0		1.2														
+86-577-8H-6,30-31	63.8	0.00	71.61	-2.60	69.01	0.0	334.6		0.0		0.0	0.0													
+86-577-8H-6,36-38	63.8	0.00	71.67	-2.60	69.07				0.0																Sample only examined for relative abundance of T. orthostylus
+86-577-8H-6,46-48	63.8	0.00	71.77	-2.60	69.17				<1.0																Sample only examined for relative abundance of T. orthostylus
+86-577-8H-6,56-58	63.8	0.00	71.87	-2.60	69.27				>1.0																Sample only examined for relative abundance of T. orthostylus
+86-577-8H-6,60-61	63.8	0.00	71.91	-2.60	69.31		201.4		30.5		0.0	0.0													
+86-577-8H-6,90-91	63.8	0.00	72.21	-2.60	69.61		220.6		133.2		0.0	0.0													
+86-577-8H-6,120-121	63.8	0.00	72.51	-2.60	69.91		172.5		106.7		0.0	0.0													
+86-577-8H-7,0-1	63.8	0.00	72.81	-2.60	70.21		228.7		127.6		0.0	0.8													
+86-577-8H-CC (86-577-8H-8, 17-18)	63.8	-1.37	73.11	-2.60	70.51		73.0		111.5		1.6														
+86-577-9H-1,0-1	73.3	0.00	73.31	0.00	73.31		40.9		152.4		1.6	3.2		0.0											
+86-577-9H-1,30-31	73.3	0.00	73.61	0.00	73.61		93.1		155.6		2.4	0.8		0.0											
+86-577-9H-1,60-61	73.3	0.00	73.91	0.00	73.91		48.9		93.9		12.0	0.8		0.0											
+86-577-9H-1,90-91	73.3	0.00	74.21	0.00	74.21		91.5		78.6		2.4	3.2		0.0											
+86-577-9H-1,120-121	73.3	0.00	74.51	0.00	74.51		29.7		56.2		4.8	3.2		3.8											
+86-577-9H-2,0-1	73.3	0.00	74.81	0.00	74.81		3.2		93.1		12.0	8.8		6.8											
+86-577-9H-2,30-31	73.3	0.00	75.11	0.00	75.11		4.0		93.9		13.6	7.2		4.5											
+86-577-9H-2,60-61	73.3	0.00	75.41	0.00	75.41		0.8		83.4		5.6	5.6		9.8											
+86-577-9H-2,90-91	73.3	0.00	75.71	0.00	75.71		4.0		65.8		0.0	4.8		9.1											
+86-577-9H-2,120-121	73.3	0.00	76.01	0.00	76.01		8.8		82.6		2.4	4.8		15.9											
+86-577-9H-3,0-1	73.3	0.00	76.31	0.00	76.31		3.2		48.9		1.6	5.6		34.1											
+86-577-9H-3,30-31	73.3	0.00	76.61	0.00	76.61		0.0		75.4		0.0	8.8		43.8											
+86-577-9H-3,60-61	73.3	0.00	76.91	0.00	76.91		0.0		139.6		0.0	14.4		60.6											
+86-577-9H-3,90-91	73.3	0.00	77.21	0.00	77.21		0.8		90.7		0.0	8.0		55.3											
+86-577-9H-3,120-121	73.3	0.00	77.51	0.00	77.51		0.0		88.3		0.0	16.0	0.0	28.8											
+86-577-9H-4,0-1	73.3	0.00	77.81	0.00	77.81		0.0	36.3	155.0		0.0	16.0	0.0	31.8											
+86-577-9H-4,30-31	73.3	0.00	78.11	0.00	78.11		0.0	42.4	93.9		3.2	21.5	0.0	28.0											
+86-577-9H-4,60-61	73.3	0.00	78.41	0.00	78.41		9.6	42.4	81.8	0.0	7.8	28.1	0.0	18.2											
+86-577-9H-4,90-91	73.3	0.00	78.71	0.00	78.71		0.0	54.5	104.3	0.0	4.8	36.1	8.8	37.1											
+86-577-9H-4,120-121	73.3	0.00	79.01	0.00	79.01		0.0	18.2	92.3	0.0	0.8	40.1	15.2	16.7											
+86-577-9H-5,0-1	73.3	0.00	79.31	0.00	79.31		0.0	4.5	63.4	0.0	1.6	53.8	0.0	10.6											
+86-577-9H-5,30-31	73.3	0.00	79.61	0.00	79.61		0.0	1.5	15.2	5.6	0.0	48.1	0.0	6.8											
+86-577-9H-5,60-61	73.3	0.00	79.91	0.00	79.91			0.0	0.0	30.5	0.0	55.4	3.2	24.2											
+86-577-9H-5,90-91	73.3	0.00	80.21	0.00	80.21			0.0	0.0	62.6	0.0	134.0	12.8	39.4											
+86-577-9H-5,113-114	73.3	0.00	80.44	0.00	80.44			0.0	0.0	32.9	0.0	68.2	85.8	21.2											
+86-577-9H-6,0-1	73.3	0.00	80.81	0.00	80.81			0.0	0.0	0.0		0.0	134.8	4.5											
+86-577-9H-6,30-31	73.3	0.00	81.11	0.00	81.11					0.0		0.0	165.3	4.5											
+86-577-9H-6,60-61	73.3	0.00	81.41	0.00	81.41					0.0		0.0	171.7	0.8											
+86-577-9H-6,90-91	73.3	0.00	81.71	0.00	81.71					0.0		0.0	196.6	2.3											
+86-577-9H-6,120-121	73.3	0.00	82.01	0.00	82.01								113.9	0.0							0.0				
+86-577-9H-7,8-9	73.3	0.00	82.39	-0.23	82.16																<1.0				Sample only examined for relative abundance of Fasciculithus
+86-577-10H-1,30-31	82.8	0.00	83.11	1.50	84.61								316.9	9.1	19.3	12.0					281.6				
+86-577-10H-1,60-61	82.8	0.00	83.41	1.50	84.91								283.2	4.5	18.5	20.9					305.8				
+86-577-10H-1,90-91	82.8	0.00	83.71	1.50	85.21								182.9	1.5	33.7	20.1					324.6				
+86-577-10H-1,120-121	82.8	0.00	84.01	1.50	85.51								175.7	17.4	49.7	12.8									
+86-577-10H-2,0-1	82.8	0.00	84.31	1.50	85.81								181.3	7.6	44.9	16.8									
+86-577-10H-2,30-31	82.8	0.00	84.61	1.50	86.11								180.5	9.8	66.6	20.9							-		
+86-577-10H-2,60-61	82.8	0.00	84.91	1.50	86.41								68.2	9.8	38.5	12.8									
+86-577-10H-2,90-91	82.8	0.00	85.21	1.50	86.71								69.8	7.6	63.4	11.2	0.0						R		
+86-577-10H-2,120-121	82.8	0.00	85.51	1.50	87.01								84.2	41.6	64.2	17.7	0.0						F		
+86-577-10H-3,0-1	82.8	0.00	85.81	1.50	87.31								33.7	5.3	44.1	22.5	0.0								
+86-577-10H-3,30-31	82.8	0.00	86.11	1.50	87.61								15.2	14.4	26.5	19.3	0.0						F		
+86-577-10H-3,60-61	82.8	0.00	86.41	1.50	87.91								4.8	9.1	19.3	25.7	14.4								
+86-577-10H-3,90-91	82.8	0.00	86.71	1.50	88.21								0.0	8.3	27.3	24.1	10.4								
+86-577-10H-3,120-121	82.8	0.00	87.01	1.50	88.51								0.0	9.1	28.9	8.8	22.5						F		
+86-577-10H-4,0-1	82.8	0.00	87.31	1.50	88.81								0.0	6.8	53.8	6.4	44.9								
+86-577-10H-4,30-31	82.8	0.00	87.61	1.50	89.11								0.0	12.1	122.8	13.6	2.4								
+86-577-10H-4,60-61	82.8	0.00	87.91	1.50	89.41									18.9	72.2	5.6	0.0								
+86-577-10H-4,90-91	82.8	0.00	88.21	1.50	89.71									47.7	95.5	19.3	0.0								
+86-577-10H-4,120-121	82.8	0.00	88.51	1.50	90.01									12.1	71.4	5.6	0.0								
+86-577-10H-5,0-1	82.8	0.00	88.81	1.50	90.31									17.4	107.5	0.0	0.0								
+86-577-10H-5,30-31	82.8	0.00	89.11	1.50	90.61									3.8	88.3	0.0									
+86-577-10H-5,60-61	82.8	0.00	89.41	1.50	90.91									6.8	74.6	0.0									
+86-577-10H-5,90-91	82.8	0.00	89.71	1.50	91.21									3.0	69.8	0.0									
+86-577-10H-5,120-121	82.8	0.00	90.01	1.50	91.51									3.8	145.2										
+86-577-10H-6,0-1	82.8	0.00	90.31	1.50	91.81									7.6	108.3										
+86-577-10H-6,30-31	82.8	0.00	90.61	1.50	92.11									3.0	100.3										
+86-577-10H-6,60-61	82.8	0.00	90.91	1.50	92.41									18.2	107.5										
+86-577-10H-6,90-91	82.8	0.00	91.21	1.50	92.71									54.5	121.9										
+86-577-10H-6,120-121	82.8	0.00	91.51	1.50	93.01									53.0	136.9										
+86-577-10H-7,0-1	82.8	0.00	91.81	1.50	93.31									16.7	87.4										
+86-577-10H-7,30-31	82.8	0.00	92.11	1.50	93.61									14.4	101.1										
+86-577-10H-8,17-18	82.8	-1.08	92.40	1.50	93.90									7.6											
+86-577-11H-1,0-1	92.3	0.00	92.31	-1.00	91.31									4.5	95.5										
+86-577-11H-1,30-31	92.3	0.00	92.61	-1.00	91.61									7.6	109.1										
+86-577-11H-1,60-61	92.3	0.00	92.91	-1.00	91.91									7.6	101.9										
+86-577-11H-1,90-91	92.3	0.00	93.21	-1.00	92.21									9.1	121.1									0.0	
+86-577-11H-1,120-121	92.3	0.00	93.51	-1.00	92.51									17.4	111.5			0.0						0.0	
+86-577-11H-2,0-1	92.3	0.00	93.81	-1.00	92.81									54.5	149.2			0.0	0.0					0.0	
+86-577-11H-2,30-31	92.3	0.00	94.11	-1.00	93.11									46.9	122.8			0.0	0.0					0.0	
+86-577-11H-2,60-61	92.3	0.00	94.41	-1.00	93.41									45.4	119.5			0.0	0.0					0.0	
+86-577-11H-2,90-91	92.3	0.00	94.71	-1.00	93.71									9.8	24.1			2.4	0.0					109.9	
+86-577-11H-2,120-121	92.3	0.00	95.01	-1.00	94.01									9.8	27.3			44.9	2.4					8.0	
+86-577-11H-3,0-1	92.3	0.00	95.31	-1.00	94.31									9.1	23.3			16.0	9.6		80.2			0.0	
+86-577-11H-3,30-31	92.3	0.00	95.61	-1.00	94.61									9.1	26.5			9.6	4.8	0.0	101.4			44.1	
+86-577-11H-3,60-61	92.3	0.00	95.91	-1.00	94.91									0.0	1.6			0.0	0.0	0.0	59.0			0.8	
+86-577-11H-3,90-91	92.3	0.00	96.21	-1.00	95.21									0.0	3.2			0.0	0.8	0.0	67.8			8.0	
+86-577-11H-3,120-121	92.3	0.00	96.51	-1.00	95.51									3.0	4.8			3.2	1.6	0.0	53.3			7.2	
+86-577-11H-4,0-1	92.3	0.00	96.81	-1.00	95.81									0.0	0.0			0.0	0.0	3.6	41.8			0.0	
+86-577-11H-4,30-31	92.3	0.00	97.11	-1.00	96.11									0.0	4.8			3.2	0.0	1.8	45.4			4.0	
+86-577-11H-4,60-61	92.3	0.00	97.41	-1.00	96.41									0.0	0.0			0.0	0.0	9.1	27.3			0.8	
+86-577-11H-4,90-91	92.3	0.00	97.71	-1.00	96.71									1.5	0.8			0.8	0.0	7.3	20.6			0.8	
+86-577-11H-4,120-121	92.3	0.00	98.01	-1.00	97.01									0.0	0.0			0.0		6.7	21.2			0.0	
+86-577-11H-5,0-1	92.3	0.00	98.31	-1.00	97.31									0.0	0.0			0.0		10.9	23.0			0.0	
+86-577-11H-5,30-31	92.3	0.00	98.61	-1.00	97.61									0.0	0.0			0.0		8.5	32.1			0.0	
+86-577-11H-5,60-61	92.3	0.00	98.91	-1.00	97.91									0.0	0.0			0.0		21.2	21.2			0.0	
+86-577-11H-5,90-91	92.3	0.00	99.21	-1.00	98.21									0.8						18.2	11.5			0.0	
+86-577-11H-5,120-121	92.3	0.00	99.51	-1.00	98.51									0.0						14.5	12.7			0.0	
+86-577-11H-6,0-1	92.3	0.00	99.81	-1.00	98.81									0.0						10.9	10.3				
+86-577-11H-6,30-31	92.3	0.00	100.11	-1.00	99.11									0.0						4.8	39.4	1143			
+86-577-11H-6,60-61	92.3	0.00	100.41	-1.00	99.41									0.0						4.8	21.8	842			
+86-577-11H-6,90-91	92.3	0.00	100.71	-1.00	99.71									0.0						1.8	17.6	999			
+86-577-11H-6,120-121	92.3	0.00	101.01	-1.00	100.01									0.8						3.6	12.6	1083			
+86-577-11H-CC (86-577-11H-7, 0-1)	92.3	0.00	101.31	-1.00	100.31									0.8						0.0	0.0	951			

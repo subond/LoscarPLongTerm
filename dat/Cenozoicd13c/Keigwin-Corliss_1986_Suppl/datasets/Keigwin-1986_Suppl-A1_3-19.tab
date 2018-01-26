@@ -1,0 +1,42 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 3-19 sediments. doi:10.1594/PANGAEA.718944, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: -28.534700 * LONGITUDE: -23.677200
+	MINIMUM DEPTH, sediment: 63.9 m * MAXIMUM DEPTH, sediment: 130.4 m
+Event(s):	3-19 * LATITUDE: -28.534700 * LONGITUDE: -23.677200 * DATE/TIME: 1969-01-07T00:00:00 * ELEVATION: -4677.0 m * RECOVERY: 96.50 m * PENETRATION: 145.20 m * LOCATION: South Atlantic/RIDGE * CAMPAIGN: Leg3 (URI: doi:10.2973/dsdp.proc.3.1970) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 12 cores; 103.8 m cored; 0 m drilled; 93 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Oridorsalis tener, d18O [per mil PDB] (O. tener d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Oridorsalis tener, d13C [per mil PDB] (O. tener d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globocassidulina subglobosa, d18O [per mil PDB] (G. subglobosa d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globocassidulina subglobosa, d13C [per mil PDB] (G. subglobosa d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	86 data points
+*/
+Depth [m]	Label	O. tener d18O [per mil PDB]	O. tener d13C [per mil PDB]	G. subglobosa d18O [per mil PDB]	G. subglobosa d13C [per mil PDB]
+63.90	3-19-4-5,120	1.59	-0.12		
+65.40	3-19-4-6,120	1.70	0.15		
+76.20	3-19-5-1,60	1.78	-0.02	1.64	-0.43
+76.80	3-19-5-1,120	1.79	0.59		
+77.73	3-19-5-2,63	1.30	0.49		
+80.74	3-19-5-4,64	1.09	0.19		
+81.30	3-19-5-4,121	1.36	0.35		
+82.20	3-19-5-5,60	1.12	0.14	1.22	0.47
+82.80	3-19-5-5,120	1.16	0.58	1.27	0.88
+83.70	3-19-5-6,60			1.36	
+84.30	3-19-5-6,120			0.99	0.79
+86.61	3-19-6-1,61	0.86	0.17		
+88.10	3-19-6-2,60			1.15	0.55
+89.62	3-19-6-3,62			1.08	0.77
+92.60	3-19-6-5,60	1.25	0.84		
+94.10	3-19-6-6,60			1.41	0.39
+98.60	3-19-7-3,60	0.84	0.17		
+101.60	3-19-7-5,50	0.50	-0.14	0.50	0.27
+104.90	3-19-8-1,60	0.85	0.55		
+107.90	3-19-8-3,60	0.18	0.27	0.34	0.79
+110.90	3-19-8-5,60	0.68	-0.16	0.85	0.20
+114.00	3-19-9-1,60	0.47	0.11		
+117.05	3-19-9-3,65	0.63	0.16		
+120.00	3-19-9-5,60			0.60	0.21
+130.40	3-19-10-5,60	0.47	0.19		

@@ -1,0 +1,27 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 90-593 sediments. doi:10.1594/PANGAEA.718961, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: -40.507800 * LONGITUDE: 167.674500
+	MINIMUM DEPTH, sediment: 536.4 m * MAXIMUM DEPTH, sediment: 566.8 m
+Event(s):	90-593 * LATITUDE: -40.507800 * LONGITUDE: 167.674500 * DATE/TIME: 1982-12-28T00:00:00 * ELEVATION: -1068.0 m * RECOVERY: 469.50 m * PENETRATION: 571.50 m * LOCATION: South Pacific/Tasman Sea/PLATEAU * CAMPAIGN: Leg90 (URI: doi:10.2973/dsdp.proc.90.1986) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 58 cores; 550.5 m cored; 19.2 m drilled; 85.3 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Uvigerina sp., d18O [per mil PDB] (Uvigerina sp. d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Uvigerina sp., d13C [per mil PDB] (Uvigerina sp. d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Chiloguembelina spp., d18O [per mil PDB] (Chiloguembelina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Chiloguembelina spp., d13C [per mil PDB] (Chiloguembelina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	38 data points
+*/
+Depth [m]	Label	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]	Uvigerina sp. d18O [per mil PDB]	Uvigerina sp. d13C [per mil PDB]	Chiloguembelina d18O [per mil PDB]	Chiloguembelina d13C [per mil PDB]
+536.44	90-593-57-3,34	0.78	1.86				
+537.92	90-593-57-4,32						
+539.42	90-593-57-5,32	0.65	1.78			0.32	1.92
+540.96	90-593-57-6,36	0.78	1.94	1.35	1.42	0.17	2.09
+562.22	90-593-60-1,32	0.13	1.21	0.39	0.39	-0.26	1.63
+563.73	90-593-60-2,33	0.23	1.13			-0.17	1.65
+565.22	90-593-60-3,32	0.26	2.01	0.58	0.34		
+566.78	90-593-60-4,38	0.13	0.88	0.51	0.10		

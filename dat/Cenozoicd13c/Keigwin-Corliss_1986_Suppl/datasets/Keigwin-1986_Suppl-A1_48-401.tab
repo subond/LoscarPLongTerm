@@ -1,0 +1,19 @@
+/* DATA DESCRIPTION:
+Citation:	Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 48-401 sediments. doi:10.1594/PANGAEA.718958, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 47.427500 * LONGITUDE: -8.810300
+	MINIMUM DEPTH, sediment: 84.6 m * MAXIMUM DEPTH, sediment: 94.2 m
+Event(s):	48-401 * LATITUDE: 47.427500 * LONGITUDE: -8.810300 * DATE/TIME: 1976-06-06T00:00:00 * ELEVATION: -2495.0 m * RECOVERY: 103.10 m * PENETRATION: 341.00 m * LOCATION: North Atlantic/TERRACE * CAMPAIGN: Leg48 (URI: doi:10.2973/dsdp.proc.48.1979) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 24 cores; 228 m cored; 38 m drilled; 45.2 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Chiloguembelina cubensis, d18O [per mil PDB] (C. cubensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Chiloguembelina cubensis, d13C [per mil PDB] (C. cubensis d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Pseudohastigerina spp., d18O [per mil PDB] (Pseudohastigerina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Pseudohastigerina spp., d13C [per mil PDB] (Pseudohastigerina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	6 data points
+*/
+Depth [m]	Label	C. cubensis d18O [per mil PDB]	C. cubensis d13C [per mil PDB]	Pseudohastigerina d18O [per mil PDB]	Pseudohastigerina d13C [per mil PDB]
+84.58	48-401-2-1,8	0.33	1.12		
+94.15	48-401-3-1,15			0.07	1.1

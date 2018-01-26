@@ -1,0 +1,33 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table 2) Original depths, offsets, composite depths and core overlaps for cores at DSDP Site 86-577. Dataset #810413 (DOI registration in progress), 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	MEDIAN LATITUDE: 32.441767 * MEDIAN LONGITUDE: 157.723233 * SOUTH-BOUND LATITUDE: 32.441300 * WEST-BOUND LONGITUDE: 157.723200 * NORTH-BOUND LATITUDE: 32.442200 * EAST-BOUND LONGITUDE: 157.723300
+	MINIMUM DEPTH, sediment/rock: 63.8 m * MAXIMUM DEPTH, sediment/rock: 113.9 m
+Event(s):	86-577 * LATITUDE: 32.441800 * LONGITUDE: 157.723300 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 111.10 m * PENETRATION: 118.80 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 118.8 m cored; 0 m drilled; 93.5 % recovery
+	86-577A * LATITUDE: 32.442200 * LONGITUDE: 157.723200 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 110.80 m * PENETRATION: 123.40 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 123.4 m cored; 0 m drilled; 89.8 % recovery
+	86-577B * LATITUDE: 32.441300 * LONGITUDE: 157.723200 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 9.60 m * PENETRATION: 113.90 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 1 cores; 9.5 m cored; 0 m drilled; 101.4 % recovery
+Comment:	DEPTH; sediment is the top depth in mbsf.
+Parameter(s):	Event label (Event) * Metadata
+	Sample code/label (Label) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	DEPTH, sediment/rock [m] (Depth) * Geocode
+	Offset [m] (Offset) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Depth, composite top [mcd] (Depth c top) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Core gap [m] (Gap) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	49 data points
+*/
+Event	Label	Depth [m]	Offset [m]	Depth c top [mcd]	Gap [m]
+86-577	86-577-8H	63.8	-2.6	61.2	
+86-577	86-577-9H	73.3	0.0	73.3	2.6
+86-577	86-577-10H	82.8	1.5	84.3	1.5
+86-577	86-577-11H	92.3	-1.0	91.3	-2.5
+86-577	86-577-12H	101.8	2.7	104.5	3.7
+86-577	86-577-13H	111.3	2.7	114.0	0.0
+86-577A	86-577A-8H	66.4	0.4	66.8	
+86-577A	86-577A-9H	75.9	0.1	76.0	-0.3
+86-577A	86-577A-10H	85.4	1.8	87.2	1.7
+86-577A	86-577A-11H	94.9	2.1	97.0	0.3
+86-577A	86-577A-12H	104.4	2.2	106.6	0.1
+86-577A	86-577A-13H	113.9	2.1	116.0	-0.1
+86-577B	86-577B-1H	104.4	2.2	106.6	

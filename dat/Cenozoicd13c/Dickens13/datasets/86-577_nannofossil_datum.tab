@@ -1,0 +1,67 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table S3) Nannofossil datums at DSDP Site 86-577. Dataset #809248 (DOI registration in progress), 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Related to:	Backman, Jan (1986): Late Paleocene to middle Eocene calcareous nannofossil biochronology from the Shatsky Rise, Walvis Ridge and Italy. Palaeogeography, Palaeoclimatology, Palaeoecology, 57(1), 43-59, doi:10.1016/0031-0182(86)90005-2
+	Cande, Steven C; Kent, Dennis V (1995): Revised calibration of the geomagnetic polarity timescale for the Late Cretaceous and Cenozoic. Journal of Geophysical Research-Solid Earth, 100(B4), 6093-6095, doi:10.1029/94JB03098
+	Thibault, Nicolas; Gardin, Silvia; Galbrun, Bruno (2010): Latitudinal migration of calcareous nannofossil Micula murus in the Maastrichtian: Implications for global climate change. Geology, 38(3), 203-206, doi:10.1130/G30326.1
+	Westerhold, Thomas; Röhl, Ursula; Laskar, Jacques (2012): Time scale controversy: Accurate orbital calibration of early Paleogene. Geochemistry Geophysics Geosystems, 13, Q06015, doi:10.1029/2012GC004096
+	Westerhold, Thomas; Röhl, Ursula; Raffi, Isabella; Fornaciari, Eliana; Monechi, Simonetta; Reale, Viviana; Bowles, Julie; Evans, Helen F (2008): Astronomical calibration of the Paleocene time. Palaeogeography, Palaeoclimatology, Palaeoecology, 257(4), 377-403, doi:10.1016/j.palaeo.2007.09.016
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	MEDIAN LATITUDE: 32.442000 * MEDIAN LONGITUDE: 157.723250 * SOUTH-BOUND LATITUDE: 32.441800 * WEST-BOUND LONGITUDE: 157.723200 * NORTH-BOUND LATITUDE: 32.442200 * EAST-BOUND LONGITUDE: 157.723300
+	MINIMUM DEPTH, sediment/rock: 68.9 m * MAXIMUM DEPTH, sediment/rock: 122.9 m
+Event(s):	86-577 * LATITUDE: 32.441800 * LONGITUDE: 157.723300 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 111.10 m * PENETRATION: 118.80 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 118.8 m cored; 0 m drilled; 93.5 % recovery
+	86-577A * LATITUDE: 32.442200 * LONGITUDE: 157.723200 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 110.80 m * PENETRATION: 123.40 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 123.4 m cored; 0 m drilled; 89.8 % recovery
+Comment:	DEPTH, sediment is the old depth [mbsf]. Placement of nannofossil datums for Upper Cretaceous and Lower Paleogene sediment according to composite depth scale and an updated time scale (Westerhold et al., 2008, 2012).
+Parameter(s):	Event label (Event) * Metadata
+	Ageprofile Datum Description (Ageprof dat des) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Sample code/label (Label) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001) * COMMENT: top
+	Sample code/label 2 (Label 2) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001) * COMMENT: bottom
+	Depth, top/min [m] (Depth top) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: core top [m]
+	DEPTH, sediment/rock [m] (Depth) * Geocode
+	Reference/source (Reference) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Offset [m] (Offset) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: core offsets from Table 2
+	Depth, composite [mcd] (Depth c) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: new depth
+	Age model [ka] (Age model) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: Age on Option 1 time scale suggested by Westerhold et al. (2008); WO-1 = Westerhold et al. (2008) Option 1. Note these authors do not report ages above the top of Chron C24n.3n or below the top of Chron C30n; ages for polarity chron boundaries beyond are assumed to be the same as reported by Cande and Kent (1995).
+	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	277 data points
+*/
+Event	Ageprof dat des	Label	Label 2	Depth top [m]	Depth [m]	Reference	Offset [m]	Depth c [mcd]	Age model [ka]	Comment
+86-577	LCO D. sublodoensis	86-577-8-4,60-61	86-577-8-4,90-91	63.8	68.91	Backman, 1986	-2.6	66.31	49500	
+86-577	Top T. orthostylus	86-577-8-6,36-38	86-577-8-6,46-48	63.8	71.67	Backman, 1986	-2.6	69.07	50700	
+86-577	Base D. lodoensis	86-577-9-4,30-31	86-577-9-4,60-61	73.3	78.11	Backman, 1986	0.0	78.11	53240	
+86-577	Top D. multiradiatus	86-577-9-4,60-91	86-577-9-4,90-91	73.3	78.56	Backman, 1986	0.0	78.56	53240	
+86-577	Top T. contortus	86-577-9-5,0-1	86-577-9-5,30-31	73.3	79.31	Backman, 1986	0.0	79.31	53800	
+86-577	Base S. radians	86-577-9-5,30-31	86-577-9-5,60-61	73.3	79.61	Backman, 1986	0.0	79.61	53850	
+86-577	Base T. orthostylus	86-577-9-5,30-31	86-577-9-5,60-61	73.3	79.61	Backman, 1986	0.0	79.61	54000	
+86-577	Base T. contortus	86-577-9-5,113-114	86-577-9-6,0-1	73.3	80.44	Backman, 1986	0.0	80.44	54340	
+86-577	Base D. diastypus	86-577-9-5,113-114	86-577-9-6,0-1	73.3	80.44	Backman, 1986	0.0	80.44	54480	
+86-577	Top Fasciculithus spp.	86-577-9-6,120-121	86-577-9CC-7,8-9	73.3	82.01	This study	0.0	82.01	55110	
+86-577	Base D. multiradiatus	86-577-10-3,60-61	86-577-10-3,90-91	82.8	86.41	Backman, 1986	1.5	87.91	56760	
+86-577	Top D. okadai	86-577-10-3,30-31	86-577-10-3,60-61	82.8	86.11	Backman, 1986	1.5	87.61	56850	
+86-577	Base D. okadai	86-577-10-4,30-31	86-577-10-4,60-61	82.8	87.61	Backman, 1986	1.5	89.11	56950	
+86-577	Base D. nobilis	86-577-10-4,120-121	86-577-10-5,0-1	82.8	88.51	Backman, 1986	1.5	90.01	56970	
+86-577	Top  H. kleinpellii	86-577-11-2,60-61	86-577-11-2,90-91	92.3	94.41	Backman, 1986	-1.0	93.41	58330	
+86-577	Com D. mohleri	86-577-11-2,100-101	86-577-11-2,100-101	92.3	94.81	Backman, 1986	-1.0	93.81	58550	
+86-577	Base H. kleinpellii	86-577-11-3,30-31	86-577-11-4,60-61	92.3	95.61	Backman, 1986	-1.0	94.61	59020	
+86-577	Base Fasciculithus spp.	86-577-11-6,140-141	86-577-11-6,140-141	92.3	101.21	Backman, 1986	-1.0	100.21	61210	
+86-577A	LCO D. sublodoensis					This study			49500	Possibly in core gap
+86-577A	Top T. orthostylus	86-577A-8-2,146-148	86-577A-8-3,5-7	66.4	69.37	This study	-0.4	68.97	50700	
+86-577A	Base D. lodoensis	86-577A-9-2,120-121	86-577A-9-3,0-1	75.9	78.61	This study	0.1	78.71	53240	
+86-577A	Top D. multiradiatus					This study			53240	Likely in missing core interval
+86-577A	Top T. contortus	86-577A-9-3,30-31	86-577A-9-3,60-61	75.9	79.21	This study	0.1	79.31	53800	
+86-577A	Base S. radians	86-577A-9-CC,9-10				This study			53850	Likely in missing core interval
+86-577A	Base T. orthostylus	86-577A-9-CC,9-10				This study			54000	Likely in missing core interval
+86-577A	Base T. contortus	86-577A-9-CC,9-10				This study			54340	Likely in missing core interval
+86-577A	Base D. diastypus	86-577A-9-CC,9-10				This study			54480	Likely in missing core interval
+86-577A	Top Fasciculithus spp.	86-577A-9-CC,9-10				This study			55110	Likely in missing core interval
+86-577A	Base D. multiradiatus	86-577A-10-1,78-79		85.4	86.19	This study			56760	Likely above upper sample or in core gap
+86-577A	Top D. okadai	86-577A-10-1,78-79		85.4	86.19	This study			56850	Likely above upper sample or in core gap
+86-577A	Base D. okadai	86-577A-10-2,29-30	86-577A-10-2,79-80	85.4	87.20	This study	1.8	89.00	56950	
+86-577A	Base D. nobilis	86-577A-10-2,129-130	86-577A-10-3,29-30	85.4	88.20	This study	1.8	90.00	56970	
+86-577A	Top  H. kleinpellii	86-577A-10-5,80-81	86-577A-11-5,129-130	85.4	92.21	This study	1.8	94.01	58330	
+86-577A	Com D. mohleri	86-577A-10-5,129-130	86-577A-10-6,34-35	85.4	92.70	This study	1.8	94.50	58550	
+86-577A	Base H. kleinpellii	86-577A-10-5,129-130	86-577A-10-6,34-35	85.4	92.70	This study	1.8	94.50	59020	
+86-577A	Base Fasciculithus spp.	86-577A-11-3,59-60	86-577A-11-3,90-91	94.9	98.50	This study	2.1	100.60	61210	
+86-577A	Base Sphenolithus	86-577A-11-4,120-121	86-577A-11-5,1-2	94.9	100.61	This study	2.1	102.71	61590	
+86-577A	Base M. murus	86-577A-13-7,4-5	86-577A-13-CC,-	94.9	122.94	Thibault et al.	2.1	125.04	67970	

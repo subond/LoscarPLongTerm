@@ -1,0 +1,25 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): Core alignment and composite depth scale of DSDP Site 86-577. Dataset #809257 (DOI registration in progress), 
+	Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Abstract:	Deep Sea Drilling Project Site 577 on Shatsky Rise (North Pacific Ocean) recovered a series of cores at three holes that contain calcareous nannofossil ooze of latest Cretaceous (late Maastrichtian) through early Eocene age. Several important records have been generated using samples from these cores, but the stratigraphy has remained outdated and confusing. Here we revise the stratigraphy at Site 577. This includes refining several age datums, realigning cores in the depth domain, and placing all stratigraphic markers on a current time scale. The work provides a template for appropriately bringing latest Cretaceous and Paleogene data sets at old drill sites into current paleoceanographic literature for this time interval. While the Paleocene Eocene Thermal Maximum (PETM) lies within core gaps at Holes 577* and 577A, the sedimentary record at the site holds other important events and remains crucially relevant to understanding changes in oceanographic conditions from the latest Cretaceous through early Paleogene.
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	MEDIAN LATITUDE: 32.441875 * MEDIAN LONGITUDE: 157.723260 * SOUTH-BOUND LATITUDE: 32.441300 * WEST-BOUND LONGITUDE: 157.723200 * NORTH-BOUND LATITUDE: 32.442200 * EAST-BOUND LONGITUDE: 157.723300
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	14 datasets
+*/
+/* TABULAR SUMMARY OF DATASETS LISTED IN THIS COLLECTION: */
+Filename	Citation of child dataset
+Age_estimate.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table 1) Paleomagnetic and nannofossil age estimates for the latest Cretaceous, Paleocene and early Eocene. Dataset #810412 (DOI registration in progress)
+86-577A_nannofossil.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S2) Nannofossil abundances at DSDP Hole 86-577A. doi:10.1594/PANGAEA.809115
+86-577_nannofossil.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S1) Nannofossil abundances at DSDP Hole 86-577. doi:10.1594/PANGAEA.809113
+86-577_GRAPE.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S5) Reported, corrected and composite depths for Gamma Ray Attentuation Porosity Evaluator (GRAPE) data at DSDP Hole 86-577. doi:10.1594/PANGAEA.809121
+86-577B_GRAPE.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S7) Reported, corrected and composite depths for Gamma Ray Attentuation Porosity Evaluator (GRAPE) data at DSDP Hole 86-577B. doi:10.1594/PANGAEA.809123
+86-577A_GRAPE.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S6) Reported, corrected and composite depths for Gamma Ray Attentuation Porosity Evaluator (GRAPE) data at DSDP Hole 86-577A. doi:10.1594/PANGAEA.809122
+86-577_depth_isotope.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S8) Recalibrated depth and ages for previously published stable isotope data from DSDP Site 86-577. doi:10.1594/PANGAEA.809130
+86-577_depth_isotope_2.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S12) Recalibrated depth and ages for previously published benthic foraminifera stable isotope data from DSDP Hole 86-577. doi:10.1594/PANGAEA.809219
+86-577_nannofossil_datum.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S3) Nannofossil datums at DSDP Site 86-577. Dataset #809248 (DOI registration in progress)
+86-577_polarity_chron.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S4) Depths and ages of polarity chron boundaries at DSDP Site 86-577. doi:10.1594/PANGAEA.809252
+86-577_composite_depth.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table 2) Original depths, offsets, composite depths and core overlaps for cores at DSDP Site 86-577. Dataset #810413 (DOI registration in progress)
+86-577_depth_isotope_3.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S9) Recalibrated depth and ages for previously published stable isotope data of fine fraction from DSDP Hole 86-577. doi:10.1594/PANGAEA.809182
+86-577_depth_isotope_4.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S10) Recalibrated depth and ages for previously published stable isotope data of bulk sediment and benthic foraminifera from DSDP Hole 86-577. Dataset #809197 (DOI registration in progress)
+86-577_depth_isotope_5.tab	Dickens, Gerald Roy; Backman, Jan (2013): (Table S11) Recalibrated depth and ages for previously published stable isotope data from DSDP Hole 86-577. doi:10.1594/PANGAEA.809200

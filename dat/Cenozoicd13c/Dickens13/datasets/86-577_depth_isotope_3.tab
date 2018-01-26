@@ -1,0 +1,80 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table S9) Recalibrated depth and ages for previously published stable isotope data of fine fraction from DSDP Hole 86-577. doi:10.1594/PANGAEA.809182, 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Related to:	Westerhold, Thomas; Röhl, Ursula; Laskar, Jacques (2012): Time scale controversy: Accurate orbital calibration of early Paleogene. Geochemistry Geophysics Geosystems, 13, Q06015, doi:10.1029/2012GC004096
+	Westerhold, Thomas; Röhl, Ursula; Raffi, Isabella; Fornaciari, Eliana; Monechi, Simonetta; Reale, Viviana; Bowles, Julie; Evans, Helen F (2008): Astronomical calibration of the Paleocene time. Palaeogeography, Palaeoclimatology, Palaeoecology, 257(4), 377-403, doi:10.1016/j.palaeo.2007.09.016
+	Zachos, James C; Arthur, Michael A; Dean, Walter E (1989): Geochemical evidence for suppression of pelagic marine productivity at the Cretaceous/Tertiary boundary. Nature, 337(6202), 61-64, doi:10.1038/337061a0
+	Zachos, James C; Arthur, Michael A; Thunell, Robert C; Williams, Douglas F; Tappa, Eric (1985): Stable isotope and trace element geochemistry of carbonate sediments across the Cretaceous/Tertiary boundary at Deep Sea Drilling Project Hole 577, Leg 86. In: Heath GR; Burckle LH; et al. (eds.), Initial Reports of the Deep Sea Drilling Project, Washington (U.S. Govt. Printing Office), 86, 513-532, doi:10.2973/dsdp.proc.86.120.1985
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 32.441800 * LONGITUDE: 157.723300
+	MINIMUM DEPTH, sediment/rock: 103.8 m * MAXIMUM DEPTH, sediment/rock: 116.7 m
+Event(s):	86-577 * LATITUDE: 32.441800 * LONGITUDE: 157.723300 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 111.10 m * PENETRATION: 118.80 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 118.8 m cored; 0 m drilled; 93.5 % recovery
+Comment:	Placement of previously published bulk and benthic foraminifera stable carbon isotope data for Upper Cretaceous and Lower Paleogene sediment at DSDP Site 577 according to composite depth scale and an updated time scale (Westerhold et al., 2008, 2012). Isotope, CaCO3 and size fraction data were reported by Zachos et al. (1985), dataset doi:10.1594/PANGAEA.802433. DEPTH, sediment is the depth [mbsf] reported by Zachos et al. (1985). Note that depths for CC samples are not consistent with core logs.
+Parameter(s):	Sample code/label (Label) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	DEPTH, sediment/rock [m] (Depth) * Geocode
+	Depth, top/min [m] (Depth top) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: core top [mbsf], reported according to drillers table (Shipboard Scientific Party, 1985) intervals from core logs
+	Void correction [m] (Void corr) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Depth, sediment revised [m] (Depth revised) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: fix [mbsf], assuming average interval distance and the above
+	Offset [m] (Offset) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: offset of cores from Table 2
+	Depth, composite [mcd] (Depth c) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: adjusted, the depth of the sample in floating depth space [mcd] relative to m below seafloor
+	delta 13C, carbonate [per mil PDB] (d13C carb) * PI: Zachos, James C (eMail: jzachos@ernerald.ucsc.edu)
+	delta 18O, carbonate [per mil PDB] (d18O carb) * PI: Zachos, James C (eMail: jzachos@ernerald.ucsc.edu)
+	Aragonia spp., d13C [per mil PDB] (Aragonia spp. d13C) * PI: Zachos, James C (eMail: jzachos@ernerald.ucsc.edu)
+	Aragonia spp., d18O [per mil PDB] (Aragonia spp. d18O) * PI: Zachos, James C (eMail: jzachos@ernerald.ucsc.edu)
+	Age model [ka] (Age model) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: estimated age on Option 1 time by Westerhold et al. (2008) as determined by linear sedimentaton between six polarity chron reversals and data on a mcd depth scale
+	Calcium carbonate [%] (CaCO3) * PI: Zachos, James C (eMail: jzachos@ernerald.ucsc.edu)
+	Size fraction > 0.063 mm, sand [%] (>63 µm) * PI: Zachos, James C (eMail: jzachos@ernerald.ucsc.edu)
+	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: blue horizons are approximate positions of polarity chron reversals
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	566 data points
+*/
+Label	Depth [m]	Depth top [m]	Void corr [m]	Depth revised [m]	Offset [m]	Depth c [mcd]	d13C carb [per mil PDB]	d18O carb [per mil PDB]	Aragonia spp. d13C [per mil PDB]	Aragonia spp. d18O [per mil PDB]	Age model [ka]	CaCO3 [%]	>63 µm [%]	Comment
+86-577-12H-2,49-51	103.80	101.8	0	103.80	2.70	106.50	2.03	-1.30			63450	93.00	7	
+86-577-12H-2,69-71	104.00	101.8	0	104.00	2.70	106.70	1.95	-1.42			63550	91.90	1	
+86-577-12H-2,89-91	104.20	101.8	0	104.20	2.70	106.90	2.13	-1.37	0.81	-0.05	63660	91.60	1	
+86-577-12H-2,99-101	104.30	101.8	0	104.30	2.70	107.00	2.09	-0.90			63710	92.80	3	
+86-577-12H-2,129-131	104.60	101.8	0	104.60	2.70	107.30	2.02	-1.27	0.88	0.08	63870	94.50	3	
+86-577-12H-3,9-11	104.90	101.8	0	104.90	2.70	107.60	1.89	-1.24	0.60	-0.08	64030	89.70	3	Base C28n, 64.03 Ma
+86-577-12H-3,29-31	105.10	101.8	0	105.10	2.70	107.80	2.04	-0.97			64070	93.90	1	
+86-577-12H-3,49-51	105.30	101.8	0	105.30	2.70	108.00	2.18	-1.08			64110	91.30	1	
+86-577-12H-3,69-71	105.50	101.8	0	105.50	2.70	108.20	2.27	-0.95			64160	92.50	1	
+86-577-12H-3,89-91	105.70	101.8	0	105.70	2.70	108.40	2.06	-1.37			64200	87.90	1	
+86-577-12H-3,109-111	105.90	101.8	0	105.90	2.70	108.60	1.92	-1.45			64240	94.85	3	
+86-577-12H-3,129-131	106.10	101.8	0	106.10	2.70	108.80	2.04	-1.30			64280	92.70	11	
+86-577-12H-4,9-11	106.40	101.8	0	106.40	2.70	109.10	2.00	-1.09			64340	95.40	14	
+86-577-12H-4,29-31	106.60	101.8	0	106.60	2.70	109.30	1.98	-1.13			64390	95.60	18	
+86-577-12H-4,49-51	106.80	101.8	0	106.80	2.70	109.50	1.73	-1.24			64430	93.10	20	
+86-577-12H-4,69-71	107.00	101.8	0	107.00	2.70	109.70	1.75	-0.85			64470	95.60	27	
+86-577-12H-4,89-91	107.20	101.8	0	107.20	2.70	109.90	1.87	-0.34	1.21	0.05	64510	94.50	25	
+86-577-12H-4,109-111	107.40	101.8	0	107.40	2.70	110.10	1.85	-0.16			64550	95.20	23	
+86-577-12H-5,19-21	108.00	101.8	0	108.00	2.70	110.70	1.78	-0.85			64680	93.10	20	
+86-577-12H-5,39-41	108.20	101.8	0	108.20	2.70	110.90	1.83	-0.95			64720	91.30	28	
+86-577-12H-5,59-61	108.40	101.8	0	108.40	2.70	111.10	1.84	-0.90	1.98	0.48	64760	93.10	25	
+86-577-12H-5,79-81	108.60	101.8	0	108.60	2.70	111.30	1.98	-0.87	1.90	0.39	64810	93.70	24	
+86-577-12H-5,91-93	108.72	101.8	0	108.72	2.70	111.42	2.19	-0.70			64830	93.00	14	
+86-577-12H-5,98-100	108.89	101.8	0	108.79	2.70	111.49	2.15	-0.49			64850	91.50	16	
+86-577-12H-5,108-109	108.99	101.8	0	108.89	2.70	111.59	2.02	-0.83	1.82	0.45	64870	93.20	15	
+86-577-12H-5,113-114	109.44	101.8	0	108.94	2.70	111.64	2.02	-0.63			64880	93.50	13	
+86-577-12H-5,117-119	109.09	101.8	0	108.98	2.70	111.68	1.91	-0.65	1.65	0.20	64890	89.50	9	
+86-577-12H-5,125-126	109.16	101.8	0	109.06	2.70	111.76	2.03	-0.73	1.61	0.15	64900	88.20	6	
+86-577-12H-5,128-130	109.19	101.8	0	109.09	2.70	111.79	2.49	-0.74			64910	88.80	3	
+86-577-12H-5,131-132	109.22	101.8	0	109.12	2.70	111.82	2.83	-0.82	1.65	0.04	64910	94.80	1	Aragonia value different in in table and figure by Zachos et al. (1985)
+86-577-12H-5,134-136	109.26	101.8	0	109.15	2.70	111.85	2.94	-0.64			64920	95.70	<1	
+86-577-12H-5,144-145	109.35	101.8	0	109.25	2.70	111.95	2.87	-0.97			64940	96.00	<1	
+86-577-12H-6,19-21	109.60	101.8	0	109.50	2.70	112.20	2.76	-0.81	1.36	0.31	64990	95.20	<1	
+86-577-12H-6,39-41	109.80	101.8	0	109.70	2.70	112.40	2.55	-0.85			65040	96.10	<1	
+86-577-12H-6,59-61	110.00	101.8	0	109.90	2.70	112.60	2.55	-0.87	0.82	-0.33	65080	94.80	<1	
+86-577-12H-6,99-101	110.40	101.8	0	110.30	2.70	113.00	2.50	-0.93			65160	95.20	<1	
+86-577-12H-7,9-11	111.00	101.8	0	110.90	2.70	113.60	2.64	-0.94			65290	93.60	<1	
+86-577-13H-1,59-61	111.80	111.3	0	111.90	2.65	114.55	2.48	-1.08			65490	87.40	<1	
+86-577-13H-1,99-101	112.20	111.3	0	112.30	2.65	114.95	2.49	-1.05			65570	94.00	<1	
+86-577-13H-1,139-141	112.60	111.3	0	112.70	2.65	115.35	2.83	-0.99			65660	95.38	<1	Top C30n, 65.63 Ma
+86-577-13H-2,39-41	113.10	111.3	0	113.20	2.65	115.85	2.80	-1.10			65760	96.30	<1	
+86-577-13H-2,79-81	113.50	111.3	0	113.60	2.65	116.25	2.78	-1.03			65840	94.50	<1	
+86-577-13H-2,119-121	113.90	111.3	0	114.00	2.65	116.65	2.76	-1.05			65930	94.80	<1	
+86-577-13H-3,19-21	114.40	111.3	0	114.50	2.65	117.15	2.72	-0.97			66030	94.00	<1	
+86-577-13H-3,59-61	114.80	111.3	0	114.90	2.65	117.55	2.80	-0.94			66120	94.60	<1	
+86-577-13H-3,99-101	115.20	111.3	0	115.30	2.65	117.95	2.65	-0.95			66200	90.90	<1	
+86-577-13H-3,139-141	115.60	111.3	0	115.70	2.65	118.35	2.86	-0.93			66280	95.10	<1	
+86-577-13H-4,39-41	116.10	111.3	0	116.20	2.65	118.85	2.71	-0.99			66390	94.10	<1	
+86-577-13H-4,99-101	116.70	111.3	0	116.80	2.65	119.45	2.64	-0.87			66510	94.90	<1	

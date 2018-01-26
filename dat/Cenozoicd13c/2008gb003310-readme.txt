@@ -1,0 +1,59 @@
+Auxiliary Material for Paper 2008GB003310
+
+
+Modelled reconstructions of the oceanic carbonate system for different histories of atmospheric carbon dioxide during the last 20 Ma
+
+
+Christopher D. Roberts and Aradhna K. Tripati
+Department of Earth Sciences, University of Cambridge, Cambridge, UK
+
+
+Roberts, C. D., and A. K. Tripati (2009), Modeled reconstructions of the oceanic carbonate system for different histories of atmospheric carbon dioxide during the last 20 Ma, Global Biogeochem. Cycles, 23, GB1011, doi:10.1029/2008GB003310.
+
+
+Introduction:
+
+These supplementary data are a new 20 Ma composite record of d18O and d13C. Over 14,000 measurements of planktic and benthic foraminifera from the Pacific Ocean were compiled from published records. The data set includes several records from the previously published benthic isotope stack of Zachos et al. [2001]. Age models were updated to the geomagnetic polarity timescale of Gradstein et al. (2004), and d13C and d18O data were corrected to account for species offsets following Shackleton et al. (1995) and Spero et al. (2003). All d13C data have been corrected to seawater DIC and are reported relative to the VPDB standard. All d18O data have been corrected to G. ruber (planktics) and Uvigerina spp. (benthics) and are specified relative to the VPDB standard.
+
+1. 2008gb003310-ds01.txt 
+Data Set S1. This is a composite record of planktic d18O and d13C. 
+
+1.1 Column "AGE_CK95_Ma", Ma, Age on Cande and Kent (1995) timescale.
+1.2 Column "AGE_GTS04_Ma", Ma, Age on Gradstein et al. (2004) timescale.
+1.3 Column "DSDP_ODP_SITE", ODP/DSDP site number.
+1.4 Column "LATITUDE", degrees.
+1.5 Column "LONGITUDE", degrees.
+1.6 Column "REFERENCE", source of data.
+1.7 Column "SAMPLE", sample number.
+1.8 Column "MBSF", m, depth below sea floor.
+1.9 Column "MCD", m, meters composite depth.
+1.10 Column "GENUS", genus of foraminifera.
+1.11 Column "SPECIES", species of foraminifera.
+1.12 Column "RAW_d13C", permil, measured values for d13C (i.e. not corrected to DIC).
+1.13 Column "RAW_d18O", permil, measured values for d18O (i.e. not corrected to G. Ruber).
+1.14 Column "d13C_CORRECTION", permil, correction applied to account for d13C offset between measured values and DIC.
+1.15 Column "d18O_CORRECTION", permil, correction applied to account for d18O offset between measured values and G ruber.
+1.16 Column "CORRECTED_d13C", permil, final values for d13C, corrected to DIC.
+1.17 Column "CORRECTED_d18O", permil, final values for d18O, corrected corrected to G. ruber.
+
+
+2. 2008gb003310-ds02.txt 
+Data Set S2. This is a composite record of benthic d18O and d13C.							
+2.1 Column "AGE_CK95_Ma", Ma, Age on Cande and Kent (1995) timescale.
+2.2 Column "AGE_GTS04_Ma", Ma, Age on Gradstein et al. (2004) timescale.
+2.3 Column "DSDP_ODP_SITE", ODP/DSDP site number.
+2.4 Column "LATITUDE", degrees.
+2.5 Column "LONGITUDE", degrees.
+2.6 Column "REFERENCE", source of data.
+2.7 Column "SAMPLE", sample number.
+2.8 Column "MBSF", m, depth below sea floor.
+2.9 Column "MCD", m, meters composite depth.
+2.10 Column "GENUS", genus of foraminifera.
+2.11 Column "SPECIES", species of foraminifera.
+2.12 Column "RAW_d13C_permil", permil, measured values for d13C (i.e. not corrected to DIC).
+2.13 Column "RAW_d18O_permil", permil, measured values for d18O (i.e. not corrected to Uvigerina spp.).
+2.14 Column "d13C_CORRECTION", permil, correction applied to account for d13C offset between measured values and DIC.
+2.15 Column "d18O_CORRECTION", permil, correction applied to account for d18O offset between measured values and Uvigerina spp.
+2.16 Column "CORRECTED_d13C", permil, final values for d13C, corrected to DIC.
+2.17 Column "CORRECTED_d18O", permil, final values for d18O, corrected corrected to Uvigerina spp.
+

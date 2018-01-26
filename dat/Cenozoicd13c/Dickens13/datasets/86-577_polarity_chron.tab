@@ -1,0 +1,78 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table S4) Depths and ages of polarity chron boundaries at DSDP Site 86-577. doi:10.1594/PANGAEA.809252, 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Related to:	Bleil, Ulrich (1985): The magnetostratigraphy of northwest Pacific sediments, Deep Sea Drilling Project Leg 86. In: Heath, GR, Burckle, LH, et al. (eds.), Initial Reports of the Deep Sea Drilling Project, Washington (U.S. Government Print Office), 86, 441-458, doi:10.2973/dsdp.proc.86.117.1985
+	Cande, Steven C; Kent, Dennis V (1995): Revised calibration of the geomagnetic polarity timescale for the Late Cretaceous and Cenozoic. Journal of Geophysical Research-Solid Earth, 100(B4), 6093-6095, doi:10.1029/94JB03098
+	Westerhold, Thomas; Röhl, Ursula; Raffi, Isabella; Fornaciari, Eliana; Monechi, Simonetta; Reale, Viviana; Bowles, Julie; Evans, Helen F (2008): Astronomical calibration of the Paleocene time. Palaeogeography, Palaeoclimatology, Palaeoecology, 257(4), 377-403, doi:10.1016/j.palaeo.2007.09.016
+	Westerhold, Thomas; Röhl, Ursula; Wilkens, Roy H; Pälike, Heiko; Lyle, Mitchell W; Dunkley Jones, Tom; Bown, Paul R; Moore, Ted; Kamikuri, Shin-Ichi (2012): Revised composite depth scales and integration of IODP Sites U1331, U1332, U1333, U1334 and ODP Sites 1218, 1219, 1220. Proc. IODP: Tokyo (Integrated Ocean Drilling Program Management International, Inc.), 320/321, doi:10.2204/iodp.proc.320321.201.2012
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	MEDIAN LATITUDE: 32.442000 * MEDIAN LONGITUDE: 157.723250 * SOUTH-BOUND LATITUDE: 32.441800 * WEST-BOUND LONGITUDE: 157.723200 * NORTH-BOUND LATITUDE: 32.442200 * EAST-BOUND LONGITUDE: 157.723300
+	MINIMUM DEPTH, sediment/rock: 67.7 m * MAXIMUM DEPTH, sediment/rock: 121.6 m
+Event(s):	86-577 * LATITUDE: 32.441800 * LONGITUDE: 157.723300 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 111.10 m * PENETRATION: 118.80 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 118.8 m cored; 0 m drilled; 93.5 % recovery
+	86-577A * LATITUDE: 32.442200 * LONGITUDE: 157.723200 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 110.80 m * PENETRATION: 123.40 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 123.4 m cored; 0 m drilled; 89.8 % recovery
+Comment:	DEPTH, sediment is the old depth [mbsf]. Base C30n below depth of coring in Hole 86-577.
+Parameter(s):	Event label (Event) * Metadata
+	Ageprofile Datum Description (Ageprof dat des) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: polarity chron boundaries
+	Sample code/label (Label) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001) * COMMENT: top
+	Sample code/label 2 (Label 2) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001) * COMMENT: bottom
+	Depth, top/min [m] (Depth top) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: core top [mbsf]
+	DEPTH, sediment/rock [m] (Depth) * Geocode
+	Reference/source (Reference) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Offset [m] (Offset) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Depth, composite [mcd] (Depth c) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: new depth
+	Age model [ka] (Age model) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: reported age
+	Age model, optional [ka] (Age model opt) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: Age on Option 1 time scale suggested by Westerhold et al. (2008); WO-1 = Westerhold et al. (2008) Option 1. Note these authors do not report ages above the top of Chron C24n.3n or below the top of Chron C30n; ages for polarity chron boundaries beyond are assumed to be the same as reported by Cande and Kent (1995).
+	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	362 data points
+*/
+Event	Ageprof dat des	Label	Label 2	Depth top [m]	Depth [m]	Reference	Offset [m]	Depth c [mcd]	Age model [ka]	Age model opt [ka]	Comment
+86-577	Top C22n	86-577-8-3,90	86-577-8-3,140	63.8	67.70	Bleil, 1985	-2.60	65.10	51950	49000	
+86-577	Base C22n	86-577-8-4,90	86-577-8-4,140	63.8	69.20	Bleil, 1985	-2.60	66.60	52620	49700	
+86-577	Top C23n.1n								53880	50800	Likely in core gap
+86-577	Base C23n.1n								54030	50900	Likely in core gap
+86-577	Top C23n.2n								54090	51000	Likely in core gap
+86-577	Base C23n.2n								54700	51700	Likely in core gap
+86-577	Top C24n.1n	86-577-9-2,40	86-577-9-2,90	73.3	75.20	Bleil, 1985	0.00	75.20	55140	52300	
+86-577	Base C24n.1n	86-577-9-3,40	86-577-9-3,90	73.3	76.70	Bleil, 1985	0.00	76.70	55370	52630	
+86-577	Top C24n.2n	86-577-9-4,40	86-577-9-4,90	73.3	78.20	Bleil, 1985	0.00		55660		C24n.2n and C24n.3n not distinguished by Bleil (1985)
+86-577	Base C24n.2n	86-577-9-5,40	86-577-9-5,90	73.3	79.70	Bleil, 1985	0.00		56140		C24n.2n and C24n.3n not distinguished by Bleil (1985)
+86-577	Top C24n.3n	86-577-9-4,40	86-577-9-4,90	73.3	78.20	Revised	0.00	78.20		53030	C24n.2n and C24n.3n not distinguished by Bleil (1985)
+86-577	Base C24n.3n	86-577-9-5,40	86-577-9-5,90	73.3	79.70	Revised	0.00	79.70		53530	C24n.2n and C24n.3n not distinguished by Bleil (1985)
+86-577	Top C25n	86-577-10-2,90	86-577-10-2,140	82.8	85.20	Bleil, 1985	1.50	86.70	58640	56660	
+86-577	Base C25n	86-577-10-3,140	86-577-10-4,80	82.8	87.20	Bleil, 1985	1.50	88.70	59240	57200	
+86-577	Top C26n	86-577-10-6,92	86-577-10-6,142	82.8	91.22	Bleil, 1985	1.50	92.72	60210	58550	
+86-577	Base C26n	86-577-10-7,11	86-577-11-1,39	82.8	91.91	Bleil, 1985			60750	58880	This constraint disappears with core overlap (see below)
+86-577	Top C27n								63030	61770	Likely in core gap
+86-577	Base C27n								63540	62100	Likely in core gap
+86-577	Top C28n	86-577-12-1,110	86-577-12-1,120	101.8	102.90	Bleil, 1985	2.70	105.60	64290	63080	
+86-577	Base C28n	86-577-12-3,40	86-577-12-3,50	101.8	105.20	Bleil, 1985	2.70	107.90	65120	64030	
+86-577	Top C29n	86-577-12-4,10	86-577-12-4,20	101.8	106.40	Bleil, 1985	2.70	109.10	65500	64210	
+86-577	Base C29n	86-577-12-5,50	86-577-12-5,60	101.8	108.30	Bleil, 1985	2.70	111.00	66170	64910	
+86-577	Top C30n	86-577-13-1,120	86-577-13-1,140	111.3	112.50	Bleil, 1985	2.65	115.15	66740	65630	
+86-577	Base C30n										Below depth of coring in Hole 577*
+86-577A	Top C22n								51950	49000	Likely in core gap
+86-577A	Base C22n								52620	49700	Likely in core gap
+86-577A	Top C23n.1n	86-577A-8-2,90	86-577A-8-2,140	66.4	68.80	Bleil, 1985	-0.40	68.40	53880	50800	
+86-577A	Base C23n.1n	86-577A-8-2,140	86-577A-8-3,40	66.4	69.30	Bleil, 1985	-0.40	68.90	54030	50900	
+86-577A	Top C23n.2n	86-577A-8-3,40	86-577A-8-3,90	66.4	69.80	Bleil, 1985	-0.40	69.40	54090	51000	
+86-577A	Base C23n.2n	86-577A-8-4,40	86-577A-8-4,90	66.4	71.30	Bleil, 1985	-0.40	70.90	54700	51700	
+86-577A	Top C24n.1n	86-577A-8-6,20	86-577A-9-1,41	66.4	74.10	Bleil, 1985			55140	52300	This constraint disappears with core gap
+86-577A	Base C24n.1n	86-577A-9-1,131	86-577A-9-2,44	75.9	77.21	Bleil, 1985	0.10	77.31	55370	52630	
+86-577A	Top C24n.2n	86-577A-9-2,82	86-577A-9-2,125	75.9	78.22	Bleil, 1985			55660		C24n.2n and C24n.3n not distinguished by Bleil (1985)
+86-577A	Base C24n.2n								56140		
+86-577A	Top C24n.3n	86-577A-9-2,82	86-577A-9-2,125	75.9	78.22	Revised	0.10	78.32		53030	
+86-577A	Base C24n.3n									53530	Likely in missing core
+86-577A	Top C25n									56660	Likely in core gap
+86-577A	Base C25n									57200	Likely in core gap
+86-577A	Top C26n	86-577A-10-3,30	86-577A-10-3,71	85.4	88.70	Bleil, 1985	1.80	90.50	60210	58550	
+86-577A	Base C26n	86-577A-10-3,100	86-577A-10-4,31	85.4	89.40	Bleil, 1985	1.80	91.20	60750	58880	
+86-577A	Top C27n	86-577A-11-4,130	86-577A-11-5,30	94.9	100.70	Bleil, 1985	2.10	102.80	63030	61770	
+86-577A	Base C27n	86-577A-11-5,80	86-577A-11-5,130	94.9	101.70	Bleil, 1985	2.10	103.80	63540	62100	
+86-577A	Top C28n	86-577A-11-6,70	86-577A-11-6,120	94.9	103.10	Bleil, 1985	2.10	105.20	64290	63080	
+86-577A	Base C28n	86-577A-12-1,96	86-577A-12-1,116	104.4	105.36	Bleil, 1985	2.20	107.56	64290	64030	
+86-577A	Top C29n	86-577A-12-2,76	86-577A-12-2,94	104.4	106.66	Bleil, 1985	2.20	108.86	65500	64210	
+86-577A	Base C29n	86-577A-12-3,116	86-577A-12-3,135	104.4	108.56	Bleil, 1985	2.20	110.76	66170	64910	
+86-577A	Top C30n	86-577A-12-6,111	86-577A-12-6,126	104.4	113.01	Bleil, 1985	2.20	115.21	66740	65630	
+86-577A	Base C30n	86-577A-13-5,119	86-577A-13-5,137	113.9	121.09	Bleil, 1985	2.10	123.19	68420	67600	
+86-577A	Top C30n	86-577A-13-6,15	86-577A-13-6,35	113.9	121.55	Bleil, 1985	2.10	123.65	68520	67700	

@@ -1,0 +1,18 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 22-217 sediments. doi:10.1594/PANGAEA.718946, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 8.926200 * LONGITUDE: 90.538800
+	MINIMUM DEPTH, sediment: 313.1 m * MAXIMUM DEPTH, sediment: 313.1 m
+Event(s):	22-217 * LATITUDE: 8.926200 * LONGITUDE: 90.538800 * DATE/TIME: 1972-02-24T00:00:00 * ELEVATION: -3010.0 m * RECOVERY: 181.60 m * PENETRATION: 614.50 m * LOCATION: Indian Ocean//RIDGE * CAMPAIGN: Leg22 (URI: doi:10.2973/dsdp.proc.22.1974) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 35 cores; 326.5 m cored; 9.5 m drilled; 55.6 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globorotalia cerroazulensis, d18O [per mil PDB] (G. cerroazulensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globorotalia cerroazulensis, d13C [per mil PDB] (G. cerroazulensis d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	5 data points
+*/
+Depth [m]	Label	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]	G. cerroazulensis d18O [per mil PDB]	G. cerroazulensis d13C [per mil PDB]
+313.08	22-217-9-5,59	0.73	0.82	-0.31	1.37

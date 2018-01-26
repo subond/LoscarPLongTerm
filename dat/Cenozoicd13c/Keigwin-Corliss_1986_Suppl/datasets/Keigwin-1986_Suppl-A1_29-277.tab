@@ -1,0 +1,37 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 29-277 sediments. doi:10.1594/PANGAEA.718951, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: -52.223800 * LONGITUDE: 166.191300
+	MINIMUM DEPTH, sediment: 161.5 m * MAXIMUM DEPTH, sediment: 209.0 m
+Event(s):	29-277 * LATITUDE: -52.223800 * LONGITUDE: 166.191300 * DATE/TIME: 1973-03-11T00:00:00 * ELEVATION: -1214.0 m * RECOVERY: 253.40 m * PENETRATION: 472.50 m * LOCATION: Antarctic Ocean/PLATEAU * CAMPAIGN: Leg29 (URI: doi:10.2973/dsdp.proc.29.1975) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 45 cores; 425 m cored; 0 m drilled; 59.6 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Globocassidulina subglobosa, d18O [per mil PDB] (G. subglobosa d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globocassidulina subglobosa, d13C [per mil PDB] (G. subglobosa d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globigerina angiporoides, d18O [per mil PDB] (G. angiporoides d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Globigerina angiporoides, d13C [per mil PDB] (G. angiporoides d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Chiloguembelina spp., d18O [per mil PDB] (Chiloguembelina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Chiloguembelina spp., d13C [per mil PDB] (Chiloguembelina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Chiloguembelina cubensis, d18O [per mil PDB] (C. cubensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	57 data points
+*/
+Depth [m]	Label	G. subglobosa d18O [per mil PDB]	G. subglobosa d13C [per mil PDB]	G. angiporoides d18O [per mil PDB]	G. angiporoides d13C [per mil PDB]	Chiloguembelina d18O [per mil PDB]	Chiloguembelina d13C [per mil PDB]	C. cubensis d18O [per mil PDB]
+161.48	29-277-18-2,98	1.58	0.85				1.64	0.29
+163.03	29-277-18-3,103						1.49	0.42
+163.40	29-277-18-3,140	1.68	0.81					
+171.00	29-277-19-2,100	1.63	1.14					
+171.02	29-277-19-2,102					0.46	1.72	
+171.40	29-277-19-2,140	1.64	1.11	1.03	1.59			
+172.00	29-277-19-CC	1.78	1.14					
+182.40	29-277-20-3,140	1.17	0.73					
+183.90	29-277-20-4,140			0.20	0.96			
+186.90	29-277-20-6,140			0.09	0.77			
+190.02	29-277-21-2,102					0.05	1.44	
+190.40	29-277-21-2,140	0.91	0.74	0.36	1.01			
+191.90	29-277-21-3,140	0.75	0.38					
+198.40	29-277-22-1,140			0.22	1.26			
+197.98	29-277-22-2,98					-0.13	1.77	
+207.90	29-277-23-1,140	0.76	0.82					
+209.03	29-277-23-2,103					-0.30	1.47	

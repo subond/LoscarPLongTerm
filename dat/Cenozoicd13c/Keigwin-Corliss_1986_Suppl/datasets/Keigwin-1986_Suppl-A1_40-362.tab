@@ -1,0 +1,29 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 40-362 sediments. doi:10.1594/PANGAEA.718955, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: -19.757500 * LONGITUDE: 10.532500
+	MINIMUM DEPTH, sediment: 834.9 m * MAXIMUM DEPTH, sediment: 1000.7 m
+Event(s):	40-362 * LATITUDE: -19.757500 * LONGITUDE: 10.532500 * DATE/TIME: 1975-01-17T00:00:00 * ELEVATION: -1325.0 m * RECOVERY: 362.90 m * PENETRATION: 805.50 m * LOCATION: South Atlantic/RIDGE * CAMPAIGN: Leg40 (URI: doi:10.2973/dsdp.proc.40.1978) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 44 cores; 418 m cored; 0 m drilled; 86.8 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	42 data points
+*/
+Depth [m]	Label	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]
+834.87	40-362-3-1,67-70	0.92	0.35
+872.78	40-362-4-1,68-71	0.89	0.66
+910.78	40-362-5-1,68-71	0.10	1.27
+913.78	40-362-5-3,68-70	-0.02	1.24
+918.30	40-362-5-6,70-73	0.49	1.53
+929.76	40-362-6-1,76-79	0.37	1.65
+932.68	40-362-6-3,68-71	0.00	1.67
+937.20	40-362-6-6,70-73	0.06	1.34
+948.77	40-362-7-1,77-81	-0.55	1.20
+954.68	40-362-7-5,68-71	-0.54	1.38
+967.72	40-362-8-1,72-75	-0.42	1.43
+972.18	40-362-8-4,68-71	0.01	0.91
+997.68	40-362-9-2,68-71	-0.43	1.12
+1000.68	40-362-9-4,68-71	-0.55	1.10

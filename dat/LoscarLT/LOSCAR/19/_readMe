@@ -1,0 +1,17 @@
+- test Run
+- The same as 12 except using the actual Mg and Ca data
+-Temperature of ocean boxes is now calculated based on Berner using pco2 and
+    the linearly changing solar constant.
+- Mg and Ca using the ACTUAL DATA NOW
+- Thus Ca not predicted anymore, but the tracers is still there, however 
+deriv set to be unchanging.
+- INTEPOLATING rrain constant at modern (6.1)
+- INTEPOLATING fsh. Pacific paleo fsh higher 4.5->6
+- nshT NOT interpolated because shelf rain becomes too large
+- INTEPOLATING Thermohaline (TH0) constant at 25
+- INTEPOLATING constant Mixing (mv0 and mhd0)
+- INTEPOLATING Tethys Thermohaline constant at 2 Sv
+- Smooth NADW to SO circulation switch from 0 to 10 Ma
+- Fin contrib to P weather 0.0, FSi 1.0
+- Q10 = 4, no temperature dependency
+- Bathymetry interpolated based on Malte

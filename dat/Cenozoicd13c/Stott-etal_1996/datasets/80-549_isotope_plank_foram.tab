@@ -1,0 +1,61 @@
+/* DATA DESCRIPTION:
+Citation:	Stott, LD et al. (1996): (Table 2) Carbon and oxygen isotopic results of planktonic foraminifera from DSDP Hole 80-549. doi:10.1594/PANGAEA.770074, 
+	In Supplement to: Stott, Lowell D; Sinha, Ashish; Thiry, Medard; Aubry, Marie-Pierre; Berggren, William A (1996): Global d13C changes across the Paleocene-Eocene boundary: criteria for terrestrial-marine correlations. In: Knox, RWO'B; Corfield, RM; Dunay, RE (eds.), Correlation of the Early Paleogene in Northwest Europe, Geological Society Special Publication, 101, 381-399
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 49.088000 * LONGITUDE: -13.098000
+	MINIMUM DEPTH, sediment: 331.7 m * MAXIMUM DEPTH, sediment: 341.0 m
+Event(s):	80-549 * LATITUDE: 49.088000 * LONGITUDE: -13.098000 * DATE/TIME: 1981-06-15T00:00:00 * ELEVATION: -2515.0 m * RECOVERY: 370.00 m * PENETRATION: 1001.50 m * LOCATION: North Atlantic/SPUR * CAMPAIGN: Leg80 (URI: doi:10.2973/dsdp.proc.80.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 91 cores; 759.5 m cored; 53 m drilled; 48.7 % recovery
+Comment:	Sediment depth is given in mbsf.
+Parameter(s):	Sample code/label (Label) * PI: Stott, Lowell D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	DEPTH, sediment [m] (Depth) * Geocode
+	Morozovella subbotinae, d13C [per mil PDB] (M. subbotinae d13C) * PI: Stott, Lowell D * METHOD: Mass spectrometer VG Micromass Prism
+	Morozovella subbotinae, d18O [per mil PDB] (M. subbotinae d18O) * PI: Stott, Lowell D * METHOD: Mass spectrometer VG Micromass Prism
+	Subbotina patagonica, d18O [per mil PDB] (S. patagonica d18O) * PI: Stott, Lowell D * METHOD: Mass spectrometer VG Micromass Prism
+	Subbotina patagonica, d13C [per mil PDB] (S. patagonica d13C) * PI: Stott, Lowell D * METHOD: Mass spectrometer VG Micromass Prism
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	143 data points
+*/
+Label	Depth [m]	M. subbotinae d13C [per mil PDB]	M. subbotinae d18O [per mil PDB]	S. patagonica d18O [per mil PDB]	S. patagonica d13C [per mil PDB]
+80-549-16-1,22-24	331.73	3.21	-2.59	0.82	-1.36
+80-549-16-1,71.5-73.5	332.21	2.94	-2.51	0.94	-1.40
+80-549-16-1,102.5-104.5	332.52	2.37	-2.50	0.64	-1.18
+80-549-16-1,136-138	332.86			0.77	-1.21
+80-549-16-2,42-44	333.43	3.03	-2.34	0.71	-1.21
+80-549-16-2,72-74	333.73	3.01	-2.21	0.78	-1.33
+80-549-16-2,102.5-104.5	334.02	2.75	-2.31	0.84	-1.46
+80-549-16-2,137-139	334.38	3.20	-2.40	0.69	-1.12
+80-549-16-3,13-15	334.64	2.75	-2.30		
+80-549-16-3,23-25	334.74	3.41	-2.60		
+80-549-16-3,34-36	334.85				
+80-549-16-3,48-49	334.99	2.98	-2.35		
+80-549-16-3,58-60	335.08	2.89	-2.28		
+80-549-16-3,66-68	335.17	3.01	-2.64		
+80-549-16-3,78-80	335.29	2.95	-2.05		
+80-549-16-3,100-102	335.50	3.12	-2.21		
+80-549-16-3,117-119	335.68	3.82	-2.01		
+80-549-16-3,144-146	335.95	3.52	-1.66		
+80-549-16-4,8-10	336.09	3.91	-2.12		
+80-549-16-4,23.5-25.5	336.24	3.52	-2.29		
+80-549-16-4,40-42	336.41	3.65	-2.31		
+80-549-16-4,72-74	336.73	3.78	-2.00		
+80-549-16-4,84-86	336.85	3.76	-1.92		
+80-549-16-4,97-99	336.98	3.83	-2.09		
+80-549-16-4,110-112	337.11	3.39	-2.02		
+80-549-16-5,16-18	337.67	3.67	-2.28		
+80-549-16-5,22-24	337.73	3.42	-2.35		
+80-549-16-5,32-34	337.83	3.28	-2.12		
+80-549-16-5,54-56	338.05	2.82	-2.43		
+80-549-16-5,54-56	338.05	2.99	-2.30		
+80-549-16-5,70-72	338.21	2.35	-2.93		
+80-549-16-5,83-85	338.34	3.03	-2.45		
+80-549-16-5,91-93	338.42	2.59	-2.30	0.04	-1.55
+80-549-16-5,103-105	338.47	1.69	-3.29	-0.40	-2.23
+80-549-16-5,119-121	338.70	0.22	-1.86		
+80-549-16-5,147-149	338.98				
+80-549-16-6,14-16	339.15				
+80-549-16-6,67-69	339.68	4.31	-2.95		
+80-549-16-6,96-98	339.97	4.71	-2.34		
+80-549-16-6,139-141	340.40			1.76	
+80-549-16-7,9-11	340.60	3.82	-2.66	2.23	-1.20
+80-549-16-7,21-23	340.72	3.88	-2.00	1.64	
+80-549-16-7,44-46	340.95	3.49	-2.17		

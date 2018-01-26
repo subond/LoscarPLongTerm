@@ -1,0 +1,67 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table 1) Paleomagnetic and nannofossil age estimates for the latest Cretaceous, Paleocene and early Eocene. Dataset #810412 (DOI registration in progress), 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Related to:	Agnini, Claudia; Fornaciari, Eliana; Raffi, Isabella; Rio, Domenico; Röhl, Ursula; Westerhold, Thomas (2007): High-resolution nannofossil biochronology of middle Paleocene to early Eocene at ODP Site 1262: Implications for calcareous nannoplankton evolution. Marine Micropaleontology, 64(3-4), 215-248, doi:10.1016/j.marmicro.2007.05.003
+	Westerhold, Thomas; Röhl, Ursula; Raffi, Isabella; Fornaciari, Eliana; Monechi, Simonetta; Reale, Viviana; Bowles, Julie; Evans, Helen F (2008): Astronomical calibration of the Paleocene time. Palaeogeography, Palaeoclimatology, Palaeoecology, 257(4), 377-403, doi:10.1016/j.palaeo.2007.09.016
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Parameter(s):	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: M = polarity chron, N = nannofossil, E = event
+	Ageprofile Datum Description (Ageprof dat des) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Age model [ka] (Age model) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: this is not internally consistent across papers; for example, the GPTS 2004 ages differ subtly between Agnini et al. (2007) and Westerhold et al. (2008)
+	Age model, optional [ka] (Age model opt) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: reported by Agnini et al. (2007) and Westerhold et al. (2008), W-O1 = Westerhold Option 1
+	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	195 data points
+*/
+Comment (M = polarity chron, N = nanno...)	Ageprof dat des	Age model [ka]	Age model opt [ka]	Comment
+M	Top C22n	49037	49037	
+N	Base Discoaster sublodoensis		49500	
+M	Base C22n	49714	49714	
+N	Top Tribrachiatus orthostylus		50700	
+M	Top C23n.1n	50778	50778	
+M	Base C23n.1n	50946	50946	
+M	Top C23n.2n	51047	51047	
+M	Base C23n.2n	51743	51743	
+M	Top C24n.1n	52364	52364	
+E	Base K/X hyperthermal		52500	
+M	Base C24n.1n	52663	52630	
+M	Top C24n.2n			
+M	Base C24n.2n			
+M	Top C24n.3n	52903	53030	
+N	Base Discoaster lodoensis	53111	53242	
+N	Top Discoaster multiradiatus	53111	53242	
+M	Base C24n.3n	53347	53530	
+E	Base ETM2/H1 hyperthermal		53730	
+N	Top Tribrachiatus contortus	53489	53795	
+N	Base Sphenolithus radians	53532	53849	
+N	Base Tribrachiatus orthostylus	53666	53995	
+N	Base Tribrachiatus contortus	53997	54336	
+N	Base Discoaster diastypus	54131	54477	
+N	Top Fasciculithus spp.	54708	55109	
+E	Base PETM hyperthermal	55000	55530	
+M	Top C25n	55904	56660	
+N	Base common Discoaster multiradiatus	56013	56759	
+N	Top Discoaster okadai	56120	56850	
+N	Base Discoaster okadai	56226	56945	
+N	Base Discoaster nobilis	56250	56968	
+M	Base C25n	56391	57197	
+N	Top Heliolithus kleinpellii	57417	58327	
+M	Top C26n	57554	58551	
+N	Base Discoaster mohleri	57573	58545	
+M	Base C26n	57911	58878	
+N	Base Heliolithus kleinpellii	58025	59021	
+N	Base Fasciculithus spp.	60306	61205	
+N	Base Sphenolithus spp.	60738	61593	
+M	Top C27n	60920	61774	
+M	Base C27n	61276	62098	
+M	Top C28n	62499	63079	
+N	Base Chiasmolithus danicus		64314	
+M	Base C28n	63634	64028	
+M	Top C29n	63976	64205	
+N	Base Chiasmolithus  tenuis		64905	
+M	Base C29n	64745	64912	
+E	Base K/Pg Boundary	65000	65280	
+N	Base Micula prinsii		65400	
+M	Top C30n	65578	65625	
+M	Base C30n		67610	
+M	Top C31n		67735	
+N	Base Micula mura		67900	age of datum comes from Thibault et al. (2010)

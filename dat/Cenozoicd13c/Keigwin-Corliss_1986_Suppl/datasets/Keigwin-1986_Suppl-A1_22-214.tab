@@ -1,0 +1,28 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 22-214 sediments. doi:10.1594/PANGAEA.718945, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: -11.336800 * LONGITUDE: 88.718000
+	MINIMUM DEPTH, sediment: 241.0 m * MAXIMUM DEPTH, sediment: 265.7 m
+Event(s):	22-214 * LATITUDE: -11.336800 * LONGITUDE: 88.718000 * DATE/TIME: 1972-02-08T00:00:00 * ELEVATION: -1655.0 m * RECOVERY: 340.90 m * PENETRATION: 500.00 m * LOCATION: Indian Ocean//RIDGE * CAMPAIGN: Leg22 (URI: doi:10.2973/dsdp.proc.22.1974) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 53 cores; 492.5 m cored; 2.5 m drilled; 69.2 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D
+	Globocassidulina subglobosa, d18O [per mil PDB] (G. subglobosa d18O) * PI: Keigwin, Lloyd D
+	Globocassidulina subglobosa, d13C [per mil PDB] (G. subglobosa d13C) * PI: Keigwin, Lloyd D
+	Oridorsalis tener, d18O [per mil PDB] (O. tener d18O) * PI: Keigwin, Lloyd D
+	Oridorsalis tener, d13C [per mil PDB] (O. tener d13C) * PI: Keigwin, Lloyd D
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	43 data points
+*/
+Depth [m]	Label	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]	G. subglobosa d18O [per mil PDB]	G. subglobosa d13C [per mil PDB]	O. tener d18O [per mil PDB]	O. tener d13C [per mil PDB]
+241.00	22-214-26-3,top	1.11	0.92			1.46	0.10
+244.00	22-214-26-5,top	1.06	1.01			1.25	0.06
+245.50	22-214-26-6,top	1.16	1.00			1.51	0.23
+248.60	22-214-27-1,60	1.35	1.70	1.78	1.36	1.70	0.95
+253.10	22-214-27-4,60	0.94	1.25			1.04	0.46
+257.60	22-214-28-1,60	0.61	1.21			0.84	0.44
+260.60	22-214-28-3,60	0.51	1.13			0.83	0.41
+263.63	22-214-28-5,63					0.83	0.28
+265.70	22-214-28-6,120					0.91	0.17

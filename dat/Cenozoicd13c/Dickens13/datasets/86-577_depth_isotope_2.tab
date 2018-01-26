@@ -1,0 +1,132 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table S12) Recalibrated depth and ages for previously published benthic foraminifera stable isotope data from DSDP Hole 86-577. doi:10.1594/PANGAEA.809219, 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Related to:	Miller, Kenneth G; Janecek, Thomas R; Katz, Miriam E; Keil, David J (1987): Abyssal circulation and benthic foraminiferal changes near the Paleocene/Eocene boundary. Paleoceanography, 2(6), 741-761, doi:10.1029/PA002i006p00741
+	Pak, Dorothy K; Miller, Kenneth G (1992): Paleocene to Eocene benthic foraminiferal isotopes and assemblages: implications for deepwater circulation. Paleoceanography, 7(4), 405-422, doi:10.1029/92PA01234
+	Westerhold, Thomas; Röhl, Ursula; Laskar, Jacques (2012): Time scale controversy: Accurate orbital calibration of early Paleogene. Geochemistry Geophysics Geosystems, 13, Q06015, doi:10.1029/2012GC004096
+	Westerhold, Thomas; Röhl, Ursula; Raffi, Isabella; Fornaciari, Eliana; Monechi, Simonetta; Reale, Viviana; Bowles, Julie; Evans, Helen F (2008): Astronomical calibration of the Paleocene time. Palaeogeography, Palaeoclimatology, Palaeoecology, 257(4), 377-403, doi:10.1016/j.palaeo.2007.09.016
+Original version:	Miller, Kenneth G; Janecek, Thomas R; Katz, Miriam E; Keil, David J (1987): (Table 2a) Stable carbon and oxygen isotope ratios of Nuttallides truempyi from DSDP Hole 86-577. doi:10.1594/PANGAEA.52271
+	Pak, Dorothy K; Miller, Kenneth G (1992): (Table 1) Stable isotope ratios of Nuttallides truempyi from DSDP Hole 86-577. doi:10.1594/PANGAEA.52489
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 32.441800 * LONGITUDE: 157.723300
+	MINIMUM DEPTH, sediment/rock: 66.9 m * MAXIMUM DEPTH, sediment/rock: 101.0 m
+Event(s):	86-577 * LATITUDE: 32.441800 * LONGITUDE: 157.723300 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 111.10 m * PENETRATION: 118.80 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 118.8 m cored; 0 m drilled; 93.5 % recovery
+Comment:	Placement of previously published bulk and benthic foraminifera stable carbon isotope data for Upper Cretaceous and Lower Paleogene sediment at DSDP Site 577 according to composite depth scale and an updated time scale (Westerhold et al., 2008, 2012). Isotope data were reported by Miller et al. (1987) and Pak and Miller (1992). DEPTH, sediment is the depth [mbsf] reported by Pak and Miller (1993).
+Parameter(s):	Sample code/label (Label) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	DEPTH, sediment/rock [m] (Depth) * Geocode
+	Depth, top/min [m] (Depth top) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: core top [mbsf], reported according to drillers table (Shipboard Scientific Party, 1985) and with positions of CC intervals from core logs
+	Void correction [m] (Void corr) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Depth, sediment revised [m] (Depth revised) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: fix [mbsf], assuming average interval distance and the above
+	Offset [m] (Offset) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: offset of cores from Table 2
+	Depth, composite [mcd] (Depth c) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: adjusted, the depth of the sample in floating depth space [mcd] relative to m below seafloor
+	delta 13C, carbonate [per mil PDB] (d13C carb) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	delta 18O, carbonate [per mil PDB] (d18O carb) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+	Age model [ka] (Age model) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: reported age
+	Age model, optional [ka] (Age model opt) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: estimated age on Option 1 time by Westerhold et al. (2008) as determined by linear sedimentaton between six polarity chron reversals and data on a mcd depth scale
+	Age model, optional [ka] (Age model opt) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: age as above, but assuming no core gaps and overlaps
+	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: blue horizons are approximate positions of polarity chron reversals
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	1113 data points
+*/
+Label	Depth [m]	Depth top [m]	Void corr [m]	Depth revised [m]	Offset [m]	Depth c [mcd]	d13C carb [per mil PDB]	d18O carb [per mil PDB]	Age model [ka]	Age model opt [ka] (estimated age on Option 1 tim...)	Age model opt [ka] (age as above, but assuming no...)	Comment
+86-577-83,14-19	66.94	63.8	0	66.97	-2.6	64.37	0.63	0.33	51540	48820	48430	
+86-577-83,63-70	67.43	63.8	0	67.47	-2.6	64.87	0.68	-0.07	51740	48980	48650	
+86-577-83,80-81	67.53	63.8	0	67.61	-2.6	65.01	1.24	0.25	51790	49020	48720	
+86-577-84,50-57	68.80	63.8	0	68.84	-2.6	66.24	0.55	-0.52	52300	49410	49270	
+86-577-84,73-75	69.03	63.8	0	69.04	-2.6	66.44	0.73	-0.63	52390	49470	49360	
+86-577-84,95-100	69.25	63.8	0	69.28	-2.6	66.68	0.57	-0.74	52480	49540	49470	
+86-577-84,95-100	69.25	63.8	0	69.28	-2.6	66.68	0.48	-0.88	52480	49540	49470	
+86-577-84,116-119	69.46	63.8	0	69.48	-2.6	66.88	0.61	-0.72	52570	49610	49560	
+86-577-84,133-136	69.63	63.8	0	69.65	-2.6	67.05	0.62	-0.62	52640	49660	49640	
+86-577-84,147-149	69.77	63.8	0	69.78	-2.6	67.18	0.52	-0.68	52700	49700	49700	
+86-577-84,147-149	69.77	63.8	0	69.78	-2.6	67.18	0.57	-0.40	52700	49700	49700	
+86-577-85,9-14	69.89	63.8	0	69.92	-2.6	67.32	0.39	-0.94	52750	49740	49760	Base C22n, 49.71  Ma
+86-577-85,28-30	70.08	63.8	0	70.09	-2.6	67.49	0.60	-0.61	52830	49800	49840	
+86-577-85,50-57	70.30	63.8	0	70.34	-2.6	67.74	0.62	-0.72	52920	49870	49950	
+86-577-85,89-94	70.69	63.8	0	70.72	-2.6	68.12	0.69	-0.58	53080	49990	50120	
+86-577-85,105-107	70.85	63.8	0	70.86	-2.6	68.26	0.61	-0.72	53140	50040	50180	
+86-577-86,118-120	72.48	63.8	0	72.49	-2.6	69.89	-0.17	-1.57	53980	50550	50920	
+86-577-86,147-149	72.77	63.8	0	72.78	-2.6	70.18	0.41	-1.28	54270	50640	51050	
+86-577-91,53-60	73.83	73.3	0	73.87	0.0	73.87	0.00	-0.66	54820	51790	51530	
+86-577-91,98-103	74.28	73.3	0	74.31	0.0	74.31	-0.16	-0.89	54910	51920	51730	
+86-577-92,63-70	75.43	73.3	0	75.47	0.0	75.47	-0.15	-0.68	55140	52290	52250	
+86-577-92,98-103	75.78	73.3	0	75.81	0.0	75.81	-0.12	-0.69	55210	52400	52410	Top C24n.1n, 52.36 Ma
+86-577-93,43-45	76.73	73.3	0	76.74	0.0	76.74	-0.22	-1.16	55420	52760	52820	
+86-577-93,63-70	76.93	73.3	0	76.97	0.0	76.97	-0.27	-0.67	55470	52840	52920	
+86-577-93,108-113	77.38	73.3	0	77.41	0.0	77.41	-0.15	-0.79	55570	53010	53110	
+86-577-94,53-60	78.33	73.3	0	78.37	0.0	78.37	-0.44	-0.69	55780	53380	53540	
+86-577-95,26-31	79.56	73.3	0	79.59	0.0	79.59	-0.37	-0.60	56050	53840	54070	
+86-577-95,53-60	79.83	73.3	0	79.87	0.0	79.87	0.03	-0.46	56110	53950	54200	
+86-577-95,53-60	79.83	73.3	0	79.87	0.0	79.87	-0.19	-0.47	56110	53950	54200	
+86-577-95,72-75	80.02	73.3	0	80.04	0.0	80.04	0.07	-0.45	56200	54020	54270	
+86-577-95,102-105	80.32	73.3	0	80.34	0.0	80.34	0.25		56440	54130	54400	
+86-577-95,116-119	80.46	73.3	0	80.48	0.0	80.48	0.07	-0.42	56560	54190	54470	
+86-577-96,13-16	80.93	73.3	0	80.95	0.0	80.95	0.64	-0.13	56940	54360	54670	
+86-577-96,24-29	81.04	73.3	0	81.07	0.0	81.07	0.59	-0.42	57030	54410	54730	
+86-577-96,43-45	81.23	73.3	0	81.24	0.0	81.24	0.48	-0.35	57190	54480	54800	
+86-577-96,53-60	81.33	73.3	0	81.37	0.0	81.37	0.42	-0.38	57270	54530	54860	
+86-577-96,72-74	81.52	73.3	0	81.53	0.0	81.53	0.59	-0.42	57430	54590	54930	
+86-577-96,80-85	81.60	73.3	0	81.63	0.0	81.63	0.61	-0.57	57490	54620	54970	
+86-577-96,103-105	81.83	73.3	0	81.84	0.0	81.84	0.64	-0.38	57680	54710	55070	
+86-577-96,114-119	81.94	73.3	0	81.97	0.0	81.97	0.57	-0.60	57770	54750	55120	
+86-577-96,114-119	81.94	73.3	0	81.97	0.0	81.97	0.33	-0.98	57770	54750	55120	
+86-577-96,123-126	82.03	73.3	0	82.05	0.0	82.05	0.69	-0.32	57810	54790	55160	
+86-577-101,16-17	82.96	82.8	0	82.97	1.5	84.47	0.15	-0.38	58040	55710	55560	
+86-577-101,30-35	83.10	82.8	0	83.13	1.5	84.63	0.90	-0.02	58070	55770	55630	
+86-577-101,42-46	83.22	82.8	0	83.24	1.5	84.74	1.07	0.00	58100	55820	55690	
+86-577-101,63-70	83.43	82.8	0	83.47	1.5	84.97	1.08	-0.32	58150	55900	55780	
+86-577-101,73-75	83.53	82.8	0	83.54	1.5	85.04	1.76	-1.87	58180	55930	55820	
+86-577-101,91-96	83.71	82.8	0	83.74	1.5	85.24	1.54	-1.13	58220	56000	55900	
+86-577-102,53-60	84.83	82.8	0	84.87	1.5	86.37	1.48	0.22	58490	56440	56400	
+86-577-102,84-89	85.14	82.8	0	85.17	1.5	86.67	1.50	-0.10	58560	56550	56530	
+86-577-102,122-127	85.52	82.8	0	85.55	1.5	87.05	1.62	0.13	58660	56690	56690	Top C25n, 56.66 Ma
+86-577-102,133-135	85.63	82.8	0	85.64	1.5	87.14	1.50	-0.10	58690	56720	56720	
+86-577-103,63-70	86.43	82.8	0	86.47	1.5	87.97	1.44	-0.01	58900	56980	57000	
+86-577-103,73-76	86.53	82.8	0	86.55	1.5	88.05	1.67	0.07	58920	57010	57020	
+86-577-103,88-90	86.68	82.8	0	86.69	1.5	88.19	2.06	0.25	58960	57060	57070	
+86-577-103,95-100	86.75	82.8	0	86.78	1.5	88.28	1.84	-0.11	58980	57080	57100	
+86-577-103,95-100	86.75	82.8	0	86.78	1.5	88.28	2.00	0.40	58980	57080	57100	
+86-577-103,133-135	87.13	82.8	0	87.14	1.5	88.64	1.75	0.17	59080	57200	57220	
+86-577-103,148-150	87.28	82.8	0	87.29	1.5	88.79	1.58	-0.13	59120	57250	57270	
+86-577-104,13-15	87.43	82.8	0	87.44	1.5	88.94	1.39	-0.67	59160	57300	57320	
+86-577-104,70-77	88.00	82.8	0	88.04	1.5	89.54	1.83	0.14	59310	57490	57520	
+86-577-104,70-77	88.00	82.8	0	88.04	1.5	89.54	1.89	0.14	59310	57490	57520	
+86-577-104,88-90	88.18	82.8	0	88.19	1.5	89.69	2.22	0.13	59350	57540	57570	
+86-577-104,88-90	88.18	82.8	0	88.19	1.5	89.69	2.18	0.20	59350	57540	57570	
+86-577-104,113-118	88.43	82.8	0	88.46	1.5	89.96	2.05	0.09	59420	57620	57660	
+86-577-104,133-135	88.63	82.8	0	88.64	1.5	90.14	1.88	-0.08	59470	57680	57720	
+86-577-104,148-150	88.78	82.8	0	88.79	1.5	90.29	2.05	0.29	59510	57730	57770	
+86-577-105,23-28	89.03	82.8	0	89.06	1.5	90.56	1.98	0.18	59570	57810	57860	
+86-577-105,43-45	89.23	82.8	0	89.24	1.5	90.74	2.02	0.31	59630	57870	57920	
+86-577-105,53-60	89.33	82.8	0	89.37	1.5	90.87	1.98	0.25	59650	57910	57960	
+86-577-105,73-75	89.53	82.8	0	89.54	1.5	91.04	2.04	0.38	59710	57970	58020	
+86-577-105,88-90	89.68	82.8	0	89.69	1.5	91.19	2.00	0.27	59740	58020	58070	
+86-577-105,97-102	89.77	82.8	0	89.80	1.5	91.30	2.03	0.14	59770	58050	58100	
+86-577-105,116-121	89.96	82.8	0	89.99	1.5	91.49	1.78	-0.34	59820	58110	58160	
+86-577-105,133-136	90.13	82.8	0	90.15	1.5	91.65	2.12	0.31	59860	58160	58220	
+86-577-106,13-15	90.43	82.8	0	90.44	1.5	91.94	1.89	0.07	59940	58260	58320	
+86-577-106,42-44	90.72	82.8	0	90.73	1.5	92.23	1.65	0.43	60020	58350	58410	
+86-577-106,50-57	90.80	82.8	0	90.84	1.5	92.34	1.54	0.30	60040	58380	58450	
+86-577-106,73-75	91.03	82.8	0	91.04	1.5	92.54	1.62	0.51	60100	58450	58510	
+86-577-106,104-109	91.34	82.8	0	91.37	1.5	92.87	1.46	0.30	60180	58550	58620	
+86-577-106,118-120	91.48	82.8	0	91.49	1.5	92.99	0.97	-0.40	60210	58590	58660	
+86-577-106,126-131	91.56	82.8	0	91.59	1.5	93.09	1.38	0.37	60230	58620	58700	
+86-577-111,24-29	92.54	92.3	0	92.57	-1.0	91.57	1.93	0.23	60500	58140	59020	
+86-577-111,63-70	92.93	92.3	0	92.97	-1.0	91.97	2.05	0.38	60600	58260	59150	
+86-577-111,123-128	93.53	92.3	0	93.56	-1.0	92.56	1.51	0.18	60760	58450	59350	
+86-577-112,23-28	94.03	92.3	0	94.06	-1.0	93.06	1.39	0.35	60900	58610	59510	
+86-577-112,99-104	94.79	92.3	0	94.82	-1.0	93.82	1.63	0.49	61100	58860	59770	
+86-577-112,122-127	95.02	92.3	0	95.05	-1.0	94.05	1.70	0.16	61160	58930	59840	
+86-577-113,26-31	95.56	92.3	0	95.59	-1.0	94.59	1.68	0.55	61300	59100	60020	
+86-577-113,43-50	95.73	92.3	0	95.77	-1.0	94.77	1.48	0.61	61360	59160	60080	
+86-577-113,120-125	96.50	92.3	0	96.53	-1.0	95.53	1.27	0.46	61560	59400	60330	
+86-577-114,23-28	97.03	92.3	0	97.06	-1.0	96.06	1.40	0.44	61700	59570	60510	
+86-577-114,62-69	97.42	92.3	0	97.46	-1.0	96.46	1.47	0.52	61810	59700	60640	
+86-577-114,96-101	97.76	92.3	0	97.79	-1.0	96.79	1.28	0.39	61900	59810	60750	
+86-577-114,130-135	98.10	92.3	0	98.13	-1.0	97.13	1.21	0.39	61990	59920	60860	
+86-577-115,47-54	98.77	92.3	0	98.81	-1.0	97.81	1.20	0.49	62170	60130	61090	
+86-577-115,88-93	99.18	92.3	0	99.21	-1.0	98.21	0.87	0.10	62280	60260	61220	
+86-577-115,125-130	99.55	92.3	0	99.58	-1.0	98.58	0.94	0.34	62380	60380	61350	
+86-577-116,40-47	100.20	92.3	0	100.24	-1.0	99.24	0.79	0.23	62560	60590	61560	
+86-577-116,76-81	100.56	92.3	0	100.59	-1.0	99.59	1.09	0.33	62650	60700	61680	
+86-577-116,125-130	101.05	92.3	0	101.08	-1.0	100.08	0.86	0.35	62780	60860	61840	

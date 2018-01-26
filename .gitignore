@@ -1,0 +1,7 @@
+.DS_Store
+.sass-cache
+.ropeproject
+.noseids
+.directory
+mainLT.m
+*.asv

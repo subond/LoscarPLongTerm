@@ -1,0 +1,31 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 41-366 sediments. doi:10.1594/PANGAEA.718957, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 5.678000 * LONGITUDE: -19.851300
+	MINIMUM DEPTH, sediment: 399.5 m * MAXIMUM DEPTH, sediment: 417.2 m
+Event(s):	41-366 * LATITUDE: 5.678000 * LONGITUDE: -19.851300 * DATE/TIME: 1975-02-22T00:00:00 * ELEVATION: -2853.0 m * RECOVERY: 302.80 m * PENETRATION: 850.50 m * LOCATION: North Atlantic/CONT RISE * CAMPAIGN: Leg41 (URI: doi:10.2973/dsdp.proc.41.1978) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 53 cores; 499 m cored; 19 m drilled; 60.7 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Oridorsalis tener, d18O [per mil PDB] (O. tener d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Oridorsalis tener, d13C [per mil PDB] (O. tener d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Bulimina sp., d18O [per mil PDB] (Bulimina sp. d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Bulimina sp., d13C [per mil PDB] (Bulimina sp. d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Uvigerina spp., d18O [per mil PDB] (Uvigerina spp. d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Uvigerina spp., d13C [per mil PDB] (Uvigerina spp. d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Hantkenina spp., d18O [per mil PDB] (Hantkenina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >125 µm
+	Hantkenina spp., d13C [per mil PDB] (Hantkenina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >125 µm
+	Chiloguembelina cubensis, d18O [per mil PDB] (C. cubensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 125-150 µm
+	Chiloguembelina cubensis, d13C [per mil PDB] (C. cubensis d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 125-150 µm
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	44 data points
+*/
+Depth [m]	Label	O. tener d18O [per mil PDB]	O. tener d13C [per mil PDB]	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]	Bulimina sp. d18O [per mil PDB]	Bulimina sp. d13C [per mil PDB]	Uvigerina spp. d18O [per mil PDB]	Uvigerina spp. d13C [per mil PDB]	Hantkenina d18O [per mil PDB]	Hantkenina d13C [per mil PDB]	C. cubensis d18O [per mil PDB]	C. cubensis d13C [per mil PDB]
+399.54	41-366-8-4,54											-1.07	1.55
+404.51	41-366-9-1,51	1.87	0.10	1.46	1.08	1.82	0.49					-1.05	1.58
+406.00	41-366-9-2,50	1.95	0.18	1.55	1.43							-1.27	1.76
+414.02	41-366-10-1,52	1.01	-0.36	0.70	0.49					-1.49	1.83		
+415.72	41-366-10-2,72	0.89	-0.25	0.49	0.70	0.93	0.09	0.97	0.31	-0.71	0.60		
+417.18	41-366-10-3,68	1.10	-0.36			0.88	0.38	1.01	0.40				

@@ -1,0 +1,72 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 23-219 sediments. doi:10.1594/PANGAEA.718949, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 9.029200 * LONGITUDE: 72.877800
+	MINIMUM DEPTH, sediment: 156.6 m * MAXIMUM DEPTH, sediment: 204.7 m
+Event(s):	23-219 * LATITUDE: 9.029200 * LONGITUDE: 72.877800 * DATE/TIME: 1972-03-10T00:00:00 * ELEVATION: -1764.0 m * RECOVERY: 172.80 m * PENETRATION: 273.00 m * LOCATION: Indian Ocean/Arabian Sea/RIDGE * CAMPAIGN: Leg23 (URI: doi:10.2973/dsdp.proc.23.1974) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 27 cores; 235 m cored; 0 m drilled; 73.5 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Oridorsalis tener, d18O [per mil PDB] (O. tener d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Oridorsalis tener, d13C [per mil PDB] (O. tener d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globocassidulina subglobosa, d18O [per mil PDB] (G. subglobosa d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Globocassidulina subglobosa, d13C [per mil PDB] (G. subglobosa d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Bulimina alazanensis, d18O [per mil PDB] (B. alazanensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Bulimina alazanensis, d13C [per mil PDB] (B. alazanensis d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Chiloguembelina spp., d18O [per mil PDB] (Chiloguembelina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Chiloguembelina spp., d13C [per mil PDB] (Chiloguembelina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Chiloguembelina cubensis, d18O [per mil PDB] (C. cubensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Chiloguembelina spp., d18O [per mil PDB] (Chiloguembelina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >150 µm
+	Chiloguembelina spp., d13C [per mil PDB] (Chiloguembelina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >150 µm
+	Pseudohastigerina spp., d18O [per mil PDB] (Pseudohastigerina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Pseudohastigerina spp., d13C [per mil PDB] (Pseudohastigerina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: <124 µm
+	Pseudohastigerina spp., d18O [per mil PDB] (Pseudohastigerina d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >150 µm
+	Pseudohastigerina spp., d13C [per mil PDB] (Pseudohastigerina d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >150 µm
+	Globigerina ampliapertura, d18O [per mil PDB] (G. ampliapertura d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Globigerina ampliapertura, d13C [per mil PDB] (G. ampliapertura d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Catapsydrax unicavus, d18O [per mil PDB] (C. unicavus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-180 µm
+	Catapsydrax unicavus, d13C [per mil PDB] (C. unicavus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-180 µm
+	Catapsydrax unicavus, d18O [per mil PDB] (C. unicavus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+	Catapsydrax unicavus, d13C [per mil PDB] (C. unicavus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 180-300 µm
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	228 data points
+*/
+Depth [m]	Label	O. tener d18O [per mil PDB]	O. tener d13C [per mil PDB]	G. subglobosa d18O [per mil PDB]	G. subglobosa d13C [per mil PDB]	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]	B. alazanensis d18O [per mil PDB]	B. alazanensis d13C [per mil PDB]	Chiloguembelina d18O [per mil PDB] (<124 µm)	Chiloguembelina d13C [per mil PDB] (<124 µm)	C. cubensis d18O [per mil PDB]	Chiloguembelina d18O [per mil PDB] (>150 µm)	Chiloguembelina d13C [per mil PDB] (>150 µm)	Pseudohastigerina d18O [per mil PDB] (<124 µm)	Pseudohastigerina d13C [per mil PDB] (<124 µm)	Pseudohastigerina d18O [per mil PDB] (>150 µm)	Pseudohastigerina d13C [per mil PDB] (>150 µm)	G. ampliapertura d18O [per mil PDB]	G. ampliapertura d13C [per mil PDB]	C. unicavus d18O [per mil PDB] (124-180 µm)	C. unicavus d13C [per mil PDB] (124-180 µm)	C. unicavus d18O [per mil PDB] (180-300 µm)	C. unicavus d13C [per mil PDB] (180-300 µm)
+156.64	23-219-15-1,64	1.50	0.08	1.58	0.34	1.33	0.71			-0.28	0.86								0.00	0.95				
+159.57	23-219-15-3,57					1.26	0.71			-0.14	0.75								-0.21	1.07	1.02	0.42	0.97	0.68
+163.54	23-219-15-6,54	1.28	-0.40	1.57	0.09	1.23	0.35												-0.27	0.74				
+165.42	23-219-16-1,42	1.75	0.44	1.80	0.95	1.52	1.21																	
+167.13	23-219-16-2,63	1.19	0.06	1.42	0.61	0.91	0.95								-0.59	0.77								
+168.63	23-219-16-3,63	1.33	0.18	1.50	0.59			1.28	0.07						0.05	0.86								
+169.93	23-219-16-4,43	1.20	0.28							-0.18	0.59				-0.04	0.71			-0.20	0.98	0.80	0.67		
+170.54	23-219-16-4,104	1.03	-0.30								0.58	-0.19			-0.14	0.55			-0.39	1.02				
+171.63	23-219-16-5,63	0.65	-0.10	1.20	0.50																			
+171.63	23-219-16-5,63				1.27	0.43																		
+173.16	23-219-16-6,76	0.95	-0.06	1.16	0.44					-0.45	0.70		-0.34	1.11	-0.26	0.77	-0.4	1						
+174.89	23-219-17-1,89	1.27	0.21	1.07	0.54																			
+175.94	23-219-17-2,44	0.90	0.08	1.32	0.76																			
+177.61	23-219-17-3,61	1.20	0.40	1.45	0.89																			
+179.11	23-219-17-4,61	0.78	0.15	1.17	0.65																			
+179.52	23-219-17-4,102	0.92	0.37	0.94	0.57																			
+179.52	23-219-17-4,102			0.95	0.81																			
+180.41	23-219-17-5,41	0.73	0.60	1.13	0.56																			
+180.61	23-219-17-5,61	0.95	0.23	1.93	1.16																			
+183.61	23-219-18-1,61	1.15	-0.03	1.25	0.51																			
+183.93	23-219-18-1,93	0.82	-0.04	1.21	0.50																			
+183.93	23-219-18-1,93	1.03	-0.02																					
+185.11	23-219-18-2,61	1.27	-0.04	1.29	0.44																			
+186.61	23-219-18-3,61	0.91	0.55	1.05	0.39										-0.31	0.66								
+186.61	23-219-18-3,61				1.32	0.53																		
+188.11	23-219-18-4,61	0.89	0.42	1.45	1.30										-0.35	0.85								
+189.61	23-219-18-5,61	1.28	0.19	1.17	0.52					-0.27	1.25				-0.19	0.84								
+191.11	23-219-18-6,61	0.80	0.08	1.15	0.51	0.33	0.64																	
+192.58	23-219-19-1,58	0.77	0.15	1.16	0.44																			
+194.11	23-219-19-2,61	0.60	0.71	0.45	0.36										-0.41	1.13								
+195.61	23-219-19-3,61	0.77	0.72	0.35	0.55	-0.11	0.74								-0.31	1.08								
+197.11	23-219-19-4,61	1.00	0.12																					
+198.61	23-219-19-5,61	0.37	0.21	0.67	0.66	0.26	0.99																	
+200.11	23-219-19-6,61	-0.75	0.05	1.09	0.56																			
+202.22	23-219-20-1,122	0.75	-0.06																					
+204.68	23-219-20-3,68	0.66	0.27																					

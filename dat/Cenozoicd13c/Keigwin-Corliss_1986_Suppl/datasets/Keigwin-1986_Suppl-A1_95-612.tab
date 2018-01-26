@@ -1,0 +1,28 @@
+/* DATA DESCRIPTION:
+Citation:	Keigwin, LD; Corliss, BH (1986): (Appendix 1) Oxygen and carbon isotopic composition in foraminifera from DSDP Hole 95-612 sediments. doi:10.1594/PANGAEA.718962, 
+	In Supplement to: Keigwin, Lloyd D; Corliss, Bruce H (1986): Stable isotopes in late middle Eocene to Oligocene foraminifera. Geological Society of America Bulletin, 97(3), 335-345, doi:10.1130/0016-7606(1986)97<335:SIILME>2.0.CO;2
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 38.820200 * LONGITUDE: -72.773800
+	MINIMUM DEPTH, sediment: 135.4 m * MAXIMUM DEPTH, sediment: 138.9 m
+Event(s):	95-612 * LATITUDE: 38.820200 * LONGITUDE: -72.773800 * DATE/TIME: 1983-08-26T00:00:00 * ELEVATION: -1386.0 m * RECOVERY: 579.70 m * PENETRATION: 675.30 m * LOCATION: North Atlantic/SLOPE * CAMPAIGN: Leg95 (URI: doi:10.2973/dsdp.proc.95.1987) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 72 cores; 674.7 m cored; 0 m drilled; 85.9 % recovery
+Parameter(s):	DEPTH, sediment [m] (Depth) * Geocode
+	Sample code/label (Label) * PI: Keigwin, Lloyd D * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	Cibicidoides ungerianus, d18O [per mil PDB] (C. ungerianus d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Cibicidoides ungerianus, d13C [per mil PDB] (C. ungerianus d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Bulimina sp., d18O [per mil PDB] (Bulimina sp. d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Bulimina sp., d13C [per mil PDB] (Bulimina sp. d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Uvigerina sp., d18O [per mil PDB] (Uvigerina sp. d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Uvigerina sp., d13C [per mil PDB] (Uvigerina sp. d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry)
+	Pseudohastigerina micra, d18O [per mil PDB] (P. micra d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-150 µm
+	Pseudohastigerina micra, d13C [per mil PDB] (P. micra d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 124-150 µm
+	P. gemma, d18O [per mil PDB] (P. gemma d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 63-125 µm
+	P. gemma, d13C [per mil PDB] (P. gemma d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: 63-125 µm
+	Globorotalia cerroazulensis, d18O [per mil PDB] (G. cerroazulensis d18O) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >150 µm
+	Globorotalia cerroazulensis, d13C [per mil PDB] (G. cerroazulensis d13C) * PI: Keigwin, Lloyd D * METHOD: Isotope ratio mass spectrometry (URI: http://en.wikipedia.org/wiki/Isotope_ratio_mass_spectrometry) * COMMENT: >150 µm
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	25 data points
+*/
+Depth [m]	Label	C. ungerianus d18O [per mil PDB]	C. ungerianus d13C [per mil PDB]	Bulimina sp. d18O [per mil PDB]	Bulimina sp. d13C [per mil PDB]	Uvigerina sp. d18O [per mil PDB]	Uvigerina sp. d13C [per mil PDB]	P. micra d18O [per mil PDB]	P. micra d13C [per mil PDB]	P. gemma d18O [per mil PDB]	P. gemma d13C [per mil PDB]	G. cerroazulensis d18O [per mil PDB]	G. cerroazulensis d13C [per mil PDB]
+135.37	95-612-16-6,117					1.01	-0.51			-0.19	-1.29		
+137.40	95-612-17-1,120	0.46	0.06	0.84	-1.38	0.84	-0.98	-0.59	-0.21			-0.68	-0.05
+138.90	95-612-17-2,120	0.55	-0.16	0.75	-1.18	0.95	-0.25	-0.90	-0.50				

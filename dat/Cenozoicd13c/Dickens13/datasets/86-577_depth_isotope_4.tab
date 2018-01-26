@@ -1,0 +1,53 @@
+/* DATA DESCRIPTION:
+Citation:	Dickens, GR; Backman, J (2013): (Table S10) Recalibrated depth and ages for previously published stable isotope data of bulk sediment and benthic foraminifera from DSDP Hole 86-577. Dataset #809197 (DOI registration in progress), 
+	In Supplement to: Dickens, Gerald Roy; Backman, Jan (2013): Core alignment and composite depth scale for the lower Paleogene through uppermost Cretaceous interval at Deep Sea Drilling Project Site 577. Newsletters on Stratigraphy
+Related to:	Thompson, Elisabet I; Schmitz, Birger (1997): Barium and the Late Paleocene d13C maximum: Evidence of increased marine surface productivity. Paleoceanography, 12(2), 239-254, doi:10.1029/96PA03331
+	Westerhold, Thomas; Röhl, Ursula; Laskar, Jacques (2012): Time scale controversy: Accurate orbital calibration of early Paleogene. Geochemistry Geophysics Geosystems, 13, Q06015, doi:10.1029/2012GC004096
+	Westerhold, Thomas; Röhl, Ursula; Raffi, Isabella; Fornaciari, Eliana; Monechi, Simonetta; Reale, Viviana; Bowles, Julie; Evans, Helen F (2008): Astronomical calibration of the Paleocene time. Palaeogeography, Palaeoclimatology, Palaeoecology, 257(4), 377-403, doi:10.1016/j.palaeo.2007.09.016
+Project(s):	Deep Sea Drilling Project (DSDP) (URI: http://www.deepseadrilling.org/)
+Coverage:	LATITUDE: 32.441800 * LONGITUDE: 157.723300
+	MINIMUM DEPTH, sediment/rock: 81.2 m * MAXIMUM DEPTH, sediment/rock: 105.5 m
+Event(s):	86-577 * LATITUDE: 32.441800 * LONGITUDE: 157.723300 * DATE/TIME: 1982-05-23T00:00:00 * ELEVATION: -2675.0 m * RECOVERY: 111.10 m * PENETRATION: 118.80 m * LOCATION: North Pacific * CAMPAIGN: Leg86 (URI: doi:10.2973/dsdp.proc.86.1985) * BASIS: Glomar Challenger (URI: http://odp.pangaea.de/glomar.html) * DEVICE: Drilling * COMMENT: 13 cores; 118.8 m cored; 0 m drilled; 93.5 % recovery
+Comment:	Placement of previously published bulk and benthic foraminifera stable carbon isotope data for Upper Cretaceous and Lower Paleogene sediment at DSDP Site 577 according to composite depth scale and an updated time scale (Westerhold et al., 2008, 2012). Isotope data were reported by Thompson and Schmitz (1997), dataset doi:10.1594/PANGAEA.809195. DEPTH, sediment is the depth [mbsf] reported by Thompson and Schmitz (1997). Note that actual samples were not reported.
+Parameter(s):	Sample code/label (Label) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * METHOD: ODP sample designation (URI: hdl:10013/epic.27914.d001)
+	DEPTH, sediment/rock [m] (Depth) * Geocode
+	Offset [m] (Offset) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: offset of cores from Table 2
+	Depth, composite [mcd] (Depth c) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: adjusted, the depth of the sample in floating depth space [mcd] relative to m below seafloor
+	delta 13C, carbonate [per mil PDB] (d13C carb) * PI: Thompson, Elisabet I
+	delta 18O, carbonate [per mil PDB] (d18O carb) * PI: Thompson, Elisabet I
+	Nuttallides truempyi, d13C [per mil PDB] (N. truempyi d13C) * PI: Thompson, Elisabet I
+	Nuttallides truempyi, d18O [per mil PDB] (N. truempyi d18O) * PI: Thompson, Elisabet I
+	Age model [ka] (Age model) * PI: Thompson, Elisabet I * COMMENT: reported age
+	Age model, optional [ka] (Age model opt) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu) * COMMENT: estimated age on Option 1 time by Westerhold et al. (2008) as determined by linear sedimentaton between six polarity chron reversals and data on a mcd depth scale
+	Comment (Comment) * PI: Dickens, Gerald Roy (eMail: jerry@rice.edu)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	245 data points
+*/
+Label	Depth [m]	Offset [m]	Depth c [mcd]	d13C carb [per mil PDB]	d18O carb [per mil PDB]	N. truempyi d13C [per mil PDB]	N. truempyi d18O [per mil PDB]	Age model [ka]	Age model opt [ka]	Comment
+86-577-9-6	81.17	0.0	81.17	1.79	-0.38	0.65	-0.28	54220	54420	
+86-577-9-6	81.65	0.0	81.65	2.02	-1.02	0.70	-0.32	54670	54610	
+86-577-10-1	83.67	1.5	85.17	3.00	-0.95	1.65	0.16	55480	55970	
+86-577-10-2	84.61	1.5	86.11	3.22	-1.05	1.33	0.08	55750	56330	
+86-577-10-3	86.03	1.5	87.53	3.23	-1.12	1.56	-0.07	56240	56850	Top C25n, 56.66 Ma
+86-577-10-4	87.10	1.5	88.60	3.46	-1.18	1.80	0.10	56590	57190	
+86-577-10-4	88.10	1.5	89.60	3.69	-1.10	2.09	0.03	57080	57510	
+86-577-10-5	89.07	1.5	90.57	3.81	-1.08	2.12	0.14	57450	57820	
+86-577-10-6	90.10	1.5	91.60	3.68	-1.03	2.11	0.17	57610	58150	
+86-577-10-6	91.12	1.5	92.62	3.38	-0.76	1.56	0.49	57770	58470	
+86-577-10-6	91.62	1.5	93.12	3.27	-0.92	1.49	0.50	57850	58630	
+86-577-11-1	92.62	-1.0	91.62	3.76	-1.09	2.11	0.29	58010	58150	
+86-577-11-1	93.64	-1.0	92.64	3.45	-0.67	1.67	0.33	58170	58480	
+86-577-11-2	94.75	-1.0	93.75	3.33	-1.02	1.78	0.44	58350	58840	
+86-577-11-3	95.61	-1.0	94.61	3.06	-0.90	1.68	0.30	58490	59110	
+86-577-11-3	96.59	-1.0	95.59	2.90	-0.84	1.06	0.29	58940	59420	
+86-577-11-4	97.50	-1.0	96.50	3.06	-0.80	1.53	0.36	59380	59720	
+86-577-11-4	98.09	-1.0	97.09	2.86	-0.75	1.23	0.30	59670	59900	
+86-577-11-5	98.64	-1.0	97.64	2.82	-0.86	1.09	0.20	60120	60080	
+86-577-11-5	99.08	-1.0	98.08	2.80	-0.81	1.14	0.37	60630	60220	
+86-577-11-5	99.64	-1.0	98.64	2.45	-0.87	0.94	0.01	61290	60400	
+86-577-11-6	100.15	-1.0	99.15	2.34	-0.92	0.75	0.09	61800	60560	
+86-577-11-6	100.65	-1.0	99.65	2.68	-0.96	1.10	0.32	62320	60720	
+86-577-12-1	102.21	2.7	104.91	2.04	-1.07	0.93	-0.08	62920	62610	
+86-577-12-1	103.15	2.7	105.85	2.18	-1.32	1.04	-0.07	63280	63100	
+86-577-12-2	104.00	2.7	106.70	2.13	-1.31	1.06	-0.06	63600	63550	
+86-577-12-3	105.51	2.7	108.21	2.42	-0.72	1.11	-0.09	64040	64160	Base C28n, 64.03 Ma
