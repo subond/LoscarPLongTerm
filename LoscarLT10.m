@@ -188,7 +188,7 @@ if myflag  == 01;
             fEPLv EPHv Rstca dincaV epsSensF runtime Fopb0 Ffep0 Fcap0 oxicf0 anoxf0 Pfeed chck1st Focbv...
             EALvv ECALvv ECAHv EAHv dissCavv EPLvv oIv oIpv PPLvv Ffepv Fcapv counter PPHv Pscenario O0...
             Floegel rREGv REDPCv meanSpco2v dbc alphagc Fpwv fT fT0 capk0...
-            po4bf0 ocbf0 Q10 smoothcon beta eIv;
+            po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv;
 
 
 
@@ -251,7 +251,7 @@ if myflag  == 01;
         nSi   = 0.2;          % 0.2 0.3
         nCC   = 0.4;                % 0.4 0.3 1.0 0.5
 
-        plotflag = 1; % plot results
+        plotflag = 0; % plot results
         CAvflag  =2; % 2:calcium is a tracer and changes,1:calcium is a tracer but stays constant
         % 0: Ca is not a tracer
         Pfeed = 1; % 0 no Phosphate cycle, 1 phosphate cycle incuded
@@ -307,13 +307,13 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/28/';
+        mydir = 'dat/LoscarLT/LOSCAR/1/';
         if(LTflag)
-            appendLT =  0;
+            appendLT =  1;
         else
             appendLT =  0;
         end
-        savf     = 0; % save end state
+        savf     = 1; % save end state
         loadf    = 1; % load initial steady-state
 
         BlFlag   = 0; % Blast 1: shot0, 2: cont release
@@ -2131,6 +2131,7 @@ if myflag  == 01;
     oIv = zeros(1, lt);
     oIpv = zeros(1, lt);
     eIv = zeros(1, lt);
+    eIpv = zeros(1, lt);
     PPLvv = zeros(1, lt);
     Ffepv = zeros(1, lt);
     Fcapv= zeros(1, lt);
@@ -3325,6 +3326,7 @@ if myflag  == 01;
         oIv0(1) = oIv(:,end);
         oIpv0(1) = oIpv(:,end);
         eIv0(1) = eIv(:,end);
+        eIpv0(1) = eIpv(:,end);
         EPLvv0(1) = EPLvv(:,end);
         PPLvv0(1) = PPLvv(:,end);
         Fcapv0(1) = Fcapv(:,end);
@@ -3429,6 +3431,7 @@ if myflag  == 01;
             dlmwrite([mydir  'oIv.DAT'], oIv0 ,'delimiter','\t','-append');
             dlmwrite([mydir  'oIpv.DAT'],  oIpv0  ,'delimiter','\t','-append');
             dlmwrite([mydir  'eIv.DAT'],  eIv0  ,'delimiter','\t','-append');
+            dlmwrite([mydir  'eIpv.DAT'],  eIpv0  ,'delimiter','\t','-append');
             dlmwrite([mydir  'EPLvv.DAT'],  EPLvv0  ,'delimiter','\t','-append');
             dlmwrite([mydir  'PPLvv.DAT'], PPLvv0 ,'delimiter','\t','-append');
             dlmwrite([mydir  'Fcapv.DAT'],  Fcapv0  ,'delimiter','\t','-append');
@@ -3604,7 +3607,7 @@ if myflag  == 01;
 
     if(LTflag)
         orgCb = (1-(eIv+oIv)).*(EPLvv+EPHv);
-        orgPb=(1-(eIv+oIpv)).*(PPLvv+PPHv);
+        orgPb=(1-(eIpv+oIpv)).*(PPLvv+PPHv);
     end
     if(~plotflag)
 

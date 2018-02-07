@@ -121,7 +121,7 @@ if myflag == 01;
         fEPLv EPHv Rstca dincaV epsSensF Fopb0 Ffep0 Fcap0 oxicf0 anoxf0 Pfeed chck1st Focbv...
         EALvv ECALvv ECAHv EAHv dissCavv EPLvv oIv oIpv PPLvv Ffepv Fcapv counter capk PPHv Pscenario O0 Floegel totCexp0...
         rREG0 rREGv REDPCv REDPC0 meanSpco2v EPLv0 dbc alphagc Fpwv fT fT0 capk0...
-        po4bf0 ocbf0 Q10 smoothcon beta eIv;
+        po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv;
 
 
     if(LTflag)
@@ -1910,7 +1910,7 @@ if myflag == 01;
             doxMeanDeep =  (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9)+dox(13)*V(13))./((V(7)+V(8)+V(9)+V(13)));
             %doxMeanDeep = (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6)+ dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9)+dox(12)*V(12)+dox(13)*V(13))./((V(4)+V(5)+V(6)+V(7)+V(8)+V(9)+V(12)+V(13)));    
         else
-            doxMeanDeep = O0;%(dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
+            doxMeanDeep = (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
         end
 
        
@@ -2098,7 +2098,7 @@ if myflag == 01;
             Fpwv(kt) = Fpw*Aoc;
             counter = counter+1;
             
-            eI = 0.78;%*Qfac;
+            eIi = 0.78;%*Qfac;
             % the condition below should never be met as long as Q10 is
             % less than 1.20 because temp increase is no more than 11
             % degrees across the Cenozoic
@@ -2114,10 +2114,21 @@ if myflag == 01;
 %             
 %             oIp = 1-eI-((1-eI)/0.22)*po4bf;
 %             oIo = oI;
-
-            oI = 1-eI-ocbf*((CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox))/CPox;
-            
-            oIp = 1-eI-po4bf;
+            fbd = 0.2; %fraction of total fraction buried in the deep
+            fbi = 1-fbd; %fraction of total fraction buried in intermediate
+            %total C burial fraction
+            ocbft = ocbf*((CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox))/CPox;
+            % C and P burial fraction in deep
+            ocbfd = ocbft*fbd;
+            po4bfd = po4bf*fbd;
+            % C and P burial fraction in intermediate
+            ocbfi=ocbft*fbi;
+            po4bfi = po4bf*fbi;
+            eI = eIi-ocbfi;
+            oI = 1-eIi-ocbfd; 
+            %oIpold = 1-eIi-po4bf;
+            eIp=eIi-po4bfi;
+            oIp = 1-eIi-po4bfd;
             oIo = oI;
 %             orgCb = ocbf.*(sum(EPLv)+EPH)
 %             oI
@@ -2414,6 +2425,7 @@ if myflag == 01;
     oIv (kt)   = oI;
     oIpv (kt)  = oIp;
     eIv(kt)    = eI;
+    eIpv(kt)    = eIp;
     PPLvv (kt) = sum(PPLv);
     % if(t<10e6)
     add=0;
@@ -2426,13 +2438,13 @@ if myflag == 01;
     % bio pump CaCO3, Aorg
     for k=1:3
         ap(k  ) = ap(k ) +add*2 -      EALv(k)/V(k  )+ENLv(k)/V(k  ) ;
-        ap(k+3) = ap(k+3)+eI*(x*EALv(k)/V(k+3)-ENLv(k)/V(k+3));   % 1#!
+        ap(k+3) = ap(k+3)+eIp*(x*EALv(k)/V(k+3)-ENLv(k)/V(k+3));   % 1#!
         ap(k+6) = ap(k+6)+oIp*(x*EALv(k)/V(k+6)-ENLv(k)/V(k+6))... % 1#!
             +   nu*EALv(k)/V(k+6);                   % D ClmnDiss
     end;
     ap(10)  = ap(10)  - EAH/V10        + ENH/V10;
     for k=7:9                                              % DA,DI,DP
-        ap(k )  = ap(k )  +(eI+oIp)*(x*EAH/V(k)     - ENH/V(k))*gp(k)...% 1#!
+        ap(k )  = ap(k )  +(eIp+oIp)*(x*EAH/V(k)     - ENH/V(k))*gp(k)...% 1#!
             +nu*EAH/V(k)                *gp(k)...
             +Pfeed*Ffep*REDNC/REDPC*Aoc/V(k)/nOC...% Alkalinity source from iron-sorbed burial
             +Pfeed*Fcap*REDNC/REDPC*Aoc/V(k)/nOC; % Alkalinity source from fluorapatite burial;  %
@@ -2440,7 +2452,7 @@ if myflag == 01;
     if(ftys)
         k = 11;
         ap(k  ) = ap(k  )-      EALv(4)/V(k  )+ENLv(4)/V(k  ) ;
-        ap(k+1) = ap(k+1)+eI*(x*EALv(4)/V(k+1)-ENLv(4)/V(k+1));
+        ap(k+1) = ap(k+1)+eIp*(x*EALv(4)/V(k+1)-ENLv(4)/V(k+1));
         ap(k+2) = ap(k+2)+oIp*(x*EALv(4)/V(k+2)-ENLv(4)/V(k+2))... %
             +   nu*EALv(4)/V(k+2)...
             +Pfeed*Ffep*REDNC/REDPC*Aoc/V(k+2)/nOC...% Alkalinity source from iron-sorbed burial
@@ -2484,34 +2496,36 @@ if myflag == 01;
     % bio pump Porg
     for k=1:3
         pp(k  ) = pp(k )  -    PPLv(k)/V(k  );
-        pp(k+3) = pp(k+3) + eI*PPLv(k)/V(k+3);
+        pp(k+3) = pp(k+3) + eIp*PPLv(k)/V(k+3);
         pp(k+6) = pp(k+6) + oIp*PPLv(k)/V(k+6);
     end;
     pp(10)  = pp(10)  - PPH/V10;
     for k=7:9
-        pp(k )  = pp(k )  + (eI+oIp)*PPH/V(k)*gp(k)...
+        pp(k )  = pp(k )  + (eIp+oIp)*PPH/V(k)*gp(k)...
             - Ffep*Aoc/V(k)/nOC...
-            - Fcap*Aoc/V(k)/nOC;             % DA,DI,DP
+            - Fcap*Aoc/V(k)/nOC...
+            - Fopb*Aoc/V(k)/nOC;             % DA,DI,DP
     end;
     if(ftys)
         k = 11;
         pp(k  ) = pp(k  ) -    PPLv(4)/V(k  );
-        pp(k+1) = pp(k+1) + eI*PPLv(4)/V(k+1);
+        pp(k+1) = pp(k+1) + eIp*PPLv(4)/V(k+1);
         pp(k+2) = pp(k+2) + oIp*PPLv(4)/V(k+2)...
             - Ffep*Aoc/V(k+2)/nOC...
-            - Fcap*Aoc/V(k+2)/nOC;
+            - Fcap*Aoc/V(k+2)/nOC...
+            - Fopb*Aoc/V(k+2)/nOC;
     end;
     % riverine PO4 fluxes and PO4 burial
     for k=1:3
         pp(k) = pp(k) + Fpw*Aoc/V(k)/nOC...
-            - Fopb*Aoc/V(k)/nOC;%...
+            ;%...
         %                  - Ffep*Aoc/V(k)/nOC...
         %                  - Fcap*Aoc/V(k)/nOC;
     end
     if(ftys)
         k=11;
         pp(k) = pp (k) + Fpw*Aoc/V(k)/nOC...
-            - Fopb*Aoc/V(k)/nOC;%...
+            ;%...
         %                  - Ffep*Aoc/V(k)/nOC...
         %                  - Fcap*Aoc/V(k)/nOC;
     end

@@ -135,7 +135,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/19/';
+dir = 'dat/LoscarLT/LOSCAR/1/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -174,8 +174,10 @@ d13fcT =  (importdata([dir 'd13fcT.DAT']));
 epsp=  (importdata([dir 'epspv.DAT']));
 
 eI=0.78;
-orgCb = ((1-(eI+oIv)).*(EPLvv+EPH));
-orgPb=(1-(eI+oIpv)).*(PPLvv+PPH);
+eIv=  (importdata([dir 'eIv.DAT']));
+eIpv=  (importdata([dir 'eIpv.DAT']));
+orgCb = ((1-(eIv+oIv)).*(EPLvv+EPH));
+orgPb=(1-(eIpv+oIpv)).*(PPLvv+PPH);
 
 meanDoxDeep = (dox(:,7).*V(:,7)+dox(:,8).*V(:,8)+dox(:,9).*V(:,9))./((V(:,7)+V(:,8)+V(:,9)));
 
@@ -201,7 +203,7 @@ for k=1:13
     lstr(k,:) = sprintf('%s',lstr0(2*k-1:2*k));
 end;
 
-FigHandle = figure(1);
+FigHandle = figure(10);
   set(FigHandle, 'Position', [200, 0, 800, 900]);
 % figure
 subplot(321)
@@ -364,7 +366,7 @@ set(gca,'xlim',[0 60])
 
 
 
-FigHandle = figure(2);
+FigHandle = figure(20);
   set(FigHandle, 'Position', [200, 0, 800, 900]);
 subplot(321)
 box on
