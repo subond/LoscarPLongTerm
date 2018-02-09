@@ -2438,7 +2438,9 @@ if myflag == 01;
     % bio pump CaCO3, Aorg
     for k=1:3
         ap(k  ) = ap(k ) +add*2 -      EALv(k)/V(k  )+ENLv(k)/V(k  ) ;
-        ap(k+3) = ap(k+3)+eIp*(x*EALv(k)/V(k+3)-ENLv(k)/V(k+3));   % 1#!
+        ap(k+3) = ap(k+3)+eIp*(x*EALv(k)/V(k+3)-ENLv(k)/V(k+3))...
+            +fbi*Pfeed*Ffep*REDNC/REDPC*Aoc/V(k+3)/nOC...% Alkalinity source from iron-sorbed burial
+            +fbi*Pfeed*Fcap*REDNC/REDPC*Aoc/V(k+3)/nOC; % Alkalinity source from fluorapatite burial;  %;   % 1#!
         ap(k+6) = ap(k+6)+oIp*(x*EALv(k)/V(k+6)-ENLv(k)/V(k+6))... % 1#!
             +   nu*EALv(k)/V(k+6);                   % D ClmnDiss
     end;
@@ -2446,17 +2448,19 @@ if myflag == 01;
     for k=7:9                                              % DA,DI,DP
         ap(k )  = ap(k )  +(eIp+oIp)*(x*EAH/V(k)     - ENH/V(k))*gp(k)...% 1#!
             +nu*EAH/V(k)                *gp(k)...
-            +Pfeed*Ffep*REDNC/REDPC*Aoc/V(k)/nOC...% Alkalinity source from iron-sorbed burial
-            +Pfeed*Fcap*REDNC/REDPC*Aoc/V(k)/nOC; % Alkalinity source from fluorapatite burial;  %
+            +fbd*Pfeed*Ffep*REDNC/REDPC*Aoc/V(k)/nOC...% Alkalinity source from iron-sorbed burial
+            +fbd*Pfeed*Fcap*REDNC/REDPC*Aoc/V(k)/nOC; % Alkalinity source from fluorapatite burial;  %
     end;
     if(ftys)
         k = 11;
         ap(k  ) = ap(k  )-      EALv(4)/V(k  )+ENLv(4)/V(k  ) ;
-        ap(k+1) = ap(k+1)+eIp*(x*EALv(4)/V(k+1)-ENLv(4)/V(k+1));
+        ap(k+1) = ap(k+1)+eIp*(x*EALv(4)/V(k+1)-ENLv(4)/V(k+1))...
+            +fbi*Pfeed*Ffep*REDNC/REDPC*Aoc/V(k+1)/nOC...% Alkalinity source from iron-sorbed burial
+            +fbi*Pfeed*Fcap*REDNC/REDPC*Aoc/V(k+1)/nOC; % Alkalinity source from fluorapatite burial;;
         ap(k+2) = ap(k+2)+oIp*(x*EALv(4)/V(k+2)-ENLv(4)/V(k+2))... %
             +   nu*EALv(4)/V(k+2)...
-            +Pfeed*Ffep*REDNC/REDPC*Aoc/V(k+2)/nOC...% Alkalinity source from iron-sorbed burial
-            +Pfeed*Fcap*REDNC/REDPC*Aoc/V(k+2)/nOC; % Alkalinity source from fluorapatite burial;
+            +fbd*Pfeed*Ffep*REDNC/REDPC*Aoc/V(k+2)/nOC...% Alkalinity source from iron-sorbed burial
+            +fbd*Pfeed*Fcap*REDNC/REDPC*Aoc/V(k+2)/nOC; % Alkalinity source from fluorapatite burial;
     end;
     % riverine & sediment fluxes
     if(fsed)                                           % #!
@@ -2496,24 +2500,30 @@ if myflag == 01;
     % bio pump Porg
     for k=1:3
         pp(k  ) = pp(k )  -    PPLv(k)/V(k  );
-        pp(k+3) = pp(k+3) + eIp*PPLv(k)/V(k+3);
+        pp(k+3) = pp(k+3) + eIp*PPLv(k)/V(k+3)...
+            - fbi*Ffep*Aoc/V(k+3)/nOC...
+            - fbi*Fcap*Aoc/V(k+3)/nOC...
+            - fbi*Fopb*Aoc/V(k+3)/nOC;             % DA,DI,DP;
         pp(k+6) = pp(k+6) + oIp*PPLv(k)/V(k+6);
     end;
     pp(10)  = pp(10)  - PPH/V10;
     for k=7:9
         pp(k )  = pp(k )  + (eIp+oIp)*PPH/V(k)*gp(k)...
-            - Ffep*Aoc/V(k)/nOC...
-            - Fcap*Aoc/V(k)/nOC...
-            - Fopb*Aoc/V(k)/nOC;             % DA,DI,DP
+            - fbd*Ffep*Aoc/V(k)/nOC...
+            - fbd*Fcap*Aoc/V(k)/nOC...
+            - fbd*Fopb*Aoc/V(k)/nOC;             % DA,DI,DP
     end;
     if(ftys)
         k = 11;
         pp(k  ) = pp(k  ) -    PPLv(4)/V(k  );
-        pp(k+1) = pp(k+1) + eIp*PPLv(4)/V(k+1);
+        pp(k+1) = pp(k+1) + eIp*PPLv(4)/V(k+1)...
+            - fbi*Ffep*Aoc/V(k+1)/nOC...
+            - fbi*Fcap*Aoc/V(k+1)/nOC...
+            - fbi*Fopb*Aoc/V(k+1)/nOC;
         pp(k+2) = pp(k+2) + oIp*PPLv(4)/V(k+2)...
-            - Ffep*Aoc/V(k+2)/nOC...
-            - Fcap*Aoc/V(k+2)/nOC...
-            - Fopb*Aoc/V(k+2)/nOC;
+            - fbd*Ffep*Aoc/V(k+2)/nOC...
+            - fbd*Fcap*Aoc/V(k+2)/nOC...
+            - fbd*Fopb*Aoc/V(k+2)/nOC;
     end;
     % riverine PO4 fluxes and PO4 burial
     for k=1:3
