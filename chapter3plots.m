@@ -135,7 +135,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/1/';
+dir = 'dat/LoscarLT/LOSCAR/9/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -203,7 +203,7 @@ for k=1:13
     lstr(k,:) = sprintf('%s',lstr0(2*k-1:2*k));
 end;
 
-FigHandle = figure(10);
+FigHandle = figure(101);
   set(FigHandle, 'Position', [200, 0, 800, 900]);
 % figure
 subplot(321)
@@ -366,7 +366,7 @@ set(gca,'xlim',[0 60])
 
 
 
-FigHandle = figure(20);
+FigHandle = figure(201);
   set(FigHandle, 'Position', [200, 0, 800, 900]);
 subplot(321)
 box on
@@ -424,7 +424,7 @@ set(hAx,{'ycolor'},{'k';'r'})  % Left color red, right color blue..
 set(hAx(1),'YLim',[3 8],'box','off','YTick',[3 4 5 6 7 8],'XTickLabel',[])
 set(hAx(2),'XTickLabel',[])
 set(gca,'XTickLabel',[])
-ylabel(hAx(1),'Organic C export [10^{12} mol yr^{-1}]')
+ylabel(hAx(1),'Organic C burial [10^{12} mol yr^{-1}]')
 ylabel(hAx(2),'Mean deep ocean [O_2] [mol m^{-3}]')
 
 
@@ -486,6 +486,8 @@ dir1 = 'dat/LoscarLT/LOSCAR/19/';
 dir2 = 'dat/LoscarLT/LOSCAR/28/';
 dir3 = 'dat/LoscarLT/LOSCAR/29/';
 
+dir4 = 'dat/LoscarLT/LOSCAR/2/';
+
 ccdA1=  (load([dir1 'ccdA.DAT']));
 ccdI1=  (load([dir1 'ccdI.DAT']));
 ccdP1=  (load([dir1 'ccdP.DAT']));
@@ -496,21 +498,24 @@ ccdA3=  (load([dir3 'ccdA.DAT']));
 ccdI3=  (load([dir3 'ccdI.DAT']));
 ccdP3=  (load([dir3 'ccdP.DAT']));
 
+ccdP4=  (load([dir4 'ccdP.DAT']));
+
 time1 = [0:length(ccdA1)-1];
 time2 = [0:length(ccdA2)-1];
 time3 = [0:length(ccdA3)-1];
-
+time4 = [0:length(ccdP4)-1];
 figure
 box on
 hold on
 plot(time1,ccdP1,'k-','LineWidth',lw)
 plot(time2,ccdP2,'k--','LineWidth',lw)
+plot(time4,ccdP4,'r--','LineWidth',lw)
 % plot(time3,ccdP3,'k.','LineWidth',lw)
 % plot(timeP, PccdP,'r','LineWidth',lw)
 % plot(timePo, PccdPo,'r--','LineWidth',lw)
 % plot(timeSL, SLccdI,'g-','LineWidth',lw)
 hold off
-legend('Simulation 3','Constant fsh','Constant fsh & rrain','data - equator','data - off equator','data - Indian')
+legend('Simulation 3','Constant fsh','fsh(sealevel)','Constant fsh & rrain','data - equator','data - off equator','data - Indian')
 
 ylabel('Pacific CCD [m]')
 xlabel('Year (Ma)')

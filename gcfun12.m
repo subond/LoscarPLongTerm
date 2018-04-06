@@ -1,5 +1,5 @@
 function [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G]=gcfun12(d13c, myT)
-global time ws gamma RUN ACT myfwc pco20 FERT dbckv fckc crit tnr dbcv
+global time ws gamma RUN ACT myfwc pco20 FERT dbckv fckc crit tnr dbcv fbetta
 FERT=0.40;
 ACT=0.05;%0.045
 pco20=300;
@@ -126,7 +126,7 @@ ggc(i)=1250*(1-bf)/2+1245*(1+bf)/2;
 dc(i)=x*(1-bf)/2+1.4454*(1+bf)/2;
 dg(i)=-x1*(1-bf)/2-23.3787*(1+bf)/2;
 fbc=17*(1-bf)/2+14.7133*(1+bf)/2;
-fbg=5*(1-bf)/2+3.4767*(1+bf)/2;
+fbg=CalculateBurial(4.2357e+14,0.6737,1)/1e12*(1-bf)/2+3.4767*(1+bf)/2; %5, 12.079
 r=(1-bf)/2+16.74*(1+bf)/2;
 BIGD(i)=(fbg*(dbc0-alpha(j))+fbc*dbc0)/(fbg+fbc);
 fbc0=fbc;

@@ -121,7 +121,7 @@ if myflag == 01;
         fEPLv EPHv Rstca dincaV epsSensF Fopb0 Ffep0 Fcap0 oxicf0 anoxf0 Pfeed chck1st Focbv...
         EALvv ECALvv ECAHv EAHv dissCavv EPLvv oIv oIpv PPLvv Ffepv Fcapv counter capk PPHv Pscenario O0 Floegel totCexp0...
         rREG0 rREGv REDPCv REDPC0 meanSpco2v EPLv0 dbc alphagc Fpwv fT fT0 capk0...
-        po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv;
+        po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv ocbf eIi;
 
 
     if(LTflag)
@@ -2054,7 +2054,8 @@ if myflag == 01;
             % initial factor of 0.005
             % compared to 0.01 for org C
             
-            ocbf = po4bf*ocbf0/po4bf0; %Organic C burial factor
+%             ocbf = po4bf*ocbf0/po4bf0; %Organic C burial factor
+%             ocbf = ocbft;
             CPox=1/(REDPC)*(ocbf0/po4bf0); %260
             CPanox=4000;
             if(counter==0)
@@ -2098,11 +2099,11 @@ if myflag == 01;
             Fpwv(kt) = Fpw*Aoc;
             counter = counter+1;
             
-            eIi = 0.78;%*Qfac;
+%             eIi = 0.78;%*Qfac;
             % the condition below should never be met as long as Q10 is
             % less than 1.20 because temp increase is no more than 11
             % degrees across the Cenozoic
-%             if(eI>=0.99 || (eI+((1-eI)/0.22)*ocbf*((CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox))/CPox)>=1.0)
+%             if(eI>=0.99 || (eI+((1-eI)/0.22)*ocbf*((*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*))/)>=1.0)
 %                 eI=0.99;
 %                 ocbf = 0.009;
 %             end
@@ -2110,16 +2111,16 @@ if myflag == 01;
 %                 eI=0.99;
 %                 po4bf = 0.009;
 %             end
-%             oI = 1-eI-((1-eI)/0.22)*ocbf*((CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox))/CPox;
+%             oI = 1-eI-((1-eI)/0.22)*ocbf*((*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*))/;
 %             
 %             oIp = 1-eI-((1-eI)/0.22)*po4bf;
 %             oIo = oI;
-            fbd = 0.2; %fraction of total fraction buried in the deep
+            fbd = 1.0; %fraction of total fraction buried in the deep
             fbi = 1-fbd; %fraction of total fraction buried in intermediate
             %total C burial fraction
-            ocbft = ocbf*((CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox))/CPox;
+            ocbft = ocbf*((CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox))/CPox*po4bf/po4bf0;
             % C and P burial fraction in deep
-            ocbfd = ocbft*fbd;
+            ocbfd = ocbft*fbd;  
             po4bfd = po4bf*fbd;
             % C and P burial fraction in intermediate
             ocbfi=ocbft*fbi;
@@ -2129,7 +2130,16 @@ if myflag == 01;
             %oIpold = 1-eIi-po4bf;
             eIp=eIi-po4bfi;
             oIp = 1-eIi-po4bfd;
+            
+            if(oI<0)
+                oI=0;
+            end
+            if(oIp<0)
+                oIp=0;
+            end
+            
             oIo = oI;
+            
 %             orgCb = ocbf.*(sum(EPLv)+EPH)
 %             oI
 %             eI

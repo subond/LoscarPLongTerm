@@ -188,7 +188,7 @@ if myflag  == 01;
             fEPLv EPHv Rstca dincaV epsSensF runtime Fopb0 Ffep0 Fcap0 oxicf0 anoxf0 Pfeed chck1st Focbv...
             EALvv ECALvv ECAHv EAHv dissCavv EPLvv oIv oIpv PPLvv Ffepv Fcapv counter PPHv Pscenario O0...
             Floegel rREGv REDPCv meanSpco2v dbc alphagc Fpwv fT fT0 capk0...
-            po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv;
+            po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv ocbf eIi;
 
 
 
@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/1/';
+        mydir = 'dat/LoscarLT/LOSCAR/9/';
         if(LTflag)
             appendLT =  1;
         else
@@ -372,7 +372,7 @@ if myflag  == 01;
 %             fcon=3;
         end
 
-        Q10=4;
+        Q10=1.0; %1.16
 %         if(tgc>31 && tgc <=52)
 % %             Q10 = 4;
 %             Q10=interp1([32 52],[1 4],tgc,'pchip');
@@ -444,11 +444,17 @@ if myflag  == 01;
         on3  = ones(1,3);
         %--------------------- Ocean Boxes
         %        A   I   P
-        fT0=0.09; % Initial area fraction Tethys. used to scale bio pump
+%         fT0=0.09; % Initial area fraction Tethys.
         if(ftys)
-            if(tgc>51)
+            if(tgc>60)
+                fA3  = [.15 .13 .55]; %03/31/06 % Area fraction AIP
+                fT   = 0.07; 
+            elseif(tgc<=60 &&tgc>56)
+                fA3  = [.15 .14 .53]; %03/31/06 % Area fraction AIP
+                fT   = 0.08; 
+            elseif(tgc<=56 &&tgc>51)
                 fA3  = [.15 .14 .52]; %03/31/06 % Area fraction AIP
-                fT   = fT0;                    % Area fraction Tethys
+                fT   = 0.09;                    % Area fraction Tethys
             elseif(tgc<=51 && tgc>46)
                 fA3  = [.16 .16 .51  ];    % Area fraction 50  Ma;
                 fT = 0.07;                 % Area fraction 50  Ma;
@@ -481,7 +487,11 @@ if myflag  == 01;
             Vres = Voc-(DTM*(1-fH)+HH*fH+HDT*fT)*Aoc;
             %VD  = Vres*fA3/(sum(fA3));     % (m3) Vol Deep AIP
 
-            if(tgc>51)
+            if(tgc>60)
+                VD   = Vres*[13.0 14.0 73.]/100;% (m3) Vol Deep AIP; 67 Ma;
+            elseif(tgc<=60 &&tgc>56)
+                VD   = Vres*[15.0 15.0 70.]/100;% (m3) Vol Deep AIP; 60 Ma;
+            elseif(tgc<=56 &&tgc>51)  
                 VD   = Vres*[16.0 16.0 68.]/100;% (m3) Vol Deep AIP; 56 Ma;
             elseif(tgc<=51 && tgc>46)
                 VD   = Vres*[17.0 17.0 66.]/100;% (m3) Vol Deep AIP; 50 Ma;
@@ -579,6 +589,7 @@ if myflag  == 01;
             dosw=-1.2; 
         end
         oTemp = 16.9 - 4.0*(d18oi-dosw);
+%         DT = oTemp;
         TC0  = [20. 10. 2.];      % (degC) modern temp. of boxes
         % the below used with GEOCARB TEMP
         TC3  = [TC0(1)+DT TC0(2)+DT TC0(3)+DT*2 TC0(3)+DT*2];      % (degC) temp. of boxes at different ts
@@ -591,8 +602,8 @@ if myflag  == 01;
 
         mgcat=Mg(:,1);
 
-        Mgi=interp1(mgcat,Mg(:,2),[0:60],'pchip');
-        Cai=interp1(mgcat,Ca(:,2),[0:60],'pchip');
+        Mgi=interp1(mgcat,Mg(:,2),[0:70],'pchip');
+        Cai=interp1(mgcat,Ca(:,2),[0:70],'pchip');
         
         
 %         CA0 =  interp1([1 59],[10.3 20.0],tgc,'pchip');
@@ -947,6 +958,10 @@ if myflag  == 01;
                 KS    = 20.36e10;    % mol/m2/y
             end;
 
+            sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'miller05.csv']));
+            sealevel=sealevel(:,2);
+            sealevel_norm=normalize_var(sealevel,1,4.5);
+            
             %====== shelf/deep rain
             fsh    = 1.00;            %  increase shelf rain
             fshI   = 1;
@@ -966,10 +981,14 @@ if myflag  == 01;
                 end
             end;
             if(LTflag)
-                Mg =  Mgi(tgc)*1e-3;%interp1([1 59],[53 30]*1e-3,tgc,'pchip');
-                fsh    = interp1([1 59],[1.0 4.5],tgc,'pchip');           %  increase shelf rain
-                fshI   = interp1([1 59],[1.0 4.5],tgc,'pchip');
-                fshP   = interp1([1 59],[1.0 6],tgc,'pchip');
+                Mg =  Mgi(tgc)*1e-3;
+%                 fsh    = interp1([1 59],[1.0 4.5],tgc,'pchip');           %  increase shelf rain
+%                 fshI   = interp1([1 59],[1.0 4.5],tgc,'pchip');
+%                 fshP   = interp1([1 59],[1.0 6],tgc,'pchip');
+                fsh    = sealevel_norm(tgc);           %  increase shelf rain
+                fshI   = sealevel_norm(tgc);
+                fshP   = sealevel_norm(tgc);
+                
 %                 nshT   = interp1([1 59],[1.0 0.4],tgc,'pchip');           %
             end
 
@@ -985,7 +1004,20 @@ if myflag  == 01;
                 end;
             elseif(bath == 2)
                 if(ftys)  % 03/31/06, 2x2\deg Bice
-                    if(tgc>51)
+                    if(tgc>60)
+                        dsv   = [.1 .6 1 1.5 2. 2.5 3. 3.5 4. 4.5 5. 5.5 6.5]*1000; % depth (m)
+                        asvA  = [3.e-15 19.1609 2.3711 3.5620 5.7941 5.7403 8.7525 13.6071 14.6801 12.8035 12.1339 1.3945 0]/100;
+                        asvI  = [8.e-16 11.4288 2.2414 4.1322 4.5850 5.6785 7.7681 6.0069 6.9374 6.5049 43.1324 1.5844 0]/100; 
+                        asvP  = [7.e-16 5.3848 0.7729 0.8714 1.1596 1.1087 3.1049 5.6362 6.3856 9.4298 60.4115 4.1537 1.5810]/100; 
+                        asvT  = [2.e-15 44.0848 3.7635 2.5700 1.5607 2.9391 3.6885 3.5025 3.8955 2.5679 31.4274 0 0]/100;    
+
+                    elseif(tgc<=60 &&tgc>56)
+                        dsv  = [.1 .6 1 1.5 2. 2.5 3. 3.5 4. 4.5 5. 5.5 6.5]*1000; % depth (m)  
+                        asvA = [0.007258 0.133449 0.064087 0.053504 0.051560 0.043129 0.110058 0.117849 0.107462 0.119188 0.114726 0.077722 6.363636e-09];
+                        asvI = [0.001633 0.075778 0.043798 0.072831 0.046132 0.062388 0.103513 0.103176 0.119629 0.112961 0.202319 0.055836 6.533337e-09];
+                        asvP = [0.001042 0.037944 0.021983 0.019107 0.013230 0.035436 0.072793 0.108565 0.087615 0.160192 0.313064 0.123068 0.005955];
+                        asvT = [0.048831 0.457820 0.166704 0.057408 0.021598 0.036698 0.030085 0.016683 0.018780 0.029225 0.113026 0.003138 6.923079e-09];
+                     elseif(tgc<=56 &&tgc>51)  
                         dsv   = [.1 .6 1 1.5 2. 2.5 3. 3.5 4. 4.5 5. 5.5 6.5]*1000; % depth (m)
                         % area fraction A I P
                         asvA  = [1.1407 10.0216  8.7160  6.3724  4.7915  3.4973 12.2935 ...
@@ -1780,8 +1812,25 @@ if myflag  == 01;
             po4bf0=Fopb0*Aoc/(sum(PPLv0)+PPH);
             % Org C burial is twice the size of P. initially See Slomp and
             % Tsandev
-            Focb00=5e12/Aoc; % GEOCARB modern org C burial
-            ocbf0=Focb00/Fopb0*REDPC*po4bf0;
+%             Focb00=(gcfun12(dbc(1),1))*1e12/Aoc; % GEOCARB modern org C burial
+
+%             totExp = (sum(PPLv0)+PPH)/REDPC;
+
+%             ocbf0=Focb00/Fopb0*REDPC*po4bf0; %0.0118
+            ocbf0= CalculateBurial(1,0.6737,1);
+            
+            Q10 = 2.0;
+            k = log(Q10)/10; % per degree C. so 0.693 (or log(2)/2) per 10 degrees C
+            Dt=DT;
+            kDt = k*Dt;
+            bmc = exp(kDt); % "b" martin temperature coefficient
+            [ocbf, fraint,fbci,fraini,fbcd,fraind,eIi,Fremd]=CalculateBurial(1,0.6737*bmc,1);
+            
+%             Focb00/Fopb0
+%             return
+%              ocbf0 = 0.025818;
+%             po4bf0
+%             return
 %             oI0 = 1-eI-ocbf0
 %             oIp0=1-eI-po4bf0
 %             return
@@ -3672,7 +3721,8 @@ if myflag  == 01;
     set(gca,'XLim',axx);
     xlabel('Time (y)');
     ylabel('TCO_2 (mmol kg^{-1})');
-    Hl=legend(lstr,4);
+%     Hl=legend(lstr,4);
+    Hl=legend(lstr);
     set(Hl,'FontSize',10);
     refresh;
 
@@ -3734,7 +3784,8 @@ if myflag  == 01;
     set(gca,'XLim',axx);
     xlabel('Time (y)');
     ylabel('TA (mmol kg^{-1})');
-    Hl=legend(lstr,4);
+%     Hl=legend(lstr,4);
+    Hl=legend(lstr);
     set(Hl,'FontSize',10);
 
 
@@ -3754,7 +3805,8 @@ if myflag  == 01;
     set(gca,'XLim',axx);
     xlabel('Time (y)');
     ylabel('PO_4 (\mumol kg^{-1})');
-    Hl=legend(lstr,4);
+%     Hl=legend(lstr,4);
+    Hl=legend(lstr);
     set(Hl,'FontSize',10);
 
 
@@ -3777,7 +3829,8 @@ if myflag  == 01;
         set(gca,'XLim',axx);
         xlabel('Time (y)');
         ylabel('O_2 (mol m^{-3})');
-        Hl=legend(lstr,4);
+%         Hl=legend(lstr,4);
+        Hl=legend(lstr);
         set(Hl,'FontSize',10);
 
         figure(36)
@@ -3797,7 +3850,8 @@ if myflag  == 01;
         set(gca,'XLim',axx);
         xlabel('Time (y)');
         ylabel('%Oxic Respiration');
-        Hl=legend(lstr,4);
+%         Hl=legend(lstr,4);
+        Hl=legend(lstr);
         set(Hl,'FontSize',10);
 
 
@@ -3820,7 +3874,8 @@ if myflag  == 01;
     set(gca,'XLim',axx);
     xlabel('Time (y)');
     ylabel('[CO_3^{2-}] (\mumol kg^{-1})');
-    Hl=legend(lstr,4);
+%     Hl=legend(lstr,4);
+    Hl=legend(lstr);
     set(Hl,'FontSize',10);
 
     if(1)
@@ -3840,7 +3895,8 @@ if myflag  == 01;
         set(gca,'XLim',axx);
         xlabel('Time (y)');
         ylabel('pH');
-        Hl=legend(lstr,4);
+%         Hl=legend(lstr,4);
+        Hl=legend(lstr);
         set(Hl,'FontSize',10);
     end;
 
@@ -3864,7 +3920,8 @@ if myflag  == 01;
     for k=1:6
         pstr(k,:) = sprintf('%s',pstr0(2*k-1:2*k));
     end;
-    Hp=legend(pstr,1);
+%     Hp=legend(pstr,1);
+    Hp=legend(pstr);
     set(Hp,'FontSize',10);
 
 
@@ -3944,7 +4001,8 @@ if myflag  == 01;
     set(gca,'YDir','reverse');
     xlabel('Time (y)');
     ylabel('\delta^{13}C (�)');
-    Hl=legend(lstr,1);
+%     Hl=legend(lstr,1);
+    Hl=legend(lstr);
     set(Hl,'FontSize',10);
 
     if(CAvflag>0)
@@ -3972,7 +4030,8 @@ if myflag  == 01;
         %set(gca,'YDir','reverse');
         xlabel('Time (y)');
         ylabel('\delta^{44}Ca (�)');
-        Hl=legend(lstr,1);
+%         Hl=legend(lstr,1);
+        Hl=legend(lstr);
         set(Hl,'FontSize',10);
     end;
 
@@ -3994,9 +4053,9 @@ if myflag  == 01;
         xlabel('CaCO_3 (wt %)');
         ylabel('Depth (m)');
         %axis([0 100 0 5.5]);
-        legend('Atlantic','Indic','Pacific',2);
+        legend('Atlantic','Indic','Pacific');
         if(ftys)
-            legend('Atlantic','Indic','Pacific','Tethys',2);
+            legend('Atlantic','Indic','Pacific','Tethys');
         end;
 
 
@@ -4076,7 +4135,7 @@ if myflag  == 01;
             Hx=ylabel('Sat. Horizon/CCD (km)');
             set(Hx,'VerticalAlig','bottom','Rotation',-90);
             axis(b2);
-            Hl=legend([pl(1:3)],'[CO_3^{2-}]','SH','CCD',2);
+            Hl=legend([pl(1:3)],'[CO_3^{2-}]','SH','CCD');
             set(Hl,'FontSize',8);
         end;
         figure(81)
@@ -4136,7 +4195,7 @@ if myflag  == 01;
         for l=1:Ns
             dstr(l,:) = sprintf('%4.0f m',dsv(l));
         end;
-        Hl=legend(dstr,4);
+        Hl=legend(dstr);
         set(Hl,'FontSize',10);
 
 
@@ -4163,7 +4222,7 @@ if myflag  == 01;
         xlabel('Time (y)');
         ylabel('CaCO_3 (wt %)');
 
-        Hl=legend(dstr,4);
+        Hl=legend(dstr);
         set(Hl,'FontSize',10);
 
 
@@ -4188,7 +4247,7 @@ if myflag  == 01;
         xlabel('Time (y)');
         ylabel('CaCO_3 (wt %)');
 
-        Hl=legend(dstr,4);
+        Hl=legend(dstr);
         set(Hl,'FontSize',10);
 
 
@@ -4216,7 +4275,7 @@ if myflag  == 01;
             ylabel('CaCO_3 (wt %)');
 
 
-            Hl=legend(dstr,4);
+            Hl=legend(dstr);
             set(Hl,'FontSize',10);
         end;
 
@@ -4246,7 +4305,7 @@ if myflag  == 01;
         for l=1:Ns
             dstr(l,:) = sprintf('%4.0f m',dsv(l));
         end;
-        Hl=legend(dstr,4);
+        Hl=legend(dstr);
         set(Hl,'FontSize',10);
 
 
@@ -4273,7 +4332,7 @@ if myflag  == 01;
         xlabel('Time (y)');
         ylabel('CaCO_3 (wt %)');
 
-        Hl=legend(dstr,4);
+        Hl=legend(dstr);
         set(Hl,'FontSize',10);
 
 
@@ -4298,7 +4357,7 @@ if myflag  == 01;
         xlabel('Time (y)');
         ylabel('CaCO_3 (wt %)');
 
-        Hl=legend(dstr,4);
+        Hl=legend(dstr);
         set(Hl,'FontSize',10);
 
 
@@ -4326,7 +4385,7 @@ if myflag  == 01;
             ylabel('CaCO_3 (wt %)');
 
 
-            Hl=legend(dstr,4);
+            Hl=legend(dstr);
             set(Hl,'FontSize',10);
         end;
 
@@ -4361,7 +4420,7 @@ if myflag  == 01;
             %             ylabel('^{13}f_c');
             ylabel('\delta^{13} C (sediments)');
 
-            Hl=legend(dstr,4);
+            Hl=legend(dstr);
             set(Hl,'FontSize',10);
             if(CAvflag~=0)
                 subplot(212)
@@ -4387,7 +4446,7 @@ if myflag  == 01;
             %             ylabel('^{44}f_c');
             ylabel('\delta^{44} Ca (sediments)');
 
-            Hl=legend(dstr,4);
+            Hl=legend(dstr);
             set(Hl,'FontSize',10);
         end;
 
@@ -4418,7 +4477,8 @@ if myflag  == 01;
                 lstr(sk,:) = sprintf('%s',lstr0(2*k-1:2*k));
                 sk=sk+1;
             end;
-            Hl=legend(lstr,4);
+%             Hl=legend(lstr,4);
+            Hl=legend(lstr);
             set(Hl,'FontSize',10);
         end
 
@@ -4490,7 +4550,7 @@ if myflag  == 01;
     xlabel('TCO_2 (mmol/kg)');
     ylabel('TA (mmol/kg)');
 
-    legend([pl(4) Pl(4)],'Model','Obsrv',2);
+    legend([pl(4) Pl(4)],'Model','Obsrv');
 
 
     if(1)
@@ -4567,10 +4627,10 @@ if myflag  == 01;
     %subplot(224)
     subplot(236)
     plot(0,0,'dk',0,0,'sk',0,0,'^k',0,0,'vk');
-    Hl=legend('Atl','Ind','Pac','HL',1);
+    Hl=legend('Atl','Ind','Pac','HL');
     if(ftys)
         plot(0,0,'dk',0,0,'sk',0,0,'^k',0,0,'vk',0,0,'pk');
-        Hl=legend('Atl','Ind','Pac','HL','Tet',1);
+        Hl=legend('Atl','Ind','Pac','HL','Tet');
     end;
     set(Hl,'FontSize',fs);
     set(gca,'XTick',[],'YTick',[]);
@@ -4620,7 +4680,8 @@ if myflag  == 01;
         set(gca,'XLim',axx);
         xlabel('Time (y)');
         ylabel('Ca^2^+ (mmol kg^{-1})');
-        Hl=legend(lstr,4);
+%         Hl=legend(lstr,4);
+        Hl=legend(lstr);
         set(Hl,'FontSize',10);
         refresh;
     end;
@@ -4637,7 +4698,8 @@ if myflag  == 01;
         set(gca,'XLim',axx);
         xlabel('Time (y)');
         ylabel('Ca^2^+ (mmol kg^{-1})');
-        Hl=legend(lstr,4);
+%         Hl=legend(lstr,4);
+        Hl=legend(lstr);
         set(Hl,'FontSize',10);
         refresh;
     end;
