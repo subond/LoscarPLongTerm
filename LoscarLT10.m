@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/9/';
+        mydir = 'dat/LoscarLT/LOSCAR/28/';
         if(LTflag)
             appendLT =  1;
         else
@@ -372,7 +372,7 @@ if myflag  == 01;
 %             fcon=3;
         end
 
-        Q10=1.0; %1.16
+%         Q10=1.0; %1.16
 %         if(tgc>31 && tgc <=52)
 % %             Q10 = 4;
 %             Q10=interp1([32 52],[1 4],tgc,'pchip');
@@ -588,7 +588,8 @@ if myflag  == 01;
         elseif(tgc>=35)
             dosw=-1.2; 
         end
-        oTemp = 16.9 - 4.0*(d18oi-dosw);
+        oTemp = 16.9 - 4.0*(d18oi-dosw)+0.3915; % 0.4 C offset to make it 0 
+        % at time step 1
 %         DT = oTemp;
         TC0  = [20. 10. 2.];      % (degC) modern temp. of boxes
         % the below used with GEOCARB TEMP
@@ -716,7 +717,7 @@ if myflag  == 01;
         
         mv00   = 3.8*mv0m *365*24*3600;
         mv0   = 3.8*mv0 *365*24*3600;     % (m3/y) 3.8 4.0
-        mhd0  = 1.3*mhd0*365*24*3600;     % (m3/y) 1.3
+        mhd0  = 4.0*mhd0*365*24*3600;     % (m3/y) 1.3
         mv    = mv0;
         mhd   = mhd0;
         % air-sea CO2/O2
@@ -982,12 +983,12 @@ if myflag  == 01;
             end;
             if(LTflag)
                 Mg =  Mgi(tgc)*1e-3;
-%                 fsh    = interp1([1 59],[1.0 4.5],tgc,'pchip');           %  increase shelf rain
-%                 fshI   = interp1([1 59],[1.0 4.5],tgc,'pchip');
-%                 fshP   = interp1([1 59],[1.0 6],tgc,'pchip');
-                fsh    = sealevel_norm(tgc);           %  increase shelf rain
-                fshI   = sealevel_norm(tgc);
-                fshP   = sealevel_norm(tgc);
+                fsh    = interp1([1 59],[1.0 4.5],tgc,'pchip');           %  increase shelf rain
+                fshI   = interp1([1 59],[1.0 4.5],tgc,'pchip');
+                fshP   = interp1([1 59],[1.0 6],tgc,'pchip');
+%                 fsh    = sealevel_norm(tgc);           %  increase shelf rain
+%                 fshI   = sealevel_norm(tgc);
+%                 fshP   = sealevel_norm(tgc);
                 
 %                 nshT   = interp1([1 59],[1.0 0.4],tgc,'pchip');           %
             end
@@ -1819,7 +1820,7 @@ if myflag  == 01;
 %             ocbf0=Focb00/Fopb0*REDPC*po4bf0; %0.0118
             ocbf0= CalculateBurial(1,0.6737,1);
             
-            Q10 = 2.0;
+            Q10 = 2.5;
             k = log(Q10)/10; % per degree C. so 0.693 (or log(2)/2) per 10 degrees C
             Dt=DT;
             kDt = k*Dt;

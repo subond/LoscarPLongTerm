@@ -135,7 +135,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/9/';
+dir = 'dat/LoscarLT/LOSCAR/28/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -530,7 +530,7 @@ for k=1:13
     plot(time  ,co3tv (:,k)*1e6   ,sstr(2*k-1:2*k),'Color',cs(k));
 end;
 hold off
-Hl=legend(lstr,4);
+Hl=legend(lstr);
 set(Hl,'FontSize',10);
 xlabel('Time (Ma)');
 ylabel('[CO_3^{=}]');
@@ -549,7 +549,7 @@ hold off;
 set(gca,'FontSize',fs);
 xlabel('Time (Ma)');
 ylabel('TCO_2 (mmol kg^{-1})');
-Hl=legend(lstr,4);
+Hl=legend(lstr);
 set(Hl,'FontSize',10);
 
 % figure
@@ -563,5 +563,5 @@ hold off;
 set(gca,'FontSize',fs);
 xlabel('Time (Ma)');
 ylabel('TA (mmol kg^{-1})');
-Hl=legend(lstr,4);
+Hl=legend(lstr);
 % set(Hl,'FontSize',10);

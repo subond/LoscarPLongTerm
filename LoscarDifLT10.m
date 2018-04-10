@@ -2043,7 +2043,7 @@ if myflag == 01;
 %                Qfac = (1/interp1([1 59],[1.5 3],53,'pchip'))^((TCv0(9)-2.0)/10);
 %             end
             % Q10 effect *1/3^((TCv(9)-TCv0(9))/10)
-            po4bf=po4bf0*(0.25+0.75*doxMeanDeep/O0)*Qfac; % fraction of PO4 rain that gets burried
+            po4bf=po4bf0*(0.25+0.75*doxMeanDeep/O0); % fraction of PO4 rain that gets burried
             % org PO4 burial needs to be
             % 260 times smaller than org C
             % burial. It is already 130
