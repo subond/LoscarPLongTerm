@@ -567,7 +567,7 @@ if myflag == 01;
     REDPCv(kt) = REDPC;
     EPLv    = fEPL*mv(1:3)'.*p(4:6)/REDPC; % (m3/y*mol/m3 = mol/y)
     if(ftys)
-        EPLv(4) = fEPL*mv(004)'.*p(012)/REDPC;%*flin(25,59,0.01,fT0,tgc)/fT0; % (m3/y*mol/m3 = mol/y)
+        EPLv(4) = fEPL*mv(004)'.*p(012)/REDPC;%*A(11)/2.7920e+13;%*flin(25,59,0.01,fT0,tgc)/fT0; % (m3/y*mol/m3 = mol/y)
     end;
     if(counter == 0)
        EPLv0 = EPLv; 
@@ -1907,18 +1907,20 @@ if myflag == 01;
         %sum(PPLv)=3.041338770456144e+012
 
         if(ftys)
-            doxMeanDeep =  (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9)+dox(13)*V(13))./((V(7)+V(8)+V(9)+V(13)));
+            doxMeanI =  (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9)+dox(13)*V(13))./((V(7)+V(8)+V(9)+V(13)));
             %doxMeanDeep = (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6)+ dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9)+dox(12)*V(12)+dox(13)*V(13))./((V(4)+V(5)+V(6)+V(7)+V(8)+V(9)+V(12)+V(13)));    
+%             doxMeanI =  (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6)+dox(12)*V(12))./((V(4)+V(5)+V(6)+V(12)));
         else
-            doxMeanDeep = (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
+            doxMeanI = (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
+%             doxMeanI = (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6))./((V(4)+V(5)+V(6)));
         end
 
        
-%           Ffep = Ffep0*doxMeanDeep/O0;
-        %     Fopb =4.991716e-005*sum(EPLv)/Aoc*(0.25+0.75*doxMeanDeep/O0);%-3.953740401592986e12/Aoc+0.01*sum(EPLv)/Aoc;
-        %     Fcap = 0.005025125628177*(sum(PPLv)/Aoc-Fopb)*(0.1+0.9*doxMeanDeep/O0);
+%           Ffep = Ffep0*doxMeanI/O0;
+        %     Fopb =4.991716e-005*sum(EPLv)/Aoc*(0.25+0.75*doxMeanI/O0);%-3.953740401592986e12/Aoc+0.01*sum(EPLv)/Aoc;
+        %     Fcap = 0.005025125628177*(sum(PPLv)/Aoc-Fopb)*(0.1+0.9*doxMeanI/O0);
         %     Fpw = Fpw0*(4/12*FSi/FVC+8/12*Fin/FiN);
-        %     Focb = 0;%Fopb*(CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox)-3.95374e+012/Aoc;
+        %     Focb = 0;%Fopb*(CPox*CPanox)/(doxMeanI/O0*CPanox+(1-doxMeanI/O0)*CPox)-3.95374e+012/Aoc;
         %     Focw = Focw0*1;%(4/12*FSi/FVC+8/12*Fin/FiN);
         if(~LTflag)
             if(Pscenario==0)
@@ -2003,9 +2005,9 @@ if myflag == 01;
             Yf=123; % +-24
             Af=-112; % +-24 
             rf=32;   % +-19
-            rREG = Yf+Af*exp(-doxMeanDeep*1e3/rf);
+            rREG = Yf+Af*exp(-doxMeanI*1e3/rf);
             if(counter==0)
-                rREG0 = Yf+Af*exp(-doxMeanDeep*1e3/rf);
+                rREG0 = Yf+Af*exp(-doxMeanI*1e3/rf);
                 totCexp0 = (sum(EPLv)+EPH)/Aoc;
                 Focw0 = (sum(EPLv)+EPH)*ocbf0/Aoc;
                 Fopb0 = (sum(PPLv)+PPH)*po4bf0/Aoc;
@@ -2020,9 +2022,9 @@ if myflag == 01;
             Focw = Focw0;%*(2/12*FSi/FVC+5/12*Fin/FiN+5/12*1); %Focw0
             Fpw = Fpw0*((FSi+Fin)/(FiN+FVC)); %Floegel, wallmann 2011
             Fopb = 0;%Fopb0;
-            Ffep = Ffep0*doxMeanDeep/O0; %Ffep0
+            Ffep = Ffep0*doxMeanI/O0; %Ffep0
 
-            Fcap = capk*(sum(PPLv)/Aoc-sum(PPLv)/Aoc*po4bf*(0.1+0.9*doxMeanDeep/O0)); %Fcap0
+            Fcap = capk*(sum(PPLv)/Aoc-sum(PPLv)/Aoc*po4bf*(0.1+0.9*doxMeanI/O0)); %Fcap0
             Ffepv(kt) = Ffep*Aoc;
             Fcapv(kt) = Fcap*Aoc;
             counter = counter+1;
@@ -2043,7 +2045,7 @@ if myflag == 01;
 %                Qfac = (1/interp1([1 59],[1.5 3],53,'pchip'))^((TCv0(9)-2.0)/10);
 %             end
             % Q10 effect *1/3^((TCv(9)-TCv0(9))/10)
-            po4bf=po4bf0*(0.25+0.75*doxMeanDeep/O0); % fraction of PO4 rain that gets burried
+            po4bf=po4bf0*(0.25+0.75*doxMeanI/O0)*ocbf/ocbf0; %*ocbf/ocbf0 fraction of PO4 rain that gets burried
             % org PO4 burial needs to be
             % 260 times smaller than org C
             % burial. It is already 130
@@ -2057,7 +2059,7 @@ if myflag == 01;
 %             ocbf = po4bf*ocbf0/po4bf0; %Organic C burial factor
 %             ocbf = ocbft;
             CPox=1/(REDPC)*(ocbf0/po4bf0); %260
-            CPanox=4000;
+            CPanox=1100;  %4000
             if(counter==0)
 %                 Focw0 = (sum(EPLv)+EPH)*ocbf0/Aoc;
 %                 fbgv
@@ -2082,16 +2084,16 @@ if myflag == 01;
                 %     Fpw = Fpw0*(2/12*FSi/FVC+5/12*Fin/FiN+5/12*1); %Fpw0
                 Fpw = Fpw0*((FSi+Fin)/(FiN0+FSi0)); %Floegel, wallmann 2011
                 Fopb = 0;%Fopb0;
-                Ffep = Ffep0*doxMeanDeep/O0; %Ffep0
-                Fcap = capk*(sum(PPLv)/Aoc-sum(PPLv)/Aoc*po4bf*(0.1+0.9*doxMeanDeep/O0)); %Fcap0
+                Ffep = Ffep0*doxMeanI/O0; %Ffep0
+                Fcap = capk*(sum(PPLv)/Aoc-sum(PPLv)/Aoc*po4bf*(0.1+0.9*doxMeanI/O0)); %Fcap0
             else
                 Focb = 0; % zero because it is calculated
                 Focw = Focw0;%*(2/12*FSi/FVC+5/12*Fin/FiN+5/12*1); %Focw0
                 %     Fpw = Fpw0*(2/12*FSi/FVC+5/12*Fin/FiN+5/12*1); %Fpw0
                 Fpw = Fpw0*((FSi*beta+Fin*(beta-1))/(FSi0*beta+FiN0*(beta-1))); %Floegel, wallmann 2011
                 Fopb = 0;%zero because it is calculated
-                Ffep = Ffep0*doxMeanDeep/O0; %Ffep0
-                Fcap = capk0*((sum(PPLv)+PPH)/Aoc-((sum(PPLv)+PPH)/Aoc)*po4bf*(0.1+0.9*doxMeanDeep/O0)); %Fcap0 
+                Ffep = Ffep0*doxMeanI/O0; %Ffep0
+                Fcap = capk0*((sum(PPLv)+PPH)/Aoc-((sum(PPLv)+PPH)/Aoc)*po4bf*(0.1+0.9*doxMeanI/O0)); %Fcap0 
 
             end
             Ffepv(kt) = Ffep*Aoc;
@@ -2103,7 +2105,7 @@ if myflag == 01;
             % the condition below should never be met as long as Q10 is
             % less than 1.20 because temp increase is no more than 11
             % degrees across the Cenozoic
-%             if(eI>=0.99 || (eI+((1-eI)/0.22)*ocbf*((*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*))/)>=1.0)
+%             if(eI>=0.99 || (eI+((1-eI)/0.22)*ocbf*((*CPanox)/(doxMeanI/O0*CPanox+(1-doxMeanI/O0)*))/)>=1.0)
 %                 eI=0.99;
 %                 ocbf = 0.009;
 %             end
@@ -2111,14 +2113,14 @@ if myflag == 01;
 %                 eI=0.99;
 %                 po4bf = 0.009;
 %             end
-%             oI = 1-eI-((1-eI)/0.22)*ocbf*((*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*))/;
+%             oI = 1-eI-((1-eI)/0.22)*ocbf*((*CPanox)/(doxMeanI/O0*CPanox+(1-doxMeanI/O0)*))/;
 %             
 %             oIp = 1-eI-((1-eI)/0.22)*po4bf;
 %             oIo = oI;
             fbd = 1.0; %fraction of total fraction buried in the deep
             fbi = 1-fbd; %fraction of total fraction buried in intermediate
             %total C burial fraction
-            ocbft = ocbf*((CPox*CPanox)/(doxMeanDeep/O0*CPanox+(1-doxMeanDeep/O0)*CPox))/CPox*po4bf/po4bf0;
+            ocbft = ocbf*((CPox*CPanox)/(doxMeanI/O0*CPanox+(1-doxMeanI/O0)*CPox))/CPox*po4bf/po4bf0;%*po4bf/po4bf0;
             % C and P burial fraction in deep
             ocbfd = ocbft*fbd;  
             po4bfd = po4bf*fbd;

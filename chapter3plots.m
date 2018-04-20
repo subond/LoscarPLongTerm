@@ -135,7 +135,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/28/';
+dir = 'dat/LoscarLT/LOSCAR/50/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -189,7 +189,7 @@ for gct = 1:1:gctl
 %         myFbg(gct) =5.0;
         d13G(gct) = 0.2470;
     end
-    [fbgv(gct),fbcv(gct),fwgv(gct),fmcv(gct),fmgv(gct),fwcv(gct),fGGi(gct),fgkc(gct),frkc(gct),fekc(gct),fdkc(gct),flakc(gct),rco2(gct),pco2gca(gct), acv(gct)]=gcfun12(d13G(gct), gct);
+    [fbgv(gct),fbcv(gct),fwgv(gct),fmcv(gct),fmgv(gct),fwcv(gct),fGGi(gct),fgkc(gct),frkc(gct),fekc(gct),fdkc(gct),flakc(gct),rco2(gct),pco2gca(gct), acv(gct), G(gct), dcv(gct)]=gcfun12(d13G(gct), gct);
 end
 
 
@@ -480,7 +480,13 @@ xlabel('Time (Ma)');
 ylabel('P burial fluxes [10^{10}mol y^{-1}]');
 
 
-
+figure
+for k=1:13
+    hold on
+    h1=plot(time  ,TCvt (:,k),sstr(2*k-1:2*k),'Color',cs(k));
+    hold off
+%     key1{k}=lstr(k,1:2);
+end;
 
 dir1 = 'dat/LoscarLT/LOSCAR/19/';
 dir2 = 'dat/LoscarLT/LOSCAR/28/';
@@ -535,6 +541,13 @@ set(Hl,'FontSize',10);
 xlabel('Time (Ma)');
 ylabel('[CO_3^{=}]');
 
+figure
+box on
+hold on
+for k=1:13
+    plot(time  ,dox (:,k)   ,sstr(2*k-1:2*k),'Color',cs(k));
+end;
+hold off
 
 
 

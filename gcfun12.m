@@ -1,7 +1,7 @@
-function [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G]=gcfun12(d13c, myT)
+function [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G, dc]=gcfun12(d13c, myT)
 global time ws gamma RUN ACT myfwc pco20 FERT dbckv fckc crit tnr dbcv fbetta
 FERT=0.40;
-ACT=0.05;%0.045
+ACT=0.05;%0.05, 0.045
 pco20=300;
 XX=load('dat/LPEEkurtz/Sim2/GeoCarb3Dat.dat');
 % GG=load('GEOGt.txt');
@@ -219,7 +219,7 @@ if(myT>1)
     t=-time(1);
     if(p>1)
         dg(1)=-21.2;
-        dc(1)=+2.0;
+        dc(1)=+3.0;
         dcv(1)=-4.0;
     else
         dg(1)=-x1;
