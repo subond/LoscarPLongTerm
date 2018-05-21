@@ -135,7 +135,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/50/';
+dir = 'dat/LoscarLT/LOSCAR/66/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -156,12 +156,12 @@ p=  (importdata([dir 'p.DAT']));
 a =  (importdata([dir 'a.DAT']));
 c =  (importdata([dir 'c.DAT']));
 
-ccdA=  (load([dir 'ccdA.DAT']));
-ccdI=  (load([dir 'ccdI.DAT']));
-ccdP=  (load([dir 'ccdP.DAT']));
-% ccdT=zeros(59,1);
-ccdT(1:24)=NaN;
-ccdT(25:gctl)=  (load([dir 'ccdT.DAT']));
+% ccdA=  (load([dir 'ccdA.DAT']));
+% ccdI=  (load([dir 'ccdI.DAT']));
+% ccdP=  (load([dir 'ccdP.DAT']));
+% % ccdT=zeros(59,1);
+% ccdT(1:24)=NaN;
+% ccdT(25:gctl)=  (load([dir 'ccdT.DAT']));
 pco2t=  (load([dir 'pco2t.DAT']));
 phtv=  (importdata([dir 'phtv.DAT']));
 co3tv=  (importdata([dir 'co3tv.DAT']));
@@ -181,6 +181,84 @@ orgPb=(1-(eIpv+oIpv)).*(PPLvv+PPH);
 
 meanDoxDeep = (dox(:,7).*V(:,7)+dox(:,8).*V(:,8)+dox(:,9).*V(:,9))./((V(:,7)+V(:,8)+V(:,9)));
 
+dsv   = [.1 .6 1 1.5 2. 2.5 3. 3.5 4. 4.5 5. 5.5 6.5]*1000;
+fcA=  (load([dir 'fcA.DAT']));
+fcI=  (load([dir 'fcI.DAT']));
+fcP=  (load([dir 'fcP.DAT']));
+fcT(1:gctl,1:13)=NaN;
+fcT(1:24,1:13)=NaN;
+fcT(25:gctl,:) = (load([dir 'fcT.DAT']));
+
+fcfA  = fcA(1,:); %first index is for year. cycle throuh these
+fcfI  = fcI(1,:);
+fcfP  = fcP(1,:);
+fcfT  = fcT(1,:);
+
+zv   = [000.:10:6000.]; % z, continuous (1 or 10 m)
+  %------------ CCD --------------------%
+        fccd  = 0.05; % 0.10 0.05
+        dd    = 0.01;
+        nd    = 0;
+        fccdv = [fccd-nd*dd:dd:fccd+nd*dd];
+        ld    = length(fccdv);
+
+        clear jccdA jccdI jccdP;
+        
+        for i=1:gctl
+            yA(i,:)         = interp1(dsv,fcA(i,:),zv,'PCHIP');
+            yI(i,:)         = interp1(dsv,fcI(i,:),zv,'PCHIP');
+            yP(i,:)         = interp1(dsv,fcP(i,:),zv,'PCHIP');
+%             yT(i,:)         = interp1(dsv,fcT(i,:),zv,'PCHIP');
+            for k=1:ld
+                [tmp, jccdA(i,k)] = min(abs(yA(i,150:end)-fccdv(k)));
+                [tmp, jccdI(i,k)] = min(abs(yI(i,150:end)-fccdv(k)));
+                [tmp, jccdP(i,k)] = min(abs(yP(i,150:end)-fccdv(k)));
+%                 [tmp, jccdT(i,k)] = min(abs(yT(i,:)-fccdv(k)));
+            end;
+        end;
+
+        if(nd == 0)
+            ccdA = zv(jccdA)+zv(150);
+            ccdI = zv(jccdI)+zv(150);
+            ccdP = zv(jccdP)+zv(150);
+%             ccdT = zv(jccdT);
+        else
+            ccdA = sum(zv(jccdA),2)/ld;
+            ccdI = sum(zv(jccdI),2)/ld;
+            ccdP = sum(zv(jccdP),2)/ld;
+%             ccdT = sum(zv(jccdT),2)/ld;
+        end
+
+% h = figure;
+% axis tight manual % this ensures that getframe() returns a consistent size
+% filename = 'CaCO3OverTime.gif';
+% for n = 1:gctl
+%         plot(fcA(n,:)*1e2,dsv,'b-d');
+%         hold on;
+%         plot(fcI(n,:)*1e2,dsv,'m-s');
+%         plot(fcP(n,:)*1e2,dsv,'k-o')
+%         plot(fcT(n,:)*1e2,dsv,'g-p');
+%         drawnow
+%         hold off;
+%         set(gca,'YDir','reverse');
+%         set(gca,'FontSize',10);
+%         set(gca,'YDir','reverse');
+%         xlabel('CaCO_3 (wt %)');
+%         ylabel('Depth (m)');
+%         %axis([0 100 0 5.5]);
+%          legend('Atlantic','Indic','Pacific','Tethys');
+%          title(['Year: ' num2str(n-1) ' Ma'] ,'FontSize',16)
+%          % Capture the plot as an image 
+%       frame = getframe(h); 
+%       im = frame2im(frame); 
+%       [imind,cm] = rgb2ind(im,256); 
+%       % Write to the GIF File 
+%       if n == 1 
+%           imwrite(imind,cm,filename,'gif', 'Loopcount',inf); 
+%       else 
+%           imwrite(imind,cm,filename,'gif','WriteMode','append'); 
+%       end 
+% end
 for gct = 1:1:gctl
     if(gct>1)
 %         myFbg(gct) = orgCb(end)/1e12;
@@ -189,7 +267,7 @@ for gct = 1:1:gctl
 %         myFbg(gct) =5.0;
         d13G(gct) = 0.2470;
     end
-    [fbgv(gct),fbcv(gct),fwgv(gct),fmcv(gct),fmgv(gct),fwcv(gct),fGGi(gct),fgkc(gct),frkc(gct),fekc(gct),fdkc(gct),flakc(gct),rco2(gct),pco2gca(gct), acv(gct), G(gct), dcv(gct)]=gcfun12(d13G(gct), gct);
+    [fbgv(gct),fbcv(gct),fwgv(gct),fmcv(gct),fmgv(gct),fwcv(gct),fGGi(gct),fgkc(gct),frkc(gct),fekc(gct),fdkc(gct),flakc(gct),rco2(gct),pco2gca(gct), acv(gct), G(gct), dcv(gct), fmv(gct), famv(gct)]=gcfun13(d13G(gct), gct);
 end
 
 
@@ -578,3 +656,5 @@ xlabel('Time (Ma)');
 ylabel('TA (mmol kg^{-1})');
 Hl=legend(lstr);
 % set(Hl,'FontSize',10);
+
+

@@ -188,7 +188,7 @@ if myflag  == 01;
             fEPLv EPHv Rstca dincaV epsSensF runtime Fopb0 Ffep0 Fcap0 oxicf0 anoxf0 Pfeed chck1st Focbv...
             EALvv ECALvv ECAHv EAHv dissCavv EPLvv oIv oIpv PPLvv Ffepv Fcapv counter PPHv Pscenario O0...
             Floegel rREGv REDPCv meanSpco2v dbc alphagc Fpwv fT fT0 capk0...
-            po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv ocbf eIi;
+            po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv ocbf eIi Faom13 Fmeth13 Faom Fmeth;
 
 
 
@@ -210,7 +210,7 @@ if myflag  == 01;
             FERT=0.40;
             ACT=0.05; %0.05
             %         [ybbv,ybv,ycv,aav,bbv,ccv,fGG,fgkc,frkc,fekc,fdkc,flakc,fbch,fbbv,fwcv,fwsv1,fwsv2,fbcv,fbgv,rco2,pco2gca,fwgv,fmcv,fmgv,ggc,cgc,dg,dc]=gcfun10(1); %myGeoCarbMODULE1
-            [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G, dc]=gcfun12(dbc(tgc), tgc);
+            [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G, dc, fmv, famv]=gcfun13(dbc(tgc), tgc);
             %         [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGG,fgkc,frkc,fekc,fdkc,rco2,pco2g
             %         ca]=gcfun11(d13c);
         end
@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/50/';
+        mydir = 'dat/LoscarLT/LOSCAR/69/';
         if(LTflag)
             appendLT =  1;
         else
@@ -715,9 +715,11 @@ if myflag  == 01;
             mhd0 = [x_interp1(1) x_interp1(2) x_interp1(3) x_interp1(4)];
         end
         
+        mixF0 = 4.0; %1.3
+        mixF = interp1([0 59],[mixF0 1.3],tgc,'pchip');
         mv00   = 3.8*mv0m *365*24*3600;
         mv0   = 3.8*mv0 *365*24*3600;     % (m3/y) 3.8 4.0
-        mhd0  = 4.0*mhd0*365*24*3600;     % (m3/y) 1.3
+        mhd0  = mixF*mhd0*365*24*3600;     % (m3/y) 1.3
         mv    = mv0;
         mhd   = mhd0;
         % air-sea CO2/O2
@@ -864,6 +866,14 @@ if myflag  == 01;
             FiN0  = (fwcv(1)*1.e12)/Aoc; % 12.7732
             FiN0 = 12e12/Aoc;
             FSi0 = 5e12/Aoc;
+            % Capacitor fluxes
+%             Fdp=1.0e12/Aoc;
+            Faom=famv*1.0e12/Aoc;
+            Fmeth=fmv*1.0e12/Aoc;
+
+%             d13dp=10.2;
+            d13aom=-70.0;
+            d13meth=-70.0;
         end
         Fpr   = 3.*FiN;              % mol C    /m2/y production 3.6
 
@@ -901,6 +911,13 @@ if myflag  == 01;
         Rkg    = Rst*(d13Ckg/1e3+1);
         %         if(LTflag)
         Fkg13  = Rkg*Focw0; % mol C    /m2/y
+        
+        Raom=Rst*(d13aom/1e3+1);
+        Rmeth=Rst*(d13meth/1e3+1);
+
+        Faom13=Raom*Faom;
+        Fmeth13=Rmeth*Fmeth;
+        
         %         else
         %             Fkg13  = Rkg*Focb0;
         %         end
@@ -959,12 +976,20 @@ if myflag  == 01;
                 cst   = 100.e-6;     %
                 KS    = 20.36e10;    % mol/m2/y
             end;
-
+              
+            % Data pulled from Byrnes%Karlstrom, 2018
+            % Miller 2005 data resampled to 1-My intervals. 
             sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'miller05.csv']));
             sealevel=sealevel(:,2);
-            sealevel_norm=normalize_var(sealevel,1,5);
+            sealevel_norm=normalize_var(sealevel,1,7);
             sealevel_normI=normalize_var(sealevel,1,7);
-            sealevel_normP=normalize_var(sealevel,1,10);
+            sealevel_normP=normalize_var(sealevel,1,7);
+            % Kominz 2008
+            sealevel2=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'kominz08.csv']));
+            sealevel=interp1(sealevel2(:,1),sealevel2(:,2),[0:66]);
+            sealevel_norm=normalize_var(sealevel,1,7);
+            sealevel_normI=normalize_var(sealevel,1,7);
+            sealevel_normP=normalize_var(sealevel,1,7);
             
             %====== shelf/deep rain
             fsh    = 1.00;            %  increase shelf rain
@@ -981,14 +1006,14 @@ if myflag  == 01;
                     fsh    = 4.5;             % 8.9
                     fshI   = 4.5;            % 17.2
                     fshP   = 4.5;            % 33.3
-                    nshT   = 0.1;            % 0.4 0.6(1,1) 0.35/0.6(2,3).3
+                    nshT   = 0.3;            % 0.4 0.6(1,1) 0.35/0.6(2,3).3
                 end
             end;
             if(LTflag)
                 Mg =  Mgi(tgc)*1e-3;
-%                 fsh    = interp1([1 59],[1.0 5],tgc,'pchip');   %4.5        %  increase shelf rain
-%                 fshI   = interp1([1 59],[1.0 7],tgc,'pchip');%4.5
-%                 fshP   = interp1([1 59],[1.0 10],tgc,'pchip');%6
+%                 fsh    = interp1([1 59],[1.0 4.5],tgc,'pchip');   %4.5        %  increase shelf rain
+%                 fshI   = interp1([1 59],[1.0 4.5],tgc,'pchip');%4.5
+%                 fshP   = interp1([1 59],[1.0 4.5],tgc,'pchip');%6
                 fsh    = sealevel_norm(tgc);           %  increase shelf rain
                 fshI   = sealevel_normI(tgc);
                 fshP   = sealevel_normP(tgc);
@@ -1596,20 +1621,20 @@ if myflag  == 01;
                     %                     load dat/PETM44Ca/YPE10SedCAv1LT.DAT %for PETM set-up but Ca=20.00
                     if(~reverse || tgc>25)
                         YPE10SedCAv1LT =load (['dat/PETM44Ca/YPE10SedCAv1LT' num2str(tgc-1) '.DAT']);
-                        display(['NOT REVERSED. LOADING YEAR ' (tgc) 'Ma'])
+                        display(['Running Present -> Past. LOADING YEAR ' num2str(tgc-1) 'Ma'])
                     else
                         if(tgc==25)
                             y2 =load (['dat/Modern/YPE10SedMcav' num2str(tgc-1) '.DAT']);
 %                             YPE10SedCAv1LT =load (['dat/Modern/YPE10SedMcav' num2str(tgc) 'spl.DAT']);
                             YPE10SedCAv1LT=zeros(301,1);
                             %ocean + atm
-                            YPE10SedCAv1LT(1:  13)=[y2(1:10);y2(1);y2(4);y2(7)];
-                            YPE10SedCAv1LT(1*13+1:2*13)=[y2(1*10+1:2*10);y2(11);y2(14);y2(17)];
-                            YPE10SedCAv1LT(2*13+1:3*13)=[y2(2*10+1:3*10);y2(21);y2(24);y2(27)];
-                            YPE10SedCAv1LT(3*13+1:4*13)=[y2(3*10+1:4*10);y2(31);y2(34);y2(37)];
-                            YPE10SedCAv1LT(4*13+1:5*13)=[y2(4*10+1:5*10);y2(41);y2(44);y2(47)];
-                            YPE10SedCAv1LT(5*13+1:6*13)=[y2(5*10+1:6*10);y2(51);y2(54);y2(57)];
-                            YPE10SedCAv1LT(6*13+1:7*13)=[y2(6*10+1:7*10);y2(61);y2(64);y2(67)];
+                            YPE10SedCAv1LT(1:  13)=[y2(1:10);y2(2);y2(5);y2(8)];
+                            YPE10SedCAv1LT(1*13+1:2*13)=[y2(1*10+1:2*10);y2(12);y2(15);y2(18)];
+                            YPE10SedCAv1LT(2*13+1:3*13)=[y2(2*10+1:3*10);y2(22);y2(25);y2(28)];
+                            YPE10SedCAv1LT(3*13+1:4*13)=[y2(3*10+1:4*10);y2(32);y2(35);y2(38)];
+                            YPE10SedCAv1LT(4*13+1:5*13)=[y2(4*10+1:5*10);y2(42);y2(45);y2(48)];
+                            YPE10SedCAv1LT(5*13+1:6*13)=[y2(5*10+1:6*10);y2(52);y2(55);y2(58)];
+                            YPE10SedCAv1LT(6*13+1:7*13)=[y2(6*10+1:7*10);y2(62);y2(65);y2(68)];
                             YPE10SedCAv1LT(7*13+1)=[y2(7*10+1)];%C0(7*13+1)'];
                             YPE10SedCAv1LT(7*13+2)=[y2(7*10+2)];%[CC0(11:13)'];
                             %sediments
@@ -1630,7 +1655,6 @@ if myflag  == 01;
                             YPE10SedCAv1LT(7*13+3+13*Ns:7*13+2+14*Ns)=[f13c0T'];
                             YPE10SedCAv1LT(7*13+3+14*Ns:7*13+2+15*Ns)=[fca0T'];
                             YPE10SedCAv1LT(7*13+3+15*Ns:7*13+2+16*Ns)=[f44ca0T'];
-                        display('CORRECT')
                         end
                     end
                     
@@ -1802,12 +1826,11 @@ if myflag  == 01;
             EPLv00    = fEPL*mv00(1:3)'.*[p00(1);p00(2);p00(3)]/REDPC; % (m3/y*mol/m3 = mol/y)
             if(ftys)
                 p00=TetState(2*10+4:2*10+6   );
-                p00(012)=0.00000;%p00(1);
+                p00(012)=p00(2); %p00(2) or 0.0?
                 EPLv00    = fEPL*mv(1:3)'.*[p00(1);p00(2);p00(3)]/REDPC;
-                EPLv00(4) = fEPL*mv(004)'.*p00(012)/REDPC;%*A(11)/2.7920e+13;%*0.01/fT0; % (m3/y*mol/m3 = mol/y)
+                EPLv00(4) = fEPL*mv(004)'.*p00(012)/REDPC*fT/fT0;%*A(11)/2.7920e+13;%*0.01/fT0; % (m3/y*mol/m3 = mol/y)
                 display('2')
             end;
-            
             % Initial org P exp low lat
             PPLv0=EPLv00*REDPC;
             %fPF34 in Slomp & Van Cap 2007
@@ -1823,7 +1846,7 @@ if myflag  == 01;
 %             ocbf0=Focb00/Fopb0*REDPC*po4bf0; %0.0118
             ocbf0= CalculateBurial(1,0.6737,1);
             
-            Q10 = 2.0;
+            Q10 = 1.5;
             k = log(Q10)/10; % per degree C. so 0.693 (or log(2)/2) per 10 degrees C
             Dt=DT;
             kDt = k*Dt;
@@ -3023,11 +3046,11 @@ if myflag  == 01;
         clear jccdA jccdI jccdP;
         if(ftys) clear jccdT; end;
         for i=1:lt
-            yA(i,:)         = interp1(dsv,fcA(i,:),zv,'cubic');
-            yI(i,:)         = interp1(dsv,fcI(i,:),zv,'cubic');
-            yP(i,:)         = interp1(dsv,fcP(i,:),zv,'cubic');
+            yA(i,:)         = interp1(dsv,fcA(i,:),zv,'PCHIP');
+            yI(i,:)         = interp1(dsv,fcI(i,:),zv,'PCHIP');
+            yP(i,:)         = interp1(dsv,fcP(i,:),zv,'PCHIP');
             if(ftys)
-                yT(i,:)         = interp1(dsv,fcT(i,:),zv,'cubic');
+                yT(i,:)         = interp1(dsv,fcT(i,:),zv,'PCHIP');
             end;
             for k=1:ld
                 [tmp, jccdA(i,k)] = min(abs(yA(i,:)-fccdv(k)));

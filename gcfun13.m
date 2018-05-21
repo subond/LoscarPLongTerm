@@ -1,4 +1,4 @@
-function [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G, dc]=gcfun13(d13c, myT)
+function [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G, dc, fmv, faom]=gcfun13(d13c, myT)
 global time ws gamma RUN ACT myfwc pco20 FERT dbckv fckc crit tnr dbcv fbetta
 FERT=0.40;
 ACT=0.05;%0.05, 0.045
@@ -34,6 +34,13 @@ geogt=XX(:,10)';
 % dbc=GC(:,1)';
 % dbc=c13kurtz(2,:);
 fla=GC(:,2)';
+
+%Kump & Arthur 1997
+% 0 to 65 Ma
+fla_k = [1.0000    0.9801    0.9604    0.9604    0.9991    1.1400    1.1625   1.0829    1.0304    1.0044    1.0904    1.1970    1.1592    1.1250];
+% if(myT>44 && myT <=51)
+%     fla=fla*0.90;
+% end
 % fla(1:570)
 fd=GC(:,3)';
 fg=GC(:,4)';
@@ -138,7 +145,7 @@ dm = -70;
 fat=[1 1 1 1.5 0.6 1 1];
 tm=[1 49 51.5 54 59 63 75];
 fm = 1;
-fa = 1*interp1(tm,fat,myT);
+fa = 1;%*interp1(tm,fat,myT);
 Cap0 = 0;
 Cap(1)=Cap0+fmeth0-faom0;
 
@@ -183,7 +190,7 @@ fmcv(1)=fmc0;
 fwgv(1)=fwg0;
 fmgv(1)=fmg0;
 fmv(1)=fmeth0;
-faomv(1)=faom0;
+faom(1)=faom0;
 pco2gca(1)=rco2(1)*pco20;
 
 G= gamma(t+1);
@@ -199,7 +206,8 @@ G= gamma(t+1);
     p=myT;
     dbck=d13c;
     % interpolating values because time won't always be an integer
-    flak=(interp1(1:length(fla),fla,p));
+%     flak=(interp1(1:length(fla),fla,p));
+    flak=(interp1([1:5:66],fla_k,p,'pchip'));
     fdk=(interp1(1:length(fd),fd,p));
     fgk=(interp1(1:length(fg),fg,p));
     frk=(interp1(1:length(fr),fr,p));
@@ -248,7 +256,8 @@ if(myT>1)
     p=myT;
     dbck=d13c;
     % interpolating values because time won't always be an integer
-    flak=(interp1(1:length(fla),fla,p));
+%     flak=(interp1(1:length(fla),fla,p));
+    flak=(interp1([1:5:66],fla_k,p,'pchip'));
     fdk=(interp1(1:length(fd),fd,p));
     fgk=(interp1(1:length(fg),fg,p));
     frk=(interp1(1:length(fr),fr,p));

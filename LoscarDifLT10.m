@@ -121,7 +121,7 @@ if myflag == 01;
         fEPLv EPHv Rstca dincaV epsSensF Fopb0 Ffep0 Fcap0 oxicf0 anoxf0 Pfeed chck1st Focbv...
         EALvv ECALvv ECAHv EAHv dissCavv EPLvv oIv oIpv PPLvv Ffepv Fcapv counter capk PPHv Pscenario O0 Floegel totCexp0...
         rREG0 rREGv REDPCv REDPC0 meanSpco2v EPLv0 dbc alphagc Fpwv fT fT0 capk0...
-        po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv ocbf eIi;
+        po4bf0 ocbf0 Q10 smoothcon beta eIv eIpv ocbf eIi Faom13 Fmeth13 Faom Fmeth;
 
 
     if(LTflag)
@@ -567,7 +567,7 @@ if myflag == 01;
     REDPCv(kt) = REDPC;
     EPLv    = fEPL*mv(1:3)'.*p(4:6)/REDPC; % (m3/y*mol/m3 = mol/y)
     if(ftys)
-        EPLv(4) = fEPL*mv(004)'.*p(012)/REDPC;%*A(11)/2.7920e+13;%*flin(25,59,0.01,fT0,tgc)/fT0; % (m3/y*mol/m3 = mol/y)
+        EPLv(4) = fEPL*mv(004)'.*p(012)/REDPC*fT/fT0;%*A(11)/2.7920e+13;%*flin(25,59,0.01,fT0,tgc)/fT0; % (m3/y*mol/m3 = mol/y)
     end;
     if(counter == 0)
        EPLv0 = EPLv; 
@@ -1911,7 +1911,7 @@ if myflag == 01;
             %doxMeanDeep = (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6)+ dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9)+dox(12)*V(12)+dox(13)*V(13))./((V(4)+V(5)+V(6)+V(7)+V(8)+V(9)+V(12)+V(13)));    
 %             doxMeanI =  (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6)+dox(12)*V(12))./((V(4)+V(5)+V(6)+V(12)));
         else
-            doxMeanI = (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
+            doxMeanI = O0;%(dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
 %             doxMeanI = (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6))./((V(4)+V(5)+V(6)));
         end
 
@@ -2413,6 +2413,8 @@ if myflag == 01;
             end
             cp(k  ) = cp(k  ) + 2*Fin*Aoc/V(k)/nOC         ... % Fin  L wthr:2
                 + 2*FSi*Aoc/V(k)/nOC         ... % #! Si
+                + 1*Faom*Aoc/V(k)/nOC...
+                - 1*Fmeth*Aoc/V(k)/nOC...
                 - 1*Focb*Aoc/V(k)/nOC         ... % #! krgn
                 - 0*kcarb*(omegCSv(k)-1)^2*Aoc/V(k)/nOC;
             cp(k  ) = cp(k  ) + sum(dissCv(k,1   :n1))/V(k  ); % diss L
@@ -2426,6 +2428,8 @@ if myflag == 01;
             end
             cp(k  ) = cp(k  ) + 2*Fin*Aoc/V(k)/nOC         ... % Fin  L wthr:2
                 + 2*FSi*Aoc/V(k)/nOC         ... % #! Si
+                + 1*Faom*Aoc/V(k)/nOC...
+                - 1*Fmeth*Aoc/V(k)/nOC...
                 - 1*Focb*Aoc/V(k)/nOC         ... % #! krgn
                 - 0*kcarb*(omegCSv(5)-1)^2*Aoc/V(k)/nOC;
             cp(k  ) = cp(k  ) + sum(dissCv(4,1   :n1))/V(k  ); % diss L
@@ -2444,6 +2448,10 @@ if myflag == 01;
     % else
     %     add=0;
     % end
+    aalk=1;
+    if(tgc>52)
+       aalk =0; 
+    end
     %=================== TA   ======================%
     % TH & mixing
     ap = THmfun(a,TH,TS,TT,mv,mhd,V,gA,tA,gI,tI);
@@ -2482,6 +2490,8 @@ if myflag == 01;
             end
             ap(k  ) = ap(k  )+2*Fin*Aoc/V(k)/nOC          ...  % Fin  L
                 +2*FSi*Aoc/V(k)/nOC          ...   % #! Si
+                + aalk*Faom*Aoc/V(k)/nOC...
+                - 1*Fmeth*Aoc/V(k)/nOC...
                 -0*kcarb*(omegCSv(k)-1)^2*Aoc/V(k)/nOC...
                 -Pfeed*Fpw*REDNC/REDPC*Aoc/V(k)/nOC;%...%Alkalinity sink from phosphate weathering
             %                  +Pfeed*Ffep*REDNC/REDPC*Aoc/V(k)/nOC...% Alkalinity source from iron-sorbed burial
@@ -2497,6 +2507,8 @@ if myflag == 01;
             end
             ap(k  ) = ap(k  )+2*Fin*Aoc/V(k)/nOC          ...  % Fin  L
                 +2*FSi*Aoc/V(k)/nOC          ...   % #! Si
+                + aalk*Faom*Aoc/V(k)/nOC...
+                - 1*Fmeth*Aoc/V(k)/nOC...
                 -0*kcarb*(omegCSv(5)-1)^2*Aoc/V(k)/nOC...
                 -Pfeed*Fpw*REDNC/REDPC*Aoc/V(k)/nOC;%...%Alkalinity sink from phosphate weathering
             %                  +Pfeed*Ffep*REDNC/REDPC*Aoc/V(k)/nOC...% Alkalinity source from iron-sorbed burial
@@ -2768,6 +2780,8 @@ if myflag == 01;
             end
             ccp(k  ) = ccp(k  ) + 2*Fin13*Aoc/V(k)/nOC         ... % Fin  L wthr:2
                 + 2*FSi13*Aoc/V(k)/nOC         ... % #! Si
+                + 1*Faom13*Aoc/V(k)/nOC...
+                - 1*Fmeth13*Aoc/V(k)/nOC...
                 - 1*Focb  *Aoc/V(k)/nOC*alp*Rb(k)...  % #! krgn
                 - 0*kcarb*Rin*(omegCSv(k)-1)^2*Aoc/V(k)/nOC;
 
@@ -2782,6 +2796,8 @@ if myflag == 01;
             end
             ccp(k  ) = ccp(k  ) + 2*Fin13*Aoc/V(k)/nOC         ... % Fin  L wthr:2
                 + 2*FSi13*Aoc/V(k)/nOC         ... % #! Si
+                + 1*Faom13*Aoc/V(k)/nOC...
+                - 1*Fmeth13*Aoc/V(k)/nOC...
                 - 1*Focb  *Aoc/V(k)/nOC*alp*Rb(k)...  % #! krgn
                 - 0*kcarb*Rin*(omegCSv(5)-1)^2*Aoc/V(k)/nOC;
             ccp(k  ) = ccp(k  ) + sum(dissC13v(4,1   :n1))/V(k  ); % diss L
