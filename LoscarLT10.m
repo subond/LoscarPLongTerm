@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/69/';
+        mydir = 'dat/LoscarLT/LOSCAR/71/';
         if(LTflag)
             appendLT =  1;
         else
@@ -981,15 +981,27 @@ if myflag  == 01;
             % Miller 2005 data resampled to 1-My intervals. 
             sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'miller05.csv']));
             sealevel=sealevel(:,2);
-            sealevel_norm=normalize_var(sealevel,1,7);
-            sealevel_normI=normalize_var(sealevel,1,7);
-            sealevel_normP=normalize_var(sealevel,1,7);
+            slkA = 1.0;
+            slkI = 1.0;
+            slkP = 1.0;
+            if(tgc>44 && tgc<=52)
+                slkA = 1.2;
+                slkI = 1.6;
+                slkP=LinearInterpWithClipExtrap([45 52],[1.3 2.3],tgc);
+            elseif(tgc>52)
+                slkA = 1.2;
+                slkI = 1.6;
+                slkP=LinearInterpWithClipExtrap([53 59],[2.3 1.3],tgc);
+            end
+            sealevel_norm=normalize_var(sealevel,1,7)*slkA;
+            sealevel_normI=normalize_var(sealevel,1,7)*slkI;
+            sealevel_normP=normalize_var(sealevel,1,7)*slkP;
             % Kominz 2008
-            sealevel2=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'kominz08.csv']));
-            sealevel=interp1(sealevel2(:,1),sealevel2(:,2),[0:66]);
-            sealevel_norm=normalize_var(sealevel,1,7);
-            sealevel_normI=normalize_var(sealevel,1,7);
-            sealevel_normP=normalize_var(sealevel,1,7);
+%             sealevel2=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'kominz08.csv']));
+%             sealevel=interp1(sealevel2(:,1),sealevel2(:,2),[0:66]);
+%             sealevel_norm=normalize_var(sealevel,1,7);
+%             sealevel_normI=normalize_var(sealevel,1,7);
+%             sealevel_normP=normalize_var(sealevel,1,7);
             
             %====== shelf/deep rain
             fsh    = 1.00;            %  increase shelf rain
@@ -1006,7 +1018,7 @@ if myflag  == 01;
                     fsh    = 4.5;             % 8.9
                     fshI   = 4.5;            % 17.2
                     fshP   = 4.5;            % 33.3
-                    nshT   = 0.3;            % 0.4 0.6(1,1) 0.35/0.6(2,3).3
+                    nshT   = 0.2;            % 0.4 0.6(1,1) 0.35/0.6(2,3).3
                 end
             end;
             if(LTflag)

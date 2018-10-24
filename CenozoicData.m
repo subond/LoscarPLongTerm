@@ -96,7 +96,7 @@ VASA=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelSAntlantic.csv');
 VAI=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelndian.csv');
 VAP=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelPacific.csv');
 
-timeP = palikeCCD(:,1)/1000; % million years
+timeP = palikeCCD(:,1); % million years
 timeVNA = VANA(:,1);
 timeVSA = VASA(:,1);
 timeVI = VAI(:,1);

@@ -1,3 +1,8 @@
+clear all
+% close all
+global fbetta
+fbetta = 0.3987;
+
 %% Chapter3 results and comparisons
 %%% Not smoothed kurtz data
 kurtz=load('dat\Cenozoicd13c\kurtz03\d13c.csv');
@@ -70,6 +75,9 @@ VAccdSA = VASA(:,2)*1000;
 VAccdI = VAI(:,2)*1000;
 VAccdP = VAP(:,2)*1000;
 SLccdI = SL(:,2);
+
+%Campbell 2018 CCD range pacific
+[timeC, CCDrp]=campbell18CCD();
 % ####################### pCO2 Berling & Royer 2011 compilation ###########
 
 BCa=csvread('dat\Cenozoicd13c\CenozoicpCO2\BCa.csv');
@@ -129,13 +137,19 @@ co2Stp = (St(:,6));
 co2Alkn = (Alk(:,5));
 co2SAlkp = (Alk(:,6));
 
+% new pco2&pH data from Richard
+
+X = load('dat/paleopH.dat');
+tvec = X(:,1); lt = length(tvec);
+[An16,Ed15,Pe09,F761,F926,Ba11,Se10] = fpHAuth(X);
+
 
 gct = 1;
 gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/66/';
+dir = 'dat/LoscarLT/LOSCAR/71/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -277,28 +291,41 @@ cs = 'gggkkkrrrbgkr';
 sstr = '- ---.- ---.- ---. -: : : ';
 time = [0:length(p)-1];
 lstr0 = 'LALILPIAIIIPDADIDP HLTITDT';
+lstrR = {'Anagnostou+ 16';'Edgar 15?';'Pearson+ 09';'Foster+ 12';...
+'Foster+ 12';'Bartoli+ 11';'Seki+ 10'};
 for k=1:13
     lstr(k,:) = sprintf('%s',lstr0(2*k-1:2*k));
 end;
 
-FigHandle = figure(101);
+FigHandle = figure(102);
   set(FigHandle, 'Position', [200, 0, 800, 900]);
 % figure
 subplot(321)
 box on
 hold on
-plot(timeB,co2B,'ro')
-plot(timeBo,co2Bo,'bd')
-plot(timeL,co2L,'r+')
-plot(timeN,co2N,'b*')
-plot(timePal,co2Pal,'m.')
-plot(timePhy,co2Phy,'kx')
-plot(timeSt,co2St,'g^')
-plot(timeAlk,co2Alk,'bx')
+% plot(timeB,co2B,'ro')
+% plot(timeBo,co2Bo,'bd')
+% plot(timeL,co2L,'r+')
+% plot(timeN,co2N,'b*')
+% plot(timePal,co2Pal,'m.')
+% plot(timePhy,co2Phy,'kx')
+% plot(timeSt,co2St,'g^')
+% plot(timeAlk,co2Alk,'bx')
+
+
+plot(An16.Age,An16.CO2,'s','MarkerEdgeColor','k','MarkerFaceColor','r')
+plot(Ed15.Age,Ed15.CO2,'s','MarkerEdgeColor','k','MarkerFaceColor','w')
+plot(Pe09.Age,Pe09.CO2,'^','MarkerEdgeColor','k','MarkerFaceColor','g')
+plot(F761.Age,F761.CO2,'^','MarkerEdgeColor','k','MarkerFaceColor','b')
+plot(F926.Age,F926.CO2,'s','MarkerEdgeColor','w','MarkerFaceColor','b')
+plot(Ba11.Age,Ba11.CO2,'o','MarkerEdgeColor','k','MarkerFaceColor','b')
+plot(Se10.Age,Se10.CO2,'d','MarkerEdgeColor','w','MarkerFaceColor','b')
 plot(time,pco2t,'r','LineWidth',lw)
 hold off
 set(gca,'XLim',[0 60],'XTickLabel',[])
 % legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
+
+H = legend([lstrR;'Model'],'Location','NorthEast');
 ylabel('pCO_2 [\muatm]')
 text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 
@@ -321,25 +348,38 @@ legend('Kurtz et al. ''03', 'Model','Location','SouthEast')
 set(gca,'XLim',[0 60],'XTickLabel',[])
 
 subplot (323)
+tRH=[tpHrP;tpHrA];
+phRH = [pHrP;pHrA];
 box  on;
 hold on;
 for k=1:13
     h1=plot(time  ,phtv (:,k),sstr(2*k-1:2*k),'Color',cs(k));
 %     key1{k}=lstr(k,1:2);
 end;
-h2=plot(tpHf,pHf,'go');
-h3=plot(tpHp,pHp,'gd');
-h4=plot(tpHrP,pHrP,'r*');
-h5=plot(tpHrA,pHrA,'r*');
-h6=plot(tpHs,pHs,'ms');
-h7=plot(tpHsk,pHsk,'k.');
+% h2=plot(tpHf,pHf,'go');
+% h3=plot(tpHp,pHp,'gd');
+% h4=plot(tpHrP,pHrP,'r*');
+% h5=plot(tpHrA,pHrA,'r*');
+% h6=plot(tpHs,pHs,'ms');
+% h7=plot(tpHsk,pHsk,'k.');
+
+h2=plot(An16.Age,An16.pH,'s','MarkerEdgeColor','k','MarkerFaceColor','r');
+h3=plot(Ed15.Age,Ed15.pH,'s','MarkerEdgeColor','k','MarkerFaceColor','w');
+h4=plot(Pe09.Age,Pe09.pH,'^','MarkerEdgeColor','k','MarkerFaceColor','g');
+h5=plot(F761.Age,F761.pH,'^','MarkerEdgeColor','k','MarkerFaceColor','b');
+h6=plot(F926.Age,F926.pH,'s','MarkerEdgeColor','k','MarkerFaceColor','b');
+h7=plot(Ba11.Age,Ba11.pH,'o','MarkerEdgeColor','k','MarkerFaceColor','r');
+h8=plot(Se10.Age,Se10.pH,'d','MarkerEdgeColor','k','MarkerFaceColor','b');
+h9=plot(tRH,phRH,'r*');
 hold off;
 text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 % set(gca,'FontSize',fs);
 set(gca,'XTickLabel',[])
 % xlabel('Time (y)');
-legend([h2 h3 h4 h6 h7],{'Foster et al., ''12','Pearson et al., ''09','Raitzsch & Hoenisch, ''13','Stap et al., 16','Seki et al., ''10'},'Location','SouthWest');
-% gridLegend(hdlY,5,key1,'location','north','Fontsize',8,'Box','off');
+% legend([h2 h3 h4 h6 h7],{'Foster et al., ''12','Pearson et al., ''09','Raitzsch & Hoenisch, ''13','Stap et al., 16','Seki et al., ''10'},'Location','SouthWest');
+legend([h2 h3 h4 h5 h6 h7 h8 h9],[lstrR;'Raitzsch & Hoenisch, ''13'],'Location','SouthWest');
+
+% H1 = legend([lstrR;'Raitzsch & Hoenisch, ''13'],"Location","NorthEast");% gridLegend(hdlY,5,key1,'location','north','Fontsize',8,'Box','off');
 ylabel('pH');
 
 subplot (324)
@@ -347,7 +387,7 @@ box on
 hold on;
 for k=1:13
     hdlY(k)=plot(time  ,d13cL (:,k),sstr(2*k-1:2*k),'Color',cs(k));
-    key1{k}=lstr(k,1:2);
+     key1{k}=lstr(k,1:2);
 end;
 hold off;
 % set(gca,'FontSize',fs);
@@ -363,6 +403,7 @@ gridLegend(hdlY,5,key1,'location','north','Fontsize',8,'Box','off');
 subplot(325)
 box on
 hold on
+fill(timeC,CCDrp,'y')
 plot(timeP, PccdP,'r','LineWidth',lw)
 plot(timePo, PccdPo,'r--','LineWidth',lw)
 plot(timeSL, SLccdI,'g-','LineWidth',lw)
@@ -381,7 +422,7 @@ hold off
 % legend('Pacific (Palike et al. ''12)','Pacific (Van Andel ''75)','North
 % Atlantic (Van Andel ''75)','South Atlantic (Van Andel ''75)','Indic (Van Andel ''75)')
 % legend('Pacific','Pacific','North Atlantic','South Atlantic','Indic')
-legend('data - equator','data - off equator','data - Indian','Model','Location','SouthEast')
+legend('Campbel et al., ''18','data - equator','data - off equator','data - Indian','Model','Location','SouthEast')
 ylabel('Pacific CCD (m)')
 xlabel('Year (Ma)')
 text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
@@ -444,8 +485,8 @@ set(gca,'xlim',[0 60])
 
 
 
-FigHandle = figure(201);
-  set(FigHandle, 'Position', [200, 0, 800, 900]);
+FigHandle = figure(202);
+  set(FigHandle, 'Position', [1000, 0, 800, 900]);
 subplot(321)
 box on
 hold on
@@ -557,7 +598,7 @@ set(Hl,'FontSize',10);
 xlabel('Time (Ma)');
 ylabel('P burial fluxes [10^{10}mol y^{-1}]');
 
-
+return
 figure
 for k=1:13
     hold on

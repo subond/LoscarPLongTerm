@@ -186,10 +186,10 @@ if myflag == 01;
         end;
     end;
     if(LTflag && smoothcon)
-        if(tgc>0 && tgc<12)
-            TH = interp1([1 11],[TH0 0],tgc);
-            TS = interp1([1 11],[0 TH0],tgc);
-        elseif(tgc>=12)
+        if(tgc>0 && tgc<23)
+            TH = interp1([1 22],[TH0 0],tgc);
+            TS = interp1([1 22],[0 TH0],tgc);
+        elseif(tgc>=23)
             TH = 0.0;
             TS = TH0;
         else
