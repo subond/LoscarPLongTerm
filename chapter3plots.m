@@ -291,8 +291,8 @@ cs = 'gggkkkrrrbgkr';
 sstr = '- ---.- ---.- ---. -: : : ';
 time = [0:length(p)-1];
 lstr0 = 'LALILPIAIIIPDADIDP HLTITDT';
-lstrR = {'Anagnostou+ 16';'Edgar 15?';'Pearson+ 09';'Foster+ 12';...
-'Foster+ 12';'Bartoli+ 11';'Seki+ 10'};
+lstrR = {'Anagnostou+ ''16';'Edgar ''15?';'Pearson+ ''09';'Foster+ ''12';...
+'Foster+ ''12';'Bartoli+ ''11';'Seki+ ''10'};
 for k=1:13
     lstr(k,:) = sprintf('%s',lstr0(2*k-1:2*k));
 end;
@@ -422,7 +422,7 @@ hold off
 % legend('Pacific (Palike et al. ''12)','Pacific (Van Andel ''75)','North
 % Atlantic (Van Andel ''75)','South Atlantic (Van Andel ''75)','Indic (Van Andel ''75)')
 % legend('Pacific','Pacific','North Atlantic','South Atlantic','Indic')
-legend('Campbel et al., ''18','data - equator','data - off equator','data - Indian','Model','Location','SouthEast')
+legend('Campbel+ ''18','Pälike+ ''12 Eq','Pälike+ ''12 oE' ,'Slotnick+ ''15 I','Model','Location','SouthEast')
 ylabel('Pacific CCD (m)')
 xlabel('Year (Ma)')
 text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
@@ -443,7 +443,7 @@ hold off
 % Atlantic (Van Andel ''75)','South Atlantic (Van Andel ''75)','Indic (Van Andel ''75)')
 % legend('Pacific','Pacific','North Atlantic','South Atlantic','Indic')
 % legend('North Atlantic Van Andel ''75','South Atlantic Van Andel ''75','Atlantic model')
-legend('North Atlantic data','South Atlantic data','Model')
+legend('Van Andel ''75 NA','Van Andel ''75 SA','Model')
 ylabel('Atlantic CCD [m]')
 xlabel('Year (Ma)')
 text(0.02,0.98,'f)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
