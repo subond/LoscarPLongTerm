@@ -5,7 +5,7 @@ fbetta = 0.3987;
 
 %% Chapter3 results and comparisons
 %%% Not smoothed kurtz data
-kurtz=load('dat\Cenozoicd13c\kurtz03\d13c.csv');
+kurtz=load('dat/Cenozoicd13c/kurtz03/d13c.csv');
 t=kurtz(:,1);
 d13c=kurtz(:,2);
 
@@ -14,7 +14,7 @@ c13kurtz=load('dat/LPEEkurtz/Sim2/c13kurtz2.DAT');
 dbc=c13kurtz(2,:);
 
 %%% Zachos Benthic 08
-zachos=csvread('dat\Cenozoicd13c\zac08.csv');
+zachos=csvread('dat/Cenozoicd13c/zac08.csv');
 tzachos=zachos(:,1); %time zachos
 c13zac=zachos(:,2); %c13 zachos
 o18zac=zachos(:,3); %o18 zachos
@@ -23,13 +23,13 @@ rzo=ksrlin(tzachos,o18zac,1); %Local linear kernel smoothing regression zachos
 
 
 %%% pH Data Foster et al. 2012, Raitzsch 2013, Pearson 2009
-foster=csvread('dat\Cenozoicd13c\CenozoicpH\FosterpH.csv');
+foster=csvread('dat/Cenozoicd13c/CenozoicpH/FosterpH.csv');
 % Raitzsch is deep ocean pH
-raitP=csvread('dat\Cenozoicd13c\CenozoicpH\RaitzschpHPacific.csv');
-raitA=csvread('dat\Cenozoicd13c\CenozoicpH\RaitzschpHAtlantic.csv');
-pear=csvread('dat\Cenozoicd13c\CenozoicpH\Pearson09.csv');
-stap=csvread('dat\Cenozoicd13c\CenozoicpH\Stap16.csv');
-seki=csvread('dat\Cenozoicd13c\CenozoicpH\Seki10.csv');
+raitP=csvread('dat/Cenozoicd13c/CenozoicpH/RaitzschpHPacific.csv');
+raitA=csvread('dat/Cenozoicd13c/CenozoicpH/RaitzschpHAtlantic.csv');
+pear=csvread('dat/Cenozoicd13c/CenozoicpH/Pearson09.csv');
+stap=csvread('dat/Cenozoicd13c/CenozoicpH/Stap16.csv');
+seki=csvread('dat/Cenozoicd13c/CenozoicpH/Seki10.csv');
 
 tpHf=foster(:,1);
 pHf = foster(:,2);
@@ -49,15 +49,15 @@ tpHsk=seki(:,1);
 pHsk=seki(:,2);
 
 %###################### CCD Palike and Van Andel data ######################
-palikeCCD=csvread('dat\Cenozoicd13c\CenozoicCCD\palike12ccd.csv');
-palikeCCDoff=csvread('dat\Cenozoicd13c\CenozoicCCD\palike12ccdoffeq.csv');
+palikeCCD=csvread('dat/Cenozoicd13c/CenozoicCCD/palike12ccd.csv');
+palikeCCDoff=csvread('dat/Cenozoicd13c/CenozoicCCD/palike12ccdoffeq.csv');
 % Van Andel North Atlantic CCD
-VANA=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelNAtlantic.csv');
-VASA=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelSAntlantic.csv');
-VAI=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelndian.csv');
-VAP=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelPacific.csv');
+VANA=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelNAtlantic.csv');
+VASA=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelSAntlantic.csv');
+VAI=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelndian.csv');
+VAP=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelPacific.csv');
 % Slotnick et al., 2015 Indian ocean data excluding hyperthermals
-SL=csvread('dat\Cenozoicd13c\CenozoicCCD\ccdISlotNoH.csv');
+SL=csvread('dat/Cenozoicd13c/CenozoicCCD/ccdISlotNoH.csv');
 
 timeP = palikeCCD(:,1); % million years
 timePo = palikeCCDoff(:,1); % million years
@@ -80,14 +80,14 @@ SLccdI = SL(:,2);
 [timeC, CCDrp]=campbell18CCD();
 % ####################### pCO2 Berling & Royer 2011 compilation ###########
 
-BCa=csvread('dat\Cenozoicd13c\CenozoicpCO2\BCa.csv');
-Boron=csvread('dat\Cenozoicd13c\CenozoicpCO2\Boron.csv');
-L=csvread('dat\Cenozoicd13c\CenozoicpCO2\Liverworts.csv');
-N=csvread('dat\Cenozoicd13c\CenozoicpCO2\Nacholite.csv');
-Pal=csvread('dat\Cenozoicd13c\CenozoicpCO2\Paleosols.csv');
-Phy=csvread('dat\Cenozoicd13c\CenozoicpCO2\Phytoplankton.csv');
-St=csvread('dat\Cenozoicd13c\CenozoicpCO2\Stomata.csv');
-Alk=csvread('dat\Cenozoicd13c\CenozoicpCO2\Alkenone.csv');
+BCa=csvread('dat/Cenozoicd13c/CenozoicpCO2/BCa.csv');
+Boron=csvread('dat/Cenozoicd13c/CenozoicpCO2/Boron.csv');
+L=csvread('dat/Cenozoicd13c/CenozoicpCO2/Liverworts.csv');
+N=csvread('dat/Cenozoicd13c/CenozoicpCO2/Nacholite.csv');
+Pal=csvread('dat/Cenozoicd13c/CenozoicpCO2/Paleosols.csv');
+Phy=csvread('dat/Cenozoicd13c/CenozoicpCO2/Phytoplankton.csv');
+St=csvread('dat/Cenozoicd13c/CenozoicpCO2/Stomata.csv');
+Alk=csvread('dat/Cenozoicd13c/CenozoicpCO2/Alkenone.csv');
 
 % time data
 timeB  = (BCa(:,1));
@@ -309,7 +309,7 @@ hold on
 % plot(timeN,co2N,'b*')
 % plot(timePal,co2Pal,'m.')
 % plot(timePhy,co2Phy,'kx')
-% plot(timeSt,co2St,'g^')
+plot(timeSt,co2St,'g^')
 % plot(timeAlk,co2Alk,'bx')
 
 
@@ -325,7 +325,7 @@ hold off
 set(gca,'XLim',[0 60],'XTickLabel',[])
 % legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
 
-H = legend([lstrR;'Model'],'Location','NorthEast');
+H = legend(['Stomata';lstrR;'Model'],'Location','NorthEast');
 ylabel('pCO_2 [\muatm]')
 text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 
@@ -389,6 +389,7 @@ for k=1:13
     hdlY(k)=plot(time  ,d13cL (:,k),sstr(2*k-1:2*k),'Color',cs(k));
      key1{k}=lstr(k,1:2);
 end;
+% plot(tzachos,c13zac,'+k')
 hold off;
 % set(gca,'FontSize',fs);
 text(0.02,0.98,'d)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
@@ -406,8 +407,8 @@ hold on
 fill(timeC,CCDrp,'y')
 plot(timeP, PccdP,'r','LineWidth',lw)
 plot(timePo, PccdPo,'r--','LineWidth',lw)
-plot(timeSL, SLccdI,'g-','LineWidth',lw)
-% plot(timeVP, VAccdP,'b','LineWidth',lw)
+% plot(timeSL, SLccdI,'g-','LineWidth',lw)
+plot(timeVP, VAccdP,'b','LineWidth',lw)
 % plot(timeVNA, VAccdNA,'b--','LineWidth',lw)
 % plot(timeVSA, VAccdSA,'b-.','LineWidth',lw)
 % plot(timeVI, VAccdI,'b:','LineWidth',lw)
@@ -422,7 +423,7 @@ hold off
 % legend('Pacific (Palike et al. ''12)','Pacific (Van Andel ''75)','North
 % Atlantic (Van Andel ''75)','South Atlantic (Van Andel ''75)','Indic (Van Andel ''75)')
 % legend('Pacific','Pacific','North Atlantic','South Atlantic','Indic')
-legend('Campbel+ ''18','Pälike+ ''12 Eq','Pälike+ ''12 oE' ,'Slotnick+ ''15 I','Model','Location','SouthEast')
+legend('Campbel+ ''18','Pälike+ ''12 Eq','Pälike+ ''12 oE' ,'Van Andel ''75','Model','Location','SouthEast')
 ylabel('Pacific CCD (m)')
 xlabel('Year (Ma)')
 text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')

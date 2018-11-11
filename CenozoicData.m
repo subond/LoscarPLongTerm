@@ -2,10 +2,16 @@
 lw=2;
 c13kurtz=load('dat/LPEEkurtz/Sim2/c13kurtz2.DAT');
 dbc=c13kurtz(2,:);
+
+%%% Not smoothed kurtz data
+kurtz=load('dat/Cenozoicd13c/kurtz03/d13c.csv');
+t=kurtz(:,1);
+d13c=kurtz(:,2);
+
 %%########## DATA ###############################
 %%% Zachos 2008 benthic d13C record
 
-zachos=csvread('dat\Cenozoicd13c\zac08.csv');
+zachos=csvread('dat/Cenozoicd13c/zac08.csv');
 tzachos=zachos(:,1); %time zachos
 c13zac=zachos(:,2); %time zachos
 o18zac=zachos(:,3); %time zachos
@@ -65,7 +71,7 @@ set(gca,'xlim',[0 60],'XTickLabel',[])
 % set(gca,'xlim',[0 60])
 
 CO=zachos;
-XX=csvread('dat\Cenozoicd13c\ds01.csv');
+XX=csvread('dat/Cenozoicd13c/ds01.csv');
 d13cd=CO(:,2);
 d13cd=inpaint_nans(d13cd);
 Y=runmean(d13cd,50);
@@ -89,15 +95,15 @@ ylabel('\delta^{13}C (‰)')
 
 
 %###################### CCD Palike and Van Andel data ######################
-palikeCCD=csvread('dat\Cenozoicd13c\CenozoicCCD\palike12ccd.csv');
+palikeCCD=csvread('dat/Cenozoicd13c/CenozoicCCD/palike12ccd.csv');
 % Van Andel North Atlantic CCD
-VANA=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelNAtlantic.csv');
-VASA=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelSAntlantic.csv');
-VAI=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelndian.csv');
-VAP=csvread('dat\Cenozoicd13c\CenozoicCCD\VanAndelPacific.csv');
+VANA=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelNAtlantic.csv');
+VASA=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelSAntlantic.csv');
+VAI=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelndian.csv');
+VAP=csvread('dat/Cenozoicd13c/CenozoicCCD/VanAndelPacific.csv');
 
 % Slotnick et al., 2015 Indian ocean data excluding hyperthermals
-SL=csvread('dat\Cenozoicd13c\CenozoicCCD\ccdISlotNoH.csv');
+SL=csvread('dat/Cenozoicd13c/CenozoicCCD/ccdISlotNoH.csv');
 
 timeP = palikeCCD(:,1); % million years
 timeVNA = VANA(:,1);
@@ -144,13 +150,13 @@ set(gca,'xlim',[0 60])
 
 % ####################### pCO2 Berling & Royer 2011 compilation ###########
 
-BCa=csvread('dat\Cenozoicd13c\CenozoicpCO2\BCa.csv');
-Boron=csvread('dat\Cenozoicd13c\CenozoicpCO2\Boron.csv');
-L=csvread('dat\Cenozoicd13c\CenozoicpCO2\Liverworts.csv');
-N=csvread('dat\Cenozoicd13c\CenozoicpCO2\Nacholite.csv');
-Pal=csvread('dat\Cenozoicd13c\CenozoicpCO2\Paleosols.csv');
-Phy=csvread('dat\Cenozoicd13c\CenozoicpCO2\Phytoplankton.csv');
-St=csvread('dat\Cenozoicd13c\CenozoicpCO2\Stomata.csv');
+BCa=csvread('dat/Cenozoicd13c/CenozoicpCO2/BCa.csv');
+Boron=csvread('dat/Cenozoicd13c/CenozoicpCO2/Boron.csv');
+L=csvread('dat/Cenozoicd13c/CenozoicpCO2/Liverworts.csv');
+N=csvread('dat/Cenozoicd13c/CenozoicpCO2/Nacholite.csv');
+Pal=csvread('dat/Cenozoicd13c/CenozoicpCO2/Paleosols.csv');
+Phy=csvread('dat/Cenozoicd13c/CenozoicpCO2/Phytoplankton.csv');
+St=csvread('dat/Cenozoicd13c/CenozoicpCO2/Stomata.csv');
 
 % new pco2&pH data from Richard
 
@@ -223,7 +229,7 @@ hold on
 % plot(timeL,co2L,'r+')
 % plot(timeN,co2N,'b*')
 % plot(timePal,co2Pal,'m.')
-plot(timePhy,co2Phy,'kx')
+% plot(timePhy,co2Phy,'kx')
 plot(timeSt,co2St,'g^')
 
 plot(An16.Age,An16.CO2,'s','MarkerEdgeColor','k','MarkerFaceColor','r')
@@ -236,9 +242,16 @@ plot(Se10.Age,Se10.CO2,'d','MarkerEdgeColor','w','MarkerFaceColor','b')
 hold off
 % 
 % H = legend(['B/Ca';'Boron'; 'Liverworts';'Nacholite';'Paleosols';'Phytoplankton';'Stomata';lstrR],'Location','NorthEast');
-H = legend(['Phytoplankton';'Stomata';lstrR],'Location','NorthEast');
+H = legend(['Stomata';lstrR],'Location','NorthEast');
 
 ylabel('pCO2')
 text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'xlim',[0 60],'XTickLabel',[])
+
+figure
+hold on
+plot(t,d13c,'o')
+plot(tzachos,c13zac,'+k')
+plot(XX(:,1),XX(:,2),'r','LineWidth',2)
+hold off
 

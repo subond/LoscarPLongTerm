@@ -4,12 +4,12 @@
 
 % Pacific data
 function [x2,inBetween] = campbell18CCD()
-campCCDdata_p=csvread('dat\Cenozoicd13c\CenozoicCCD\campbell18pac.csv');
+campCCDdata_p=csvread('dat/Cenozoicd13c/CenozoicCCD/campbell18pac.csv');
 %time
 campT_p=campCCDdata_p(:,1);
 
 % Indian data
-campCCDdata_i=csvread('dat\Cenozoicd13c\CenozoicCCD\campbell18ind.csv');
+campCCDdata_i=csvread('dat/Cenozoicd13c/CenozoicCCD/campbell18ind.csv');
 %time
 campT_i=campCCDdata_i(:,1);
 
