@@ -58,8 +58,8 @@ oTemp1(find(tzachos<=34.04)) = k(find(tzachos<=34.04)).*(d18om(find(tzachos<=34.
 figure
 subplot(411)
 box on
-plot(tzachos,oTemp1);
-ylabel('Ice-free temperature [^oC]')
+plot(tzachos,oTemp1,'LineWidth',2);
+ylabel('Ice-free temperature (^oC)')
 text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'xlim',[0 60],'XTickLabel',[])
 
@@ -244,7 +244,7 @@ hold off
 % H = legend(['B/Ca';'Boron'; 'Liverworts';'Nacholite';'Paleosols';'Phytoplankton';'Stomata';lstrR],'Location','NorthEast');
 H = legend(['Stomata';lstrR],'Location','NorthEast');
 
-ylabel('pCO2')
+ylabel('pCO_2 (ppmv)')
 text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'xlim',[0 60],'XTickLabel',[])
 

@@ -326,7 +326,7 @@ set(gca,'XLim',[0 60],'XTickLabel',[])
 % legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
 
 H = legend(['Stomata';lstrR;'Model'],'Location','NorthEast');
-ylabel('pCO_2 [\muatm]')
+ylabel('pCO_2 (ppmv)')
 text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 
 
@@ -343,7 +343,7 @@ hold off
 text(0.02,0.9,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 % set(gca,'XLim',axx);
 % xlabel('Time (Ma)');
-ylabel('Bulk carbonate \delta^{13}C [‰]')
+ylabel('Bulk carbonate \delta^{13}C (‰)')
 legend('Kurtz et al. ''03', 'Model','Location','SouthEast')
 set(gca,'XLim',[0 60],'XTickLabel',[])
 
@@ -395,7 +395,7 @@ hold off;
 text(0.02,0.98,'d)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 % set(gca,'YDir','reverse');
 % xlabel('Time (Ma)');
-ylabel('\delta^{13}C [‰]');
+ylabel('\delta^{13}C (‰)');
 set(gca,'XTickLabel',[])
 gridLegend(hdlY,5,key1,'location','north','Fontsize',8,'Box','off');
 % Hl=legend(lstr,1);
@@ -445,7 +445,7 @@ hold off
 % legend('Pacific','Pacific','North Atlantic','South Atlantic','Indic')
 % legend('North Atlantic Van Andel ''75','South Atlantic Van Andel ''75','Atlantic model')
 legend('Van Andel ''75 NA','Van Andel ''75 SA','Model')
-ylabel('Atlantic CCD [m]')
+ylabel('Atlantic CCD (m)')
 xlabel('Year (Ma)')
 text(0.02,0.98,'f)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'YDir','reverse')
@@ -498,7 +498,7 @@ plot(time  ,TCvt (:,9)   ,'r','LineWidth',lw);
 hold off
 set(gca,'XTickLabel',[],'YLim',[0 15])
 text(0.02,0.9,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
-ylabel('Deep ocean temperature [^oC]')
+ylabel('Deep ocean temperature (^oC)')
 % Hl=legend(lstr,1);
 % set(Hl,'FontSize',10);
 % legend('Deep Ocean')
@@ -520,7 +520,7 @@ text(0.02,0.9,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b'
 legend('F_{wc}','F_{Si}','F_{pw}')
 % xlabel('Time (Ma)');
 % ylabel({'F_{wc}, F_{Si} [10^{12} mol yr^{-1}]';'F_{pw} [10^{10} mol yr^{-1}]'});    
-ylabel({'F_{wc}, F_{Si}, F_{pw} [see caption]'});    
+ylabel({'F_{wc}, F_{Si}, F_{pw} (see caption)'});    
     
 % figure
 subplot (323)
@@ -544,8 +544,8 @@ set(hAx,{'ycolor'},{'k';'r'})  % Left color red, right color blue..
 set(hAx(1),'YLim',[3 8],'box','off','YTick',[3 4 5 6 7 8],'XTickLabel',[])
 set(hAx(2),'XTickLabel',[])
 set(gca,'XTickLabel',[])
-ylabel(hAx(1),'Organic C burial [10^{12} mol yr^{-1}]')
-ylabel(hAx(2),'Mean deep ocean [O_2] [mol m^{-3}]')
+ylabel(hAx(1),'Organic C burial (10^{12} mol yr^{-1})')
+ylabel(hAx(2),'Mean deep ocean (O_2) (mol m^{-3})')
 
 
 subplot(324)
@@ -553,7 +553,7 @@ plot(time, (EPLvv+EPH)/1e12,'g','LineWidth',lw)
 text(0.02,0.9,'d)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 % xlabel('Time (Ma)');
 set(gca,'XTickLabel',[],'YAxisLocation', 'right','YLim',[200 1200])
-ylabel('Organic C export [10^{12} mol yr^{-1}]')
+ylabel('Organic C export (10^{12} mol yr^{-1})')
 
 % PO4    
 % figure
@@ -572,7 +572,7 @@ text(0.02,0.9,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b'
 % set(gca,'XLim',axx);
 xlabel('Time (Ma)');
 set(gca,'YLim',[0 8])
-ylabel('PO_4 [\mumol kg^{-1}]');
+ylabel('PO_4 (\mumol kg^{-1})');
 % Hl=legend(lstr,4);
 
 gridLegend(hdlY,5,key,'location','northoutside','Fontsize',8,'Box','off');
@@ -597,7 +597,7 @@ set(gca,'YLim',[0 10])
 Hl=legend('F_{pb}','F_{CaP}','F_{FeP}','Total P burial');
 set(Hl,'FontSize',10);
 xlabel('Time (Ma)');
-ylabel('P burial fluxes [10^{10}mol y^{-1}]');
+ylabel('P burial fluxes (10^{10}mol y^{-1})');
 
 return
 figure
@@ -643,7 +643,7 @@ plot(time4,ccdP4,'r--','LineWidth',lw)
 hold off
 legend('Simulation 3','Constant fsh','fsh(sealevel)','Constant fsh & rrain','data - equator','data - off equator','data - Indian')
 
-ylabel('Pacific CCD [m]')
+ylabel('Pacific CCD (m)')
 xlabel('Year (Ma)')
 % text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'YDir','reverse')
@@ -659,7 +659,7 @@ hold off
 Hl=legend(lstr);
 set(Hl,'FontSize',10);
 xlabel('Time (Ma)');
-ylabel('[CO_3^{=}]');
+ylabel('(CO_3^{=})');
 
 figure
 box on
