@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/71/';
+        mydir = 'dat/LoscarLT/LOSCAR/75/';
         if(LTflag)
             appendLT =  1;
         else
@@ -984,14 +984,20 @@ if myflag  == 01;
             slkA = 1.0;
             slkI = 1.0;
             slkP = 1.0;
-            if(tgc>44 && tgc<=52)
-                slkA = 1.2;
-                slkI = 1.6;
-                slkP=LinearInterpWithClipExtrap([45 52],[1.3 2.3],tgc);
-            elseif(tgc>52)
-                slkA = 1.2;
-                slkI = 1.6;
-                slkP=LinearInterpWithClipExtrap([53 59],[2.3 1.3],tgc);
+%             if(tgc>44 && tgc<=52)
+%                 slkA = 1.2;
+%                 slkI = 1.6;
+%                 slkP=LinearInterpWithClipExtrap([45 52],[1.3 2.3],tgc);
+%             elseif(tgc>52)
+%                 slkA = 1.2;
+%                 slkI = 1.6;
+%                 slkP=LinearInterpWithClipExtrap([53 59],[2.3 1.3],tgc);
+%             end
+            if(tgc>33)
+                slkA = LinearInterpWithClipExtrap([34 52],[1.0 1.2],tgc);
+                slkI = LinearInterpWithClipExtrap([34 52],[1.0 1.6],tgc);
+%                 slkP=LinearInterpWithClipExtrap([34 59],[1.0 3],tgc);
+                slkP=LinearInterpWithClipExtrap([34 52],[2.0 3],tgc);
             end
             sealevel_norm=normalize_var(sealevel,1,7)*slkA;
             sealevel_normI=normalize_var(sealevel,1,7)*slkI;
@@ -1860,7 +1866,7 @@ if myflag  == 01;
             
             Q10 = 1.5;
             k = log(Q10)/10; % per degree C. so 0.693 (or log(2)/2) per 10 degrees C
-            Dt=DT;
+            Dt=oTemp; % Shouldn't this be oTemp?
             kDt = k*Dt;
             bmc = exp(kDt); % "b" martin temperature coefficient
             [ocbf, fraint,fbci,fraini,fbcd,fraind,eIi,Fremd]=CalculateBurial(1,0.6737*bmc,1);

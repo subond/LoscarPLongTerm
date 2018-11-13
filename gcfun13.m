@@ -37,7 +37,7 @@ fla=GC(:,2)';
 
 %Kump & Arthur 1997
 % 0 to 65 Ma
-fla_k = [1.0000    0.9801    0.9604    0.9604    0.9991    1.1400    1.1625   1.0829    1.0304    1.0044    1.0904    1.1970    1.1592    1.1250];
+% fla_k = [1.0000    0.9801    0.9604    0.9604    0.9991    1.1400    1.1625   1.0829    1.0304    1.0044    1.0904    1.1970    1.1592    1.1250];
 % if(myT>44 && myT <=51)
 %     fla=fla*0.90;
 % end
@@ -206,8 +206,8 @@ G= gamma(t+1);
     p=myT;
     dbck=d13c;
     % interpolating values because time won't always be an integer
-%     flak=(interp1(1:length(fla),fla,p));
-    flak=(interp1([1:5:66],fla_k,p,'pchip'));
+    flak=(interp1(1:length(fla),fla,p));
+%     flak=(interp1([1:5:66],fla_k,p,'pchip'));
     fdk=(interp1(1:length(fd),fd,p));
     fgk=(interp1(1:length(fg),fg,p));
     frk=(interp1(1:length(fr),fr,p));
@@ -256,8 +256,8 @@ if(myT>1)
     p=myT;
     dbck=d13c;
     % interpolating values because time won't always be an integer
-%     flak=(interp1(1:length(fla),fla,p));
-    flak=(interp1([1:5:66],fla_k,p,'pchip'));
+    flak=(interp1(1:length(fla),fla,p));
+%     flak=(interp1([1:5:66],fla_k,p,'pchip'));
     fdk=(interp1(1:length(fd),fd,p));
     fgk=(interp1(1:length(fg),fg,p));
     frk=(interp1(1:length(fr),fr,p));

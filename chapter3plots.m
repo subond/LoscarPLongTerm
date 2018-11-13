@@ -149,7 +149,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/71/';
+dir = 'dat/LoscarLT/LOSCAR/75/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -297,7 +297,7 @@ for k=1:13
     lstr(k,:) = sprintf('%s',lstr0(2*k-1:2*k));
 end;
 
-FigHandle = figure(102);
+FigHandle = figure(103);
   set(FigHandle, 'Position', [200, 0, 800, 900]);
 % figure
 subplot(321)
@@ -486,7 +486,7 @@ set(gca,'xlim',[0 60])
 
 
 
-FigHandle = figure(202);
+FigHandle = figure(203);
   set(FigHandle, 'Position', [1000, 0, 800, 900]);
 subplot(321)
 box on
