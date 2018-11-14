@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/75/';
+        mydir = 'dat/LoscarLT/LOSCAR/79/';
         if(LTflag)
             appendLT =  1;
         else
@@ -568,7 +568,7 @@ if myflag  == 01;
         %         ws = 7.4; %defined in geocarb
         DT=gamma(tgc)*log(rco2)-ws*(tgc-1)/570; % The delta T between present and time t
         
-        zachos=csvread('C:\Users\Nemanja Komar\Dropbox\PhD stuff\Cenozoicd13c\zac08.csv');
+        zachos=csvread('dat/Cenozoicd13c/zac08.csv');
         tzachos=zachos(:,1); %time zachos
         %         c13zac=zachos(:,2); %time zachos
         o18zac=zachos(:,3); %time zachos
@@ -598,8 +598,8 @@ if myflag  == 01;
         TC3  = [TC0(1)+oTemp TC0(2)+oTemp TC0(3)+oTemp TC0(3)+oTemp];      % (degC) temp. of boxes at different ts
         TCv0 = [TC3(1)*on3 TC3(2)*on3 TC3(3)*on3 TC3(4)];
         
-        Mg=csvread('dat\Cenozoicd13c\MgCa\CenozoicMg.csv');
-        Ca=csvread('dat\Cenozoicd13c\MgCa\CenozoicCa.csv');
+        Mg=csvread('dat/Cenozoicd13c/MgCa/CenozoicMg.csv');
+        Ca=csvread('dat/Cenozoicd13c/MgCa/CenozoicCa.csv');
 
         mgcat=Mg(:,1);
 
@@ -979,8 +979,13 @@ if myflag  == 01;
               
             % Data pulled from Byrnes%Karlstrom, 2018
             % Miller 2005 data resampled to 1-My intervals. 
-            sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'miller05.csv']));
-            sealevel=sealevel(:,2);
+%             sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'miller05.csv']));
+           % Kominz 2008
+            sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'kominz08.csv']));
+            
+            
+%             sealevel=sealevel(:,2);
+            sealevel=interp1(sealevel(:,1), sealevel(:,2), [1:59]);
             slkA = 1.0;
             slkI = 1.0;
             slkP = 1.0;
@@ -993,21 +998,22 @@ if myflag  == 01;
 %                 slkI = 1.6;
 %                 slkP=LinearInterpWithClipExtrap([53 59],[2.3 1.3],tgc);
 %             end
-            if(tgc>33)
-                slkA = LinearInterpWithClipExtrap([34 52],[1.0 1.2],tgc);
-                slkI = LinearInterpWithClipExtrap([34 52],[1.0 1.6],tgc);
-%                 slkP=LinearInterpWithClipExtrap([34 59],[1.0 3],tgc);
-                slkP=LinearInterpWithClipExtrap([34 52],[2.0 3],tgc);
+%             if(tgc>34)
+%                 slkA = LinearInterpWithClipExtrap([35 51],[1.0 1.0],tgc);
+%                 slkI = LinearInterpWithClipExtrap([35 51],[1.0 1.4],tgc);
+%                 slkP=LinearInterpWithClipExtrap([35 51],[2.0 2.7],tgc);
+%             end
+            if(tgc>34)
+                slkA = LinearInterpWithClipExtrap([35 52],[1.0 1.0],tgc);
+                slkI = LinearInterpWithClipExtrap([35 52],[1.0 1.4],tgc);
+                slkP=LinearInterpWithClipExtrap([35 52],[2.0 2.5],tgc);
             end
+
             sealevel_norm=normalize_var(sealevel,1,7)*slkA;
             sealevel_normI=normalize_var(sealevel,1,7)*slkI;
             sealevel_normP=normalize_var(sealevel,1,7)*slkP;
-            % Kominz 2008
-%             sealevel2=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'kominz08.csv']));
-%             sealevel=interp1(sealevel2(:,1),sealevel2(:,2),[0:66]);
-%             sealevel_norm=normalize_var(sealevel,1,7);
-%             sealevel_normI=normalize_var(sealevel,1,7);
-%             sealevel_normP=normalize_var(sealevel,1,7);
+ 
+
             
             %====== shelf/deep rain
             fsh    = 1.00;            %  increase shelf rain
@@ -1582,7 +1588,7 @@ if myflag  == 01;
 
             %load 'dat\co2PEm.tex';
             dirstr = '1000_0500.dat';
-            co2PEm = load(['dat\Emss\EmssScen\' dirstr]);
+            co2PEm = load(['dat/Emss/EmssScen/' dirstr]);
 
             tem   = co2PEm(:,1);
             em    = co2PEm(:,2);
@@ -1678,11 +1684,11 @@ if myflag  == 01;
                     
                     %%load dat\PETMCa\YPE10SedCAv10.DAT  %for PETM set-up but Ca=10.30
                 elseif(bath == 2 && CAvflag == 1 && ~LTflag && inorgF)
-                    load dat\PERM44Ca\YPE10SedCA1.DAT
+                    load dat/PERM44Ca/YPE10SedCA1.DAT
                 elseif(bath == 2 && CAvflag == 0 && ~LTflag && ~inorgF)
-                    load dat\PETM44Ca\YPE10Sed.DAT
+                    load dat/PETM44Ca/YPE10Sed.DAT
                 elseif(bath == 2 && CAvflag == 0 && LTflag && ~inorgF)
-                    load dat\PETM44Ca\YPE10SedLT.DAT
+                    load dat/PETM44Ca/YPE10SedLT.DAT
                 elseif(bath == 2 && CAvflag == 2 && ~LTflag && ~inorgF)
                     if(Pfeed)
                         load ([filepath folder fnum '/YPE10SedCa.DAT'])
@@ -1779,17 +1785,17 @@ if myflag  == 01;
                         load dat/Modern/YPE10SedMcav.DAT
                     end
                 elseif(bath == 2 && CAvflag == 1)
-                    load dat\Modern\YPE10SedMca.DAT
+                    load dat/Modern/YPE10SedMca.DAT
                 elseif(bath == 2 && CAvflag == 0)
                     load dat/Modern/YPE10SedM.DAT
-                    %%     load dat\Modern\B2D3BL0\YPE10Sed.DAT;
-                    %     load dat\Modern\CO2XLS\YPE10Sed.DAT;
-                    %     load dat\B2D1BL0\YPE10Sed;
-                    %%     load dat\B2D3BL0\YPE10Sed.DAT;
-                    %     load dat\B2D3BL0\Lpco2\YPE10Sed.DAT;
-                    %     load dat\B2D3BL0\Hpco2\YPE10Sed.DAT;
+                    %%     load dat/Modern/B2D3BL0/YPE10Sed.DAT;
+                    %     load dat/Modern/CO2XLS/YPE10Sed.DAT;
+                    %     load dat/B2D1BL0/YPE10Sed;
+                    %%     load dat/B2D3BL0/YPE10Sed.DAT;
+                    %     load dat/B2D3BL0/Lpco2/YPE10Sed.DAT;
+                    %     load dat/B2D3BL0/Hpco2/YPE10Sed.DAT;
                 elseif(bath == 3)
-                    %     load dat\B3D3BL0\YPE10Sed;
+                    %     load dat/B3D3BL0/YPE10Sed;
 
 
                 end;
@@ -2137,7 +2143,7 @@ if myflag  == 01;
                         %                         if(Floegel)
                         YPE10SedCa = Y(lt,:)';
 
-                        %                             save                    dat\PETM44CaP\Floegel\YPE10SedCa.DAT  YPE10SedCa -ASCII -DOUBLE -TABS;
+                        %                             save                    dat/PETM44CaP/Floegel/YPE10SedCa.DAT  YPE10SedCa -ASCII -DOUBLE -TABS;
                         save([filepath folder fnum '/YPE10SedCa.DAT'],'YPE10SedCa', '-ASCII', '-DOUBLE', '-TABS');
                         %                         else
                         %                             if(Pscenario==0  )
@@ -2184,7 +2190,7 @@ if myflag  == 01;
             if(savf == 1 && CAvflag == 1)
                 YPE10SedMca = Y(lt,:)';
 
-                save                    dat\Modern\YPE10SedMca.DAT  YPE10SedMca -ASCII -DOUBLE -TABS;
+                save                    dat/Modern/YPE10SedMca.DAT  YPE10SedMca -ASCII -DOUBLE -TABS;
             end
             if(savf == 1 && CAvflag == 2)
                 YPE10SedMcav = Y(lt,:)';
@@ -2193,12 +2199,12 @@ if myflag  == 01;
                 %
                 %                 save                    dat/Modern/YPE10SedMcav.DAT  YPE10SedMcav -ASCII -DOUBLE -TABS;
             end
-            %save dat\Modern\B2D3BL0\YPE10Sed.DAT  YPE10Sed -ASCII -DOUBLE -TABS;
-            %save dat\Modern\NoSed0\YPE10Sed.DAT   YPE10Sed -ASCII -DOUBLE -TABS;
-            %save dat\B2D3BL0\YPE10Sed.DAT YPE10Sed -ASCII -DOUBLE -TABS; % <------
-            %save dat\B2D3BL0\Lpco2\YPE10Sed.DAT  YPE10Sed -ASCII -DOUBLE -TABS;
-            %save dat\B2D3BL0\Hpco2\YPE10Sed.DAT  YPE10Sed -ASCII -DOUBLE -TABS;
-            %save dat\Modern\CO2XLS\YPE10Sed.DAT YPE10Sed -ASCII -DOUBLE -TABS;
+            %save dat/Modern/B2D3BL0/YPE10Sed.DAT  YPE10Sed -ASCII -DOUBLE -TABS;
+            %save dat/Modern/NoSed0/YPE10Sed.DAT   YPE10Sed -ASCII -DOUBLE -TABS;
+            %save dat/B2D3BL0/YPE10Sed.DAT YPE10Sed -ASCII -DOUBLE -TABS; % <------
+            %save dat/B2D3BL0/Lpco2/YPE10Sed.DAT  YPE10Sed -ASCII -DOUBLE -TABS;
+            %save dat/B2D3BL0/Hpco2/YPE10Sed.DAT  YPE10Sed -ASCII -DOUBLE -TABS;
+            %save dat/Modern/CO2XLS/YPE10Sed.DAT YPE10Sed -ASCII -DOUBLE -TABS;
         end;
 
         axx = [t0    tfinal];
@@ -3228,8 +3234,8 @@ if myflag  == 01;
 
         % write to file
         X = [CBl/1.e15; oxA; ccdv0; ccdvmin; pCO2Max; oxminA; pCO2Av];
-        outstr = ['dat\B2D3BL2SW\ccdrun\out' PgC_Aox '.DAT'];
-        %outstr = ['dat\B2D3BL2SW\ccdrun\NoSwcon\out' PgC_Aox '.DAT'];
+        outstr = ['dat/B2D3BL2SW/ccdrun/out' PgC_Aox '.DAT'];
+        %outstr = ['dat/B2D3BL2SW/ccdrun/NoSwcon/out' PgC_Aox '.DAT'];
         save(outstr,'X','-ascii','-double','-tabs');
         return
     end
@@ -3270,8 +3276,8 @@ if myflag  == 01;
             X2= [PgC RelTime omCInitL omCInitH omCMinL omCMinH ...
                 omAInitL omAInitH omAMinL omAMinH ...
                 co3InitL co3InitH co3MinL co3MinH]';
-            %outstr = ['dat\Emss\EmssScen\out' dirstr ];
-            %outstr = ['dat\Emss\EmssScen\sat\out' dirstr ];
+            %outstr = ['dat/Emss/EmssScen/out' dirstr ];
+            %outstr = ['dat/Emss/EmssScen/sat/out' dirstr ];
             %save(outstr,'X' ,'-ascii','-double','-tabs');
             %save(outstr,'X2','-ascii','-double','-tabs');
         end
