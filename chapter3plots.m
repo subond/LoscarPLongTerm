@@ -1,6 +1,6 @@
 clear all
 % close all
-global fbetta
+global fbetta gctl
 fbetta = 0.3987;
 
 %% Chapter3 results and comparisons
@@ -203,45 +203,7 @@ fcT(1:gctl,1:13)=NaN;
 fcT(1:24,1:13)=NaN;
 fcT(25:gctl,:) = (load([dir 'fcT.DAT']));
 
-fcfA  = fcA(1,:); %first index is for year. cycle throuh these
-fcfI  = fcI(1,:);
-fcfP  = fcP(1,:);
-fcfT  = fcT(1,:);
-
-zv   = [000.:10:6000.]; % z, continuous (1 or 10 m)
-  %------------ CCD --------------------%
-        fccd  = 0.05; % 0.10 0.05
-        dd    = 0.01;
-        nd    = 0;
-        fccdv = [fccd-nd*dd:dd:fccd+nd*dd];
-        ld    = length(fccdv);
-
-        clear jccdA jccdI jccdP;
-        
-        for i=1:gctl
-            yA(i,:)         = interp1(dsv,fcA(i,:),zv,'PCHIP');
-            yI(i,:)         = interp1(dsv,fcI(i,:),zv,'PCHIP');
-            yP(i,:)         = interp1(dsv,fcP(i,:),zv,'PCHIP');
-%             yT(i,:)         = interp1(dsv,fcT(i,:),zv,'PCHIP');
-            for k=1:ld
-                [tmp, jccdA(i,k)] = min(abs(yA(i,150:end)-fccdv(k)));
-                [tmp, jccdI(i,k)] = min(abs(yI(i,150:end)-fccdv(k)));
-                [tmp, jccdP(i,k)] = min(abs(yP(i,150:end)-fccdv(k)));
-%                 [tmp, jccdT(i,k)] = min(abs(yT(i,:)-fccdv(k)));
-            end;
-        end;
-
-        if(nd == 0)
-            ccdA = zv(jccdA)+zv(150);
-            ccdI = zv(jccdI)+zv(150);
-            ccdP = zv(jccdP)+zv(150);
-%             ccdT = zv(jccdT);
-        else
-            ccdA = sum(zv(jccdA),2)/ld;
-            ccdI = sum(zv(jccdI),2)/ld;
-            ccdP = sum(zv(jccdP),2)/ld;
-%             ccdT = sum(zv(jccdT),2)/ld;
-        end
+[ccdA, ccdI, ccdP] = removeCCDspikes(fcA,fcI,fcP);
 
 % h = figure;
 % axis tight manual % this ensures that getframe() returns a consistent size
@@ -608,47 +570,85 @@ ylabel('P burial fluxes (10^{10}mol y^{-1})');
 % %     key1{k}=lstr(k,1:2);
 % end;
 % 
-% dir1 = 'dat/LoscarLT/LOSCAR/19/';
-% dir2 = 'dat/LoscarLT/LOSCAR/28/';
-% dir3 = 'dat/LoscarLT/LOSCAR/29/';
-% 
-% dir4 = 'dat/LoscarLT/LOSCAR/2/';
-% 
-% ccdA1=  (load([dir1 'ccdA.DAT']));
-% ccdI1=  (load([dir1 'ccdI.DAT']));
-% ccdP1=  (load([dir1 'ccdP.DAT']));
-% ccdA2=  (load([dir2 'ccdA.DAT']));
-% ccdI2=  (load([dir2 'ccdI.DAT']));
-% ccdP2=  (load([dir2 'ccdP.DAT']));
-% ccdA3=  (load([dir3 'ccdA.DAT']));
-% ccdI3=  (load([dir3 'ccdI.DAT']));
-% ccdP3=  (load([dir3 'ccdP.DAT']));
-% 
-% ccdP4=  (load([dir4 'ccdP.DAT']));
-% 
-% time1 = [0:length(ccdA1)-1];
-% time2 = [0:length(ccdA2)-1];
-% time3 = [0:length(ccdA3)-1];
-% time4 = [0:length(ccdP4)-1];
-% figure
-% box on
-% hold on
-% plot(time1,ccdP1,'k-','LineWidth',lw)
-% plot(time2,ccdP2,'k--','LineWidth',lw)
-% plot(time4,ccdP4,'r--','LineWidth',lw)
-% % plot(time3,ccdP3,'k.','LineWidth',lw)
-% % plot(timeP, PccdP,'r','LineWidth',lw)
-% % plot(timePo, PccdPo,'r--','LineWidth',lw)
-% % plot(timeSL, SLccdI,'g-','LineWidth',lw)
-% hold off
-% legend('Simulation 3','Constant fsh','fsh(sealevel)','Constant fsh & rrain','data - equator','data - off equator','data - Indian')
-% 
-% ylabel('Pacific CCD (m)')
-% xlabel('Year (Ma)')
-% % text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
-% set(gca,'YDir','reverse')
-% set(gca,'xlim',[0 60])
+clear fcA fcI fcP fcT ccdA ccdI ccdP ccdT;
+for i=1:1:5
 
+    if(i==1)
+        dir = 'dat/LoscarLT/LOSCAR/81/';
+    elseif(i==2)
+        dir = 'dat/LoscarLT/LOSCAR/84/';
+    elseif(i==3)
+        dir = 'dat/LoscarLT/LOSCAR/85/';
+    elseif(i==4)
+        dir = 'dat/LoscarLT/LOSCAR/86/';
+    else
+        dir = 'dat/LoscarLT/LOSCAR/79/';
+    end
+    
+    fcA {i,:}=  (load([dir 'fcA.DAT']));
+    fcI {i,:}=  (load([dir 'fcI.DAT']));
+    fcP {i,:}=  (load([dir 'fcP.DAT']));
+    fcT{i,:}(1:gctl,1:13)=NaN;
+    fcT{i,:}(1:24,1:13)=NaN;
+    fcT{i,:}(25:gctl,:) = (load([dir 'fcT.DAT']));
+% 
+    [Accd, Iccd, Pccd] = removeCCDspikes(fcA{i,:},fcI{i,:},fcP{i,:});
+    ccdA{i,:} = Accd;
+    ccdI{i,:} = Iccd;
+    ccdP{i,:} = Pccd;
+    
+    mpco2 {i,:}=  (load([dir 'pco2t.DAT']));
+    
+    my_time{i} = [0:length(Accd)-1];
+end
+
+
+figure
+
+subplot (211)
+box on
+hold on
+plot(my_time{1},mpco2{1},'k--','LineWidth',lw)
+plot(my_time{2},mpco2{2},'bx','LineWidth',lw)
+plot(my_time{3},mpco2{3},'gd','LineWidth',lw)
+plot(my_time{4},mpco2{4},'r.-','LineWidth',lw)
+plot(my_time{5},mpco2{5},'k*','LineWidth',lw)
+hold off
+legend('Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+
+ylabel('Pacific CCD (m)')
+set(gca,'XLim',[0 60],'XTickLabel',[])
+% legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
+
+% H = legend(['Stomata';lstrR;'Model'],'Location','NorthEast');
+ylabel('pCO_2 (ppmv)')
+
+
+
+subplot (212)
+box on
+hold on
+plot(my_time{1},ccdP{1},'k--','LineWidth',lw)
+plot(my_time{2},ccdP{2},'b-','LineWidth',lw)
+plot(my_time{3},ccdP{3},'g-','LineWidth',lw)
+plot(my_time{4},ccdP{4},'r-','LineWidth',lw)
+plot(my_time{5},ccdP{5},'k-','LineWidth',lw)
+% plot(time3,ccdP3,'k.','LineWidth',lw)
+% plot(timeP, PccdP,'r','LineWidth',lw)
+% plot(timePo, PccdPo,'r--','LineWidth',lw)
+% plot(timeSL, SLccdI,'g-','LineWidth',lw)
+hold off
+legend('Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+
+ylabel('Pacific CCD (m)')
+xlabel('Year (Ma)')
+% text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+set(gca,'YDir','reverse')
+set(gca,'xlim',[0 60])
+
+
+
+return
 figure
 box on
 hold on
@@ -670,7 +670,7 @@ end;
 hold off
 
 
-return
+
  figure
 subplot(211)
 box  on;
