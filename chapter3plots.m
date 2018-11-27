@@ -599,55 +599,55 @@ set(Hl,'FontSize',10);
 xlabel('Time (Ma)');
 ylabel('P burial fluxes (10^{10}mol y^{-1})');
 
-return
-figure
-for k=1:13
-    hold on
-    h1=plot(time  ,TCvt (:,k),sstr(2*k-1:2*k),'Color',cs(k));
-    hold off
-%     key1{k}=lstr(k,1:2);
-end;
 
-dir1 = 'dat/LoscarLT/LOSCAR/19/';
-dir2 = 'dat/LoscarLT/LOSCAR/28/';
-dir3 = 'dat/LoscarLT/LOSCAR/29/';
-
-dir4 = 'dat/LoscarLT/LOSCAR/2/';
-
-ccdA1=  (load([dir1 'ccdA.DAT']));
-ccdI1=  (load([dir1 'ccdI.DAT']));
-ccdP1=  (load([dir1 'ccdP.DAT']));
-ccdA2=  (load([dir2 'ccdA.DAT']));
-ccdI2=  (load([dir2 'ccdI.DAT']));
-ccdP2=  (load([dir2 'ccdP.DAT']));
-ccdA3=  (load([dir3 'ccdA.DAT']));
-ccdI3=  (load([dir3 'ccdI.DAT']));
-ccdP3=  (load([dir3 'ccdP.DAT']));
-
-ccdP4=  (load([dir4 'ccdP.DAT']));
-
-time1 = [0:length(ccdA1)-1];
-time2 = [0:length(ccdA2)-1];
-time3 = [0:length(ccdA3)-1];
-time4 = [0:length(ccdP4)-1];
-figure
-box on
-hold on
-plot(time1,ccdP1,'k-','LineWidth',lw)
-plot(time2,ccdP2,'k--','LineWidth',lw)
-plot(time4,ccdP4,'r--','LineWidth',lw)
-% plot(time3,ccdP3,'k.','LineWidth',lw)
-% plot(timeP, PccdP,'r','LineWidth',lw)
-% plot(timePo, PccdPo,'r--','LineWidth',lw)
-% plot(timeSL, SLccdI,'g-','LineWidth',lw)
-hold off
-legend('Simulation 3','Constant fsh','fsh(sealevel)','Constant fsh & rrain','data - equator','data - off equator','data - Indian')
-
-ylabel('Pacific CCD (m)')
-xlabel('Year (Ma)')
-% text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
-set(gca,'YDir','reverse')
-set(gca,'xlim',[0 60])
+% figure
+% for k=1:13
+%     hold on
+%     h1=plot(time  ,TCvt (:,k),sstr(2*k-1:2*k),'Color',cs(k));
+%     hold off
+% %     key1{k}=lstr(k,1:2);
+% end;
+% 
+% dir1 = 'dat/LoscarLT/LOSCAR/19/';
+% dir2 = 'dat/LoscarLT/LOSCAR/28/';
+% dir3 = 'dat/LoscarLT/LOSCAR/29/';
+% 
+% dir4 = 'dat/LoscarLT/LOSCAR/2/';
+% 
+% ccdA1=  (load([dir1 'ccdA.DAT']));
+% ccdI1=  (load([dir1 'ccdI.DAT']));
+% ccdP1=  (load([dir1 'ccdP.DAT']));
+% ccdA2=  (load([dir2 'ccdA.DAT']));
+% ccdI2=  (load([dir2 'ccdI.DAT']));
+% ccdP2=  (load([dir2 'ccdP.DAT']));
+% ccdA3=  (load([dir3 'ccdA.DAT']));
+% ccdI3=  (load([dir3 'ccdI.DAT']));
+% ccdP3=  (load([dir3 'ccdP.DAT']));
+% 
+% ccdP4=  (load([dir4 'ccdP.DAT']));
+% 
+% time1 = [0:length(ccdA1)-1];
+% time2 = [0:length(ccdA2)-1];
+% time3 = [0:length(ccdA3)-1];
+% time4 = [0:length(ccdP4)-1];
+% figure
+% box on
+% hold on
+% plot(time1,ccdP1,'k-','LineWidth',lw)
+% plot(time2,ccdP2,'k--','LineWidth',lw)
+% plot(time4,ccdP4,'r--','LineWidth',lw)
+% % plot(time3,ccdP3,'k.','LineWidth',lw)
+% % plot(timeP, PccdP,'r','LineWidth',lw)
+% % plot(timePo, PccdPo,'r--','LineWidth',lw)
+% % plot(timeSL, SLccdI,'g-','LineWidth',lw)
+% hold off
+% legend('Simulation 3','Constant fsh','fsh(sealevel)','Constant fsh & rrain','data - equator','data - off equator','data - Indian')
+% 
+% ylabel('Pacific CCD (m)')
+% xlabel('Year (Ma)')
+% % text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+% set(gca,'YDir','reverse')
+% set(gca,'xlim',[0 60])
 
 figure
 box on
@@ -670,7 +670,7 @@ end;
 hold off
 
 
-
+return
  figure
 subplot(211)
 box  on;

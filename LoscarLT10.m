@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/79/';
+        mydir = 'dat/LoscarLT/LOSCAR/83/';
         if(LTflag)
             appendLT =  1;
         else
@@ -1027,9 +1027,9 @@ if myflag  == 01;
                     fshP   = 1;            % 33.3
                     nshT   = 0.27;            % 0.6(1,1) 0.35/0.6(2,3).3
                 else
-                    fsh    = 4.5;             % 8.9
-                    fshI   = 4.5;            % 17.2
-                    fshP   = 4.5;            % 33.3
+%                     fsh    = 4.5;             % 8.9
+%                     fshI   = 4.5;            % 17.2
+%                     fshP   = 4.5;            % 33.3
                     nshT   = 0.2;            % 0.4 0.6(1,1) 0.35/0.6(2,3).3
                 end
             end;
@@ -1038,9 +1038,9 @@ if myflag  == 01;
 %                 fsh    = interp1([1 59],[1.0 4.5],tgc,'pchip');   %4.5        %  increase shelf rain
 %                 fshI   = interp1([1 59],[1.0 4.5],tgc,'pchip');%4.5
 %                 fshP   = interp1([1 59],[1.0 4.5],tgc,'pchip');%6
-                fsh    = sealevel_norm(tgc);           %  increase shelf rain
-                fshI   = sealevel_normI(tgc);
-                fshP   = sealevel_normP(tgc);
+%                 fsh    = sealevel_norm(tgc);           %  increase shelf rain
+%                 fshI   = sealevel_normI(tgc);
+%                 fshP   = sealevel_normP(tgc);
                 
 %                 nshT   = interp1([1 59],[1.0 0.1],tgc,'pchip');           %
             end
@@ -1870,7 +1870,7 @@ if myflag  == 01;
 %             ocbf0=Focb00/Fopb0*REDPC*po4bf0; %0.0118
             ocbf0= CalculateBurial(1,0.6737,1);
             
-            Q10 = 1.5;
+            Q10 = 1.0;
             k = log(Q10)/10; % per degree C. so 0.693 (or log(2)/2) per 10 degrees C
             Dt=oTemp; % Shouldn't this be oTemp?
             kDt = k*Dt;

@@ -141,7 +141,7 @@ hold off
 % % Atlantic (Van Andel ''75)','South Atlantic (Van Andel ''75)','Indic (Van Andel ''75)')
 legend('Campbel+, ''18','Pälike+ ''12','Van Andel ''75 P','Van Andel ''75 NA','Van Andel ''75 SA','Van Andel ''75 I','Slotnick+ ''15 I')
 ylabel('CCD (m)')
-xlabel('Age (Ma)')
+xlabel('Year (Ma)')
 text(0.02,0.98,'d)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'YDir','reverse')
 set(gca,'xlim',[0 60])
