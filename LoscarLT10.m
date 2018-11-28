@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/83/';
+        mydir = 'dat/LoscarLT/LOSCAR/105/';
         if(LTflag)
             appendLT =  1;
         else
@@ -1003,11 +1003,11 @@ if myflag  == 01;
 %                 slkI = LinearInterpWithClipExtrap([35 51],[1.0 1.4],tgc);
 %                 slkP=LinearInterpWithClipExtrap([35 51],[2.0 2.7],tgc);
 %             end
-            if(tgc>34)
-                slkA = LinearInterpWithClipExtrap([35 52],[1.0 1.0],tgc);
-                slkI = LinearInterpWithClipExtrap([35 52],[1.0 1.4],tgc);
-                slkP=LinearInterpWithClipExtrap([35 52],[2.0 2.5],tgc);
-            end
+%             if(tgc>34)
+%                 slkA = LinearInterpWithClipExtrap([35 52],[1.0 1.0],tgc);
+%                 slkI = LinearInterpWithClipExtrap([35 52],[1.0 1.4],tgc);
+%                 slkP=LinearInterpWithClipExtrap([35 52],[2.5 2.7],tgc);
+%             end
 
             sealevel_norm=normalize_var(sealevel,1,7)*slkA;
             sealevel_normI=normalize_var(sealevel,1,7)*slkI;
@@ -1840,7 +1840,7 @@ if myflag  == 01;
         if(LTflag)
             Y0(3*Nb+1:4*Nb   )=CA0;
 %             if(reverse && tgc>=25)
-                TetState=load (['dat/Modern/YPE10SedMcav' num2str(24) '.DAT']);
+                
 %             else
                 modState=load('dat/Modern/YPE10SedMcav0.DAT');
 %             end
@@ -1849,6 +1849,7 @@ if myflag  == 01;
             % Initial org C exp low lat
             EPLv00    = fEPL*mv00(1:3)'.*[p00(1);p00(2);p00(3)]/REDPC; % (m3/y*mol/m3 = mol/y)
             if(ftys)
+                TetState=load (['dat/Modern/YPE10SedMcav' num2str(24) '.DAT']);
                 p00=TetState(2*10+4:2*10+6   );
                 p00(012)=p00(2); %p00(2) or 0.0?
                 EPLv00    = fEPL*mv(1:3)'.*[p00(1);p00(2);p00(3)]/REDPC;

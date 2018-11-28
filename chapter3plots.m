@@ -149,7 +149,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/79/';
+dir = 'dat/LoscarLT/LOSCAR/105/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -574,15 +574,15 @@ clear fcA fcI fcP fcT ccdA ccdI ccdP ccdT;
 for i=1:1:5
 
     if(i==1)
-        dir = 'dat/LoscarLT/LOSCAR/81/';
+        dir = 'dat/LoscarLT/LOSCAR/105/';
     elseif(i==2)
-        dir = 'dat/LoscarLT/LOSCAR/84/';
+        dir = 'dat/LoscarLT/LOSCAR/104/';
     elseif(i==3)
-        dir = 'dat/LoscarLT/LOSCAR/85/';
+        dir = 'dat/LoscarLT/LOSCAR/103/';
     elseif(i==4)
-        dir = 'dat/LoscarLT/LOSCAR/86/';
+        dir = 'dat/LoscarLT/LOSCAR/102/';
     else
-        dir = 'dat/LoscarLT/LOSCAR/79/';
+        dir = 'dat/LoscarLT/LOSCAR/101/';
     end
     
     fcA {i,:}=  (load([dir 'fcA.DAT']));
@@ -648,7 +648,7 @@ set(gca,'xlim',[0 60])
 
 
 
-return
+% return
 figure
 box on
 hold on
@@ -670,7 +670,7 @@ end;
 hold off
 
 
-
+return
  figure
 subplot(211)
 box  on;

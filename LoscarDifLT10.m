@@ -1911,7 +1911,7 @@ if myflag == 01;
             %doxMeanDeep = (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6)+ dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9)+dox(12)*V(12)+dox(13)*V(13))./((V(4)+V(5)+V(6)+V(7)+V(8)+V(9)+V(12)+V(13)));    
 %             doxMeanI =  (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6)+dox(12)*V(12))./((V(4)+V(5)+V(6)+V(12)));
         else
-            doxMeanI = O0;%(dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
+            doxMeanI = (dox(7).*V(7)+dox(8).*V(8)+dox(9)*V(9))./((V(7)+V(8)+V(9)));
 %             doxMeanI = (dox(4).*V(4)+dox(5).*V(5)+dox(6)*V(6))./((V(4)+V(5)+V(6)));
         end
 

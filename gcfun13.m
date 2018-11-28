@@ -145,7 +145,7 @@ dm = -70;
 fat=[1 1 1 1.5 0.6 1 1];
 tm=[1 49 51.5 54 59 63 75];
 fm = 1;
-fa = 1*interp1(tm,fat,myT);
+fa = 1;%*interp1(tm,fat,myT);
 Cap0 = 0;
 Cap(1)=Cap0+fmeth0-faom0;
 
