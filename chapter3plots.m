@@ -649,7 +649,7 @@ plot(Ba11.Age,Ba11.CO2,'o','MarkerEdgeColor','k','MarkerFaceColor','b','HandleVi
 plot(Se10.Age,Se10.CO2,'d','MarkerEdgeColor','w','MarkerFaceColor','b','HandleVisibility','off')
 plot(my_time{1},mpco2{1},'k--','LineWidth',lw)
 plot(my_time{2},mpco2{2},'bx-','LineWidth',lw)
-plot(my_time{3},mpco2{3},'gd-','LineWidth',lw)
+plot(my_time{3},mpco2{3},'cd-','LineWidth',lw)
 plot(my_time{4},mpco2{4},'m.-','LineWidth',lw)
 plot(my_time{5},mpco2{5},'k*-','LineWidth',lw)
 hold off
@@ -676,7 +676,7 @@ fill(x2,inBetween,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255
 % plot(time, ccdP,'k.-','LineWidth',lw)
 plot(my_time{1},ccdP{1},'k--','LineWidth',lw)
 plot(my_time{2},ccdP{2},'bx-','LineWidth',lw)
-plot(my_time{3},ccdP{3},'gd-','LineWidth',lw)
+plot(my_time{3},ccdP{3},'cd-','LineWidth',lw)
 plot(my_time{4},ccdP{4},'m.-','LineWidth',lw)
 plot(my_time{5},ccdP{5},'k*-','LineWidth',lw)
 % plot(time3,ccdP3,'k.','LineWidth',lw)
