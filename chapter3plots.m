@@ -601,10 +601,41 @@ for i=1:1:5
     
     my_time{i} = [0:length(Accd)-1];
 end
+% Campbell is a fill curve so break into upper and lower
+% component
+[t0, d0] = interpCCDs(timeC(1:length(timeC)/2), CCDrp(1:length(timeC)/2));
+[t0b, d0b] = interpCCDs(timeC(length(timeC)/2:length(timeC)), CCDrp(length(timeC)/2:length(timeC)));
+[t1, d1] = interpCCDs(timeP, PccdP);
+[t2, d2] = interpCCDs(timePo, PccdPo);
+[t3, d3] = interpCCDs(timeVP, VAccdP);
+d3(1)=VAccdP(end);
+
+ccd_min = min([d0;d0b;d1;d2;d3]);
+ccd_max = max([d0;d0b;d1;d2;d3]);
+
+%remove all NaN's from both X and Y
+ccd_min = ccd_min(~isnan(ccd_min));
+ccd_max = ccd_max(~isnan(ccd_max));
+
+figure
+x2 = [t3(1:length(ccd_min)), fliplr(t3(1:length(ccd_min)))];
+inBetween = [ccd_min, fliplr(ccd_max)];
 
 
 figure
+hold on
+fill(x2,inBetween,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255])
+plot(t0,d0,'y')
+plot(t0b,d0b,'k')
+plot(t1,d1,'r')
+plot(t2,d2,'r--')
+plot(t3,d3,'b')
 
+% plot(t3,ccd_min,'m')
+% plot(t3,ccd_max,'m')
+hold off
+
+figure
 subplot (211)
 box on
 hold on
@@ -636,10 +667,11 @@ ylabel('pCO_2 (ppmv)')
 subplot (212)
 box on
 hold on
-fill(timeC,CCDrp,'y','HandleVisibility','off')
-plot(timeP, PccdP,'r','LineWidth',lw,'HandleVisibility','off')
-plot(timePo, PccdPo,'r--','LineWidth',lw,'HandleVisibility','off')
-plot(timeVP, VAccdP,'b','LineWidth',lw,'HandleVisibility','off')
+fill(x2,inBetween,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255])
+% fill(timeC,CCDrp,'y','HandleVisibility','off')
+% plot(timeP, PccdP,'r','LineWidth',lw,'HandleVisibility','off')
+% plot(timePo, PccdPo,'r--','LineWidth',lw,'HandleVisibility','off')
+% plot(timeVP, VAccdP,'b','LineWidth',lw,'HandleVisibility','off')
 
 % plot(time, ccdP,'k.-','LineWidth',lw)
 plot(my_time{1},ccdP{1},'k--','LineWidth',lw)
@@ -652,7 +684,7 @@ plot(my_time{5},ccdP{5},'k*-','LineWidth',lw)
 % plot(timePo, PccdPo,'r--','LineWidth',lw)
 % plot(timeSL, SLccdI,'g-','LineWidth',lw)
 hold off
-legend('Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+legend('Data: Range','Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
 text(0.02,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 ylabel('Pacific CCD (m)')
 xlabel('Year (Ma)')
