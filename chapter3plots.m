@@ -570,7 +570,7 @@ ylabel('P burial fluxes (10^{10}mol y^{-1})');
 % %     key1{k}=lstr(k,1:2);
 % end;
 % 
-clear fcA fcI fcP fcT ccdA ccdI ccdP ccdT;
+clear fcA fcI fcP fcT ccdA ccdI ccdP ccdT d13fcA;
 for i=1:1:5
 
     if(i==1)
@@ -591,6 +591,7 @@ for i=1:1:5
     fcT{i,:}(1:gctl,1:13)=NaN;
     fcT{i,:}(1:24,1:13)=NaN;
     fcT{i,:}(25:gctl,:) = (load([dir 'fcT.DAT']));
+    d13fcA{i,:} = (load([dir 'd13fcA.DAT']));
 % 
     [Accd, Iccd, Pccd] = removeCCDspikes(fcA{i,:},fcI{i,:},fcP{i,:});
     ccdA{i,:} = Accd;
@@ -636,7 +637,7 @@ plot(t3,d3,'b')
 hold off
 
 figure
-subplot (211)
+subplot (311)
 box on
 hold on
 plot(timeSt,co2St,'g^','HandleVisibility','off')
@@ -655,7 +656,6 @@ plot(my_time{5},mpco2{5},'k*-','LineWidth',lw)
 hold off
 legend('Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
 text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
-ylabel('Pacific CCD (m)')
 set(gca,'XLim',[0 60],'XTickLabel',[])
 % legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
 
@@ -663,8 +663,26 @@ set(gca,'XLim',[0 60],'XTickLabel',[])
 ylabel('pCO_2 (ppmv)')
 
 
+subplot (312)
+box on
+hold on
+plot(t,d13c,'o')
+plot(my_time{1},d13fcA{1},'k--','LineWidth',lw)
+plot(my_time{2},d13fcA{2},'bx-','LineWidth',lw)
+plot(my_time{3},d13fcA{3},'cd-','LineWidth',lw)
+plot(my_time{4},d13fcA{4},'m.-','LineWidth',lw)
+plot(my_time{5},d13fcA{5},'k*-','LineWidth',lw)
+hold off
+% legend("Kurtz et al. '03",'Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+legend("Kurtz et al. '03")
+text(0.02,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+set(gca,'XLim',[0 60],'XTickLabel',[])
+% legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
 
-subplot (212)
+% H = legend(['Stomata';lstrR;'Model'],'Location','NorthEast');
+ylabel('Bulk carbonate \delta^{13}C (‰)')
+
+subplot (313)
 box on
 hold on
 fill(x2,inBetween,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255])
@@ -684,8 +702,9 @@ plot(my_time{5},ccdP{5},'k*-','LineWidth',lw)
 % plot(timePo, PccdPo,'r--','LineWidth',lw)
 % plot(timeSL, SLccdI,'g-','LineWidth',lw)
 hold off
-legend('Data: Range','Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
-text(0.02,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+% legend('Data: Range','Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+legend('Data: Range')
+text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 ylabel('Pacific CCD (m)')
 xlabel('Year (Ma)')
 % text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
