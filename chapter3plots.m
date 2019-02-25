@@ -149,7 +149,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/105/';
+dir = 'dat/LoscarLT/LOSCAR/110/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
