@@ -149,7 +149,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/110/';
+dir = 'dat/LoscarLT/LOSCAR/121/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -260,6 +260,7 @@ for k=1:13
 end;
 
 FigHandle = figure(102);
+
   set(FigHandle, 'Position', [200, 0, 800, 900]);
 % figure
 subplot(321)
@@ -475,7 +476,7 @@ plot(time, FSi/1e12,'r','LineWidth',lw);
 plot(time, Fpwv/1e10,'g','LineWidth',lw);
 hold off
 % set(gca,'FontSize',fs);
-set(gca,'XTickLabel',[],'YLim',[0 25])
+set(gca,'XTickLabel',[],'YLim',[0 26])
 %     Hl=legend('F_{OCB}');
 %     set(Hl,'FontSize',10);
 text(0.02,0.9,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
@@ -495,7 +496,7 @@ hold on
 hold off
 % set(gca,'FontSize',fs);
 text(0.02,0.9,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
-
+box on
 %     Hl=legend('F_{OCB}');
 %     set(Hl,'FontSize',10);
 % xlabel('Time (Ma)');
@@ -514,7 +515,7 @@ subplot(324)
 plot(time, (EPLvv+EPH)/1e12,'g','LineWidth',lw)
 text(0.02,0.9,'d)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 % xlabel('Time (Ma)');
-set(gca,'XTickLabel',[],'YAxisLocation', 'right','YLim',[200 1200])
+set(gca,'XTickLabel',[],'YAxisLocation', 'right','YLim',[300 2000])
 ylabel('Organic C export (10^{12} mol yr^{-1})')
 
 % PO4    
@@ -533,7 +534,7 @@ hold off
 text(0.02,0.9,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 % set(gca,'XLim',axx);
 xlabel('Time (Ma)');
-set(gca,'YLim',[0 8])
+set(gca,'YLim',[0 9])
 ylabel('PO_4 (\mumol kg^{-1})');
 % Hl=legend(lstr,4);
 
@@ -555,7 +556,7 @@ plot(time, totPbur./1e10,'k');
 hold off
 % set(gca,'FontSize',fs);
 text(0.02,0.9,'f)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
-set(gca,'YLim',[0 10])
+set(gca,'YLim',[0 12])
 Hl=legend('F_{pb}','F_{CaP}','F_{FeP}','Total P burial');
 set(Hl,'FontSize',10);
 xlabel('Time (Ma)');
@@ -574,15 +575,15 @@ clear fcA fcI fcP fcT ccdA ccdI ccdP ccdT d13fcA;
 for i=1:1:5
 
     if(i==1)
-        dir = 'dat/LoscarLT/LOSCAR/105/';
+        dir = 'dat/LoscarLT/LOSCAR/117/';
     elseif(i==2)
-        dir = 'dat/LoscarLT/LOSCAR/104/';
+        dir = 'dat/LoscarLT/LOSCAR/118/';
     elseif(i==3)
-        dir = 'dat/LoscarLT/LOSCAR/103/';
+        dir = 'dat/LoscarLT/LOSCAR/119/';
     elseif(i==4)
-        dir = 'dat/LoscarLT/LOSCAR/102/';
+        dir = 'dat/LoscarLT/LOSCAR/120/';
     else
-        dir = 'dat/LoscarLT/LOSCAR/101/';
+        dir = 'dat/LoscarLT/LOSCAR/121/';
     end
     
     fcA {i,:}=  (load([dir 'fcA.DAT']));
@@ -636,7 +637,7 @@ plot(t3,d3,'b')
 % plot(t3,ccd_max,'m')
 hold off
 
-figure
+figure(303)
 subplot (311)
 box on
 hold on
@@ -712,8 +713,47 @@ set(gca,'YDir','reverse')
 set(gca,'xlim',[0 60])
 
 
+sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'kominz08.csv']));
+sealevel=interp1(sealevel(:,1), sealevel(:,2), [1:59]);
+slkA = 1;
+slkI = 1;
+slkP = 1;
 
-% return
+sealevel_norm=normalize_var(sealevel,1,7)*slkA;
+sealevel_normI=normalize_var(sealevel,1,7)*slkI;
+sealevel_normP=normalize_var(sealevel,1,7)*slkP;
+sealevel_normP2 = sealevel_normP;
+
+for tgc = 1:length(sealevel_normP)
+    if(tgc>34)
+        slkA = LinearInterpWithClipExtrap([35 44],[1.0 1.0],tgc);
+        slkI = LinearInterpWithClipExtrap([35 44],[1.0 1.0],tgc);
+        slkP=LinearInterpWithClipExtrap([35 44],[3.0 3.0],tgc);
+    end
+    if(tgc>44 && tgc<=52)
+        slkA = 1.0;
+        slkI = 1.0;
+        slkP=LinearInterpWithClipExtrap([45 52],[3.0 2.8],tgc);
+    elseif(tgc>52)
+        slkA = 1.0;
+        slkI = 1.0;
+        slkP=LinearInterpWithClipExtrap([53 59],[2.8 3.2],tgc);
+    end
+sealevel_normP2(tgc)=sealevel_normP(tgc)*slkP;
+end
+
+figure
+box on
+hold on
+plot([0:length(sealevel_norm)-1], sealevel_normP, 'cd-','LineWidth',lw)
+plot([0:length(sealevel_norm)-1], sealevel_normP2, 'm.-','LineWidth',lw)
+
+hold off
+ylabel('fsh (dimensionless)')
+xlabel('Year (Ma)')
+legend('Normalized (based on sea level data)','Amplified fsh (preferred scenario)')
+
+return
 figure
 box on
 hold on

@@ -208,7 +208,7 @@ if myflag  == 01;
             alphagc=c13kurtz(3,:);
             pco20=300;  %default 300 ppm
             FERT=0.40;
-            ACT=0.05; %0.05
+            ACT=0.06; %0.05
             %         [ybbv,ybv,ycv,aav,bbv,ccv,fGG,fgkc,frkc,fekc,fdkc,flakc,fbch,fbbv,fwcv,fwsv1,fwsv2,fbcv,fbgv,rco2,pco2gca,fwgv,fmcv,fmgv,ggc,cgc,dg,dc]=gcfun10(1); %myGeoCarbMODULE1
             [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G, dc, fmv, famv]=gcfun13(dbc(tgc), tgc);
             %         [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGG,fgkc,frkc,fekc,fdkc,rco2,pco2g
@@ -307,7 +307,7 @@ if myflag  == 01;
         % Should never do this if not long term. And should only od this
         % when long-term if we want to save steady states. Be careful not
         % to append to the existing file!
-        mydir = 'dat/LoscarLT/LOSCAR/110/';
+        mydir = 'dat/LoscarLT/LOSCAR/117/';
         if(LTflag)
             appendLT =  1;
         else
@@ -989,20 +989,20 @@ if myflag  == 01;
             slkA = 1.0;
             slkI = 1.0;
             slkP = 1.0;
-            if(tgc>34)
-                slkA = LinearInterpWithClipExtrap([35 44],[1.0 1.0],tgc);
-                slkI = LinearInterpWithClipExtrap([35 44],[1.0 1.0],tgc);
-                slkP=LinearInterpWithClipExtrap([35 44],[3.0 3.0],tgc);
-            end
-            if(tgc>44 && tgc<=52)
-                slkA = 1.0;
-                slkI = 1.0;
-                slkP=LinearInterpWithClipExtrap([45 52],[3.0 2.8],tgc);
-            elseif(tgc>52)
-                slkA = 1.0;
-                slkI = 1.0;
-                slkP=LinearInterpWithClipExtrap([53 59],[2.8 3.2],tgc);
-            end
+%             if(tgc>34)
+%                 slkA = LinearInterpWithClipExtrap([35 44],[1.0 1.0],tgc);
+%                 slkI = LinearInterpWithClipExtrap([35 44],[1.0 1.0],tgc);
+%                 slkP=LinearInterpWithClipExtrap([35 44],[3.0 3.0],tgc);
+%             end
+%             if(tgc>44 && tgc<=52)
+%                 slkA = 1.0;
+%                 slkI = 1.0;
+%                 slkP=LinearInterpWithClipExtrap([45 52],[3.0 2.8],tgc);
+%             elseif(tgc>52)
+%                 slkA = 1.0;
+%                 slkI = 1.0;
+%                 slkP=LinearInterpWithClipExtrap([53 59],[2.8 3.2],tgc);
+%             end
 
 %             if(tgc>34)
 %                 slkA = LinearInterpWithClipExtrap([35 52],[1.0 1.0],tgc);
@@ -1039,10 +1039,10 @@ if myflag  == 01;
 %                 fsh    = interp1([1 59],[1.0 4.5],tgc,'pchip');   %4.5        %  increase shelf rain
 %                 fshI   = interp1([1 59],[1.0 4.5],tgc,'pchip');%4.5
 %                 fshP   = interp1([1 59],[1.0 4.5],tgc,'pchip');%6
-                fsh    = sealevel_norm(tgc);           %  increase shelf rain
-                fshI   = sealevel_normI(tgc);
-                fshP   = sealevel_normP(tgc);
-                
+%                 fsh    = sealevel_norm(tgc);           %  increase shelf rain
+%                 fshI   = sealevel_normI(tgc);
+%                 fshP   = sealevel_normP(tgc);
+%                 
 %                 nshT   = interp1([1 59],[1.0 0.1],tgc,'pchip');           %
             end
 
@@ -1881,6 +1881,7 @@ if myflag  == 01;
             % which necessitates global median water temperature 
             % of the first 500 meters of 5.9790 degrees
             bnew = (0.062 * (5.9790+round(oTemp,2))) + 0.303; % Marsay et el. 2014
+            bnew = 0.6737;
             [ocbf, fraint,fbci,fraini,fbcd,fraind,eIi,Fremd]=CalculateBurial(1,bnew,1);
             
 %             Focb00/Fopb0

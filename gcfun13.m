@@ -1,7 +1,7 @@
 function [fbgv,fbcv,fwgv,fmcv,fmgv,fwcv,fGGi,fgkc,frkc,fekc,fdkc,flakc,rco2,pco2gca, acv, G, dc, fmv, faom]=gcfun13(d13c, myT)
 global time ws gamma RUN ACT myfwc pco20 FERT dbckv fckc crit tnr dbcv fbetta
 FERT=0.40;
-ACT=0.05;%0.05, 0.045
+ACT=0.06;%0.05, 0.045
 pco20=300;
 XX=load('dat/LPEEkurtz/Sim2/GeoCarb3Dat.dat');
 % GG=load('GEOGt.txt');
