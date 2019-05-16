@@ -149,7 +149,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/121/';
+dir = 'dat/LoscarLT/LOSCAR/133/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -184,8 +184,22 @@ d13cL=  (importdata([dir 'd13c.DAT']));
 d13fcA =  (importdata([dir 'd13fcA.DAT']));
 d13fcI =  (importdata([dir 'd13fcI.DAT']));
 d13fcP =  (importdata([dir 'd13fcP.DAT']));
-d13fcT =  (importdata([dir 'd13fcT.DAT']));
+d13fcT(1:24,1:13)=NaN;
+d13fcT(25:gctl,:) = (load([dir 'd13fcT.DAT']));
 epsp=  (importdata([dir 'epspv.DAT']));
+
+BurialCA = (importdata([dir 'BurialCA.DAT']));
+BurialCI = (importdata([dir 'BurialCI.DAT']));
+BurialCP = (importdata([dir 'BurialCP.DAT']));
+BurialCT = (importdata([dir 'BurialCT.DAT']));
+
+BurialCT(1:24,1:13)=NaN;
+BurialCT(25:gctl,:) = (load([dir 'BurialCT.DAT']));
+
+d13cbulkV = ((d13fcA(:,1).*BurialCA+d13fcP(:,1).*BurialCP+d13fcI(:,1).*BurialCI)./(BurialCP+BurialCI+BurialCA)+...
+                (d13fcA(:,2).*BurialCA+d13fcP(:,2).*BurialCP+d13fcI(:,2).*BurialCI)./(BurialCP+BurialCI+BurialCA))/2;
+d13cbulkV(25:gctl,:) = ((d13fcA(25:gctl,1).*BurialCA(25:gctl,:)+d13fcP(25:gctl,1).*BurialCP(25:gctl,:)+d13fcI(25:gctl,1).*BurialCI(25:gctl,:)+d13fcT(25:gctl,1).*BurialCT(25:gctl,:))./(BurialCT(25:gctl,:)+BurialCP(25:gctl,:)+BurialCI(25:gctl,:)+BurialCA(25:gctl,:))+...
+                (d13fcA(25:gctl,2).*BurialCA(25:gctl,:)+d13fcP(25:gctl,2).*BurialCP(25:gctl,:)+d13fcI(25:gctl,2).*BurialCI(25:gctl,:)+d13fcT(25:gctl,2).*BurialCT(25:gctl,:))./(BurialCT(25:gctl,:)+BurialCP(25:gctl,:)+BurialCI(25:gctl,:)+BurialCA(25:gctl,:)))/2;
 
 eI=0.78;
 eIv=  (importdata([dir 'eIv.DAT']));
@@ -272,7 +286,7 @@ hold on
 % plot(timeN,co2N,'b*')
 % plot(timePal,co2Pal,'m.')
 % plot(timePhy,co2Phy,'kx')
-plot(timeSt,co2St,'g^')
+% plot(timeSt,co2St,'g^')
 % plot(timeAlk,co2Alk,'bx')
 
 
@@ -288,7 +302,7 @@ hold off
 set(gca,'XLim',[0 60],'XTickLabel',[])
 % legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
 
-H = legend(['Stomata';lstrR;'Model'],'Location','NorthEast');
+H = legend([lstrR;'Model'],'Location','NorthEast');
 ylabel('pCO_2 (ppmv)')
 text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 
@@ -433,17 +447,44 @@ set(gca,'xlim',[0 60])
 % set(gca,'YDir','reverse')
 % set(gca,'xlim',[0 60])
 % 
-% figure
-% box on
-% hold on
-% plot(time, flakc,'b-','LineWidth',lw)
-% plot(time, fdkc,'g.','LineWidth',lw)
-% plot(time, fekc,'r:','LineWidth',lw)
-% plot(time, frkc,'k--','LineWidth',lw)
-% hold off
-% legend('f_{LA}', 'f_{D}','f_E','f_R')
-% xlabel('Age (Ma)')
-% ylabel('Dimensionless GEOCARB parameters')
+GC=load('dat/LPEEkurtz/Sim2/GC3intdataHil.dat');
+efla = [0.0    0.2750    0.2722    0.3548    0.2753    0.2783    0.2783].*0.85;
+efd =  [0.0    0.1275    0.1300    0.1325    0.1350    0.1375    0.1437];
+efr =  [0.0    0.0192    0.0184    0.0176    0.0169    0.0163    0.0157];
+efla = interp1(1:10:61,efla,1:61);
+efd = interp1(1:10:61,efd,1:61);
+efr = interp1(1:10:61,efr,1:61);
+
+fla_min = flakc-efla(1:59);
+fla_max = flakc+efla(1:59);
+fd_min = fdkc-efd(1:59);
+fd_max = fdkc+efd(1:59);
+fr_min = frkc-efr(1:59);
+fr_max = frkc+efr(1:59);
+
+fla_range = [fla_min, fliplr(fla_max)];
+fd_range = [fd_min, fliplr(fd_max)];
+fr_range = [fr_min, fliplr(fr_max)];
+
+time2 = [(1:length(fla_min))-1, fliplr(1:length(fla_min))-1];
+figure
+box on
+hold on
+fill(time2, fla_range,[0/255 0/255 255/255],'FaceColor',[0/255 0/255 255/255], 'FaceAlpha',.3)
+fill(time2, fd_range,[0/255 211/255 0/255],'FaceColor',[0/255 211/255 0/255], 'FaceAlpha',.3)
+fill(time2, fr_range,[255/255 255/255 255/255],'FaceColor',[0/255 0/255 0/255], 'FaceAlpha',.3)
+
+% errorbar(time, flakc, efla(1:59),'b','LineWidth',0)
+plot(time, flakc,'b-','LineWidth',lw)
+plot(time, fdkc,'g.','LineWidth',lw)
+plot(time, fekc,'r:','LineWidth',lw)
+plot(time, frkc,'k--','LineWidth',lw)
+
+
+hold off
+legend('f_{LA} error', 'f_{D} error','f_R error','f_{LA}', 'f_{D}','f_E','f_R')
+xlabel('Age (Ma)')
+ylabel('Dimensionless GEOCARB parameters')
 
 
 
@@ -508,7 +549,7 @@ set(hAx(1),'YLim',[3 8],'box','off','YTick',[3 4 5 6 7 8],'XTickLabel',[])
 set(hAx(2),'XTickLabel',[])
 set(gca,'XTickLabel',[])
 ylabel(hAx(1),'Organic C burial (10^{12} mol yr^{-1})')
-ylabel(hAx(2),'Mean deep ocean (O_2) (mol m^{-3})')
+ylabel(hAx(2),'Mean interm. ocean (O_2) (mol m^{-3})')
 
 
 subplot(324)
@@ -571,6 +612,69 @@ ylabel('P burial fluxes (10^{10}mol y^{-1})');
 % %     key1{k}=lstr(k,1:2);
 % end;
 % 
+clear fcA fcI fcP fcT ccdA ccdI ccdP ccdT d13fcA;
+
+%%%% Error envelope plotting, 2 sigma of standard deviations of resifuals
+for i=1:1:6
+
+    if(i==1)
+         dir = 'dat/LoscarLT/LOSCAR/132/';
+    elseif(i==2)
+         dir = 'dat/LoscarLT/LOSCAR/133/';
+    elseif(i==3)
+        dir = 'dat/LoscarLT/LOSCAR/134/';
+    elseif(i==4)
+        dir = 'dat/LoscarLT/LOSCAR/135/';
+    elseif(i==5)
+        dir = 'dat/LoscarLT/LOSCAR/136/';
+    else
+        dir = 'dat/LoscarLT/LOSCAR/137/';
+    end
+    
+    fcA {i,:}=  (load([dir 'fcA.DAT']));
+    fcI {i,:}=  (load([dir 'fcI.DAT']));
+    fcP {i,:}=  (load([dir 'fcP.DAT']));
+    fcT{i,:}(1:gctl,1:13)=NaN;
+    fcT{i,:}(1:24,1:13)=NaN;
+    fcT{i,:}(25:gctl,:) = (load([dir 'fcT.DAT']));
+    d13fcA{i,:} = (load([dir 'd13fcA.DAT']));
+% 
+    [Accd, Iccd, Pccd] = removeCCDspikes(fcA{i,:},fcI{i,:},fcP{i,:});
+    ccdA{i,:} = Accd;
+    ccdI{i,:} = Iccd;
+    ccdP{i,:} = Pccd;
+    
+    mpco2 {i,:}=  (load([dir 'pco2t.DAT']));
+    
+    my_time{i} = [0:length(Accd)-1];
+end
+
+
+ccd_minE = min([ccdP{1};ccdP{2};ccdP{3};ccdP{4};ccdP{5};ccdP{6}]);
+ccd_maxE = max([ccdP{1};ccdP{2};ccdP{3};ccdP{4};ccdP{5};ccdP{6}]);
+
+pco2_minE = min([mpco2{1}';mpco2{2}';mpco2{3}';mpco2{4}';mpco2{5}';mpco2{6}']);
+pco2_maxE = max([mpco2{1}';mpco2{2}';mpco2{3}';mpco2{4}';mpco2{5}';mpco2{6}']);
+
+d13c_minE = min([d13fcA{1}(:,1)';d13fcA{2}(:,1)';d13fcA{3}(:,1)';d13fcA{4}(:,1)';d13fcA{5}(:,1)';d13fcA{6}(:,1)']);
+d13c_maxE = max([d13fcA{1}(:,1)';d13fcA{2}(:,1)';d13fcA{3}(:,1)';d13fcA{4}(:,1)';d13fcA{5}(:,1)';d13fcA{6}(:,1)']);
+% ccd_max = max([d0;d0b;d1;d2;d3]);
+% 
+% %remove all NaN's from both X and Y
+% ccd_min = ccd_min(~isnan(ccd_min));
+% ccd_max = ccd_max(~isnan(ccd_max));
+
+time_range = [(1:length(ccd_minE))-1, fliplr(1:length(ccd_minE))-1];
+ccd_range = [ccd_minE, fliplr(ccd_maxE)];
+pco2_range = [pco2_minE, fliplr(pco2_maxE)];
+d13c_range = [d13c_minE, fliplr(d13c_maxE)];
+% figure
+% fill(time_range, ccd_range,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255])
+% figure
+% fill(time_range, pco2_range,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255])
+% figure
+% fill(time_range, d13c_range,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255])
+
 clear fcA fcI fcP fcT ccdA ccdI ccdP ccdT d13fcA;
 for i=1:1:5
 
@@ -655,7 +759,7 @@ plot(my_time{3},mpco2{3},'cd-','LineWidth',lw)
 plot(my_time{4},mpco2{4},'m.-','LineWidth',lw)
 plot(my_time{5},mpco2{5},'k*-','LineWidth',lw)
 hold off
-legend('Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+legend('Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'reference')
 text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'XLim',[0 60],'XTickLabel',[])
 % legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
@@ -712,6 +816,76 @@ xlabel('Year (Ma)')
 set(gca,'YDir','reverse')
 set(gca,'xlim',[0 60])
 
+figure(304)
+error_color = [252/255 133/255 47/255];
+subplot (311)
+box on
+hold on
+% plot(timeSt,co2St,'g^','HandleVisibility','off')
+fill(time_range, pco2_range,error_color,'EdgeColor',error_color,'FaceColor',error_color)
+plot(An16.Age,An16.CO2,'s','MarkerEdgeColor','k','MarkerFaceColor','r','HandleVisibility','off')
+plot(Ed15.Age,Ed15.CO2,'s','MarkerEdgeColor','k','MarkerFaceColor','w','HandleVisibility','off')
+plot(Pe09.Age,Pe09.CO2,'^','MarkerEdgeColor','k','MarkerFaceColor','g','HandleVisibility','off')
+plot(F761.Age,F761.CO2,'^','MarkerEdgeColor','k','MarkerFaceColor','b','HandleVisibility','off')
+plot(F926.Age,F926.CO2,'s','MarkerEdgeColor','w','MarkerFaceColor','b','HandleVisibility','off')
+plot(Ba11.Age,Ba11.CO2,'o','MarkerEdgeColor','k','MarkerFaceColor','b','HandleVisibility','off')
+plot(Se10.Age,Se10.CO2,'d','MarkerEdgeColor','w','MarkerFaceColor','b','HandleVisibility','off')
+
+plot(my_time{5},mpco2{5},'k*-','LineWidth',lw)
+hold off
+legend('Model error envelope','Reference model scenario')
+text(0.02,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+set(gca,'XLim',[0 60],'XTickLabel',[])
+% legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
+
+% H = legend(['Stomata';lstrR;'Model'],'Location','NorthEast');
+ylabel('pCO_2 (ppmv)')
+
+
+subplot (312)
+box on
+fill(time_range, d13c_range,error_color,'EdgeColor',error_color,'FaceColor',error_color)
+hold on
+plot(t,d13c,'o','Color',[0/255 115/255 189/255])
+plot(my_time{5},d13fcA{5},'k*-','LineWidth',lw)
+hold off
+% legend("Kurtz et al. '03",'Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+legend('Model error envelope',"Kurtz et al. '03")
+text(0.02,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+set(gca,'XLim',[0 60],'XTickLabel',[])
+% legend('B/Ca','Boron', 'Liverworts','Nacholite','Paleosols','Phytoplankton','Stomata','Model')
+
+% H = legend(['Stomata';lstrR;'Model'],'Location','NorthEast');
+ylabel('Bulk carbonate \delta^{13}C (‰)')
+
+subplot (313)
+box on
+fill(time_range, ccd_range,error_color,'EdgeColor',error_color,'FaceColor',error_color)
+hold on
+fill(x2,inBetween,[211/255 211/255 211/255],'FaceColor',[211/255 211/255 211/255],'FaceAlpha',.3)
+% fill(timeC,CCDrp,'y','HandleVisibility','off')
+% plot(timeP, PccdP,'r','LineWidth',lw,'HandleVisibility','off')
+% plot(timePo, PccdPo,'r--','LineWidth',lw,'HandleVisibility','off')
+% plot(timeVP, VAccdP,'b','LineWidth',lw,'HandleVisibility','off')
+
+% plot(time, ccdP,'k.-','LineWidth',lw)
+
+plot(my_time{5},ccdP{5},'k*-','LineWidth',lw)
+% plot(time3,ccdP3,'k.','LineWidth',lw)
+% plot(timeP, PccdP,'r','LineWidth',lw)
+% plot(timePo, PccdPo,'r--','LineWidth',lw)
+% plot(timeSL, SLccdI,'g-','LineWidth',lw)
+hold off
+% legend('Data: Range','Q10 = 1.0, cons fsh','Q10 = 1.5, cons fsh','Q10 = 1.5, fsh(sea-level)','Q10 = 1.5, fsh(sea-level) + CaCO_3 prolif', 'preferred')
+legend('Model error envelope','Data: Range')
+text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+ylabel('Pacific CCD (m)')
+xlabel('Year (Ma)')
+% text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
+set(gca,'YDir','reverse')
+set(gca,'xlim',[0 60])
+
+
 
 sealevel=(importdata(['dat/Cenozoicd13c/SeaLevel/' 'kominz08.csv']));
 sealevel=interp1(sealevel(:,1), sealevel(:,2), [1:59]);
@@ -751,7 +925,7 @@ plot([0:length(sealevel_norm)-1], sealevel_normP2, 'm.-','LineWidth',lw)
 hold off
 ylabel('fsh (dimensionless)')
 xlabel('Year (Ma)')
-legend('Normalized (based on sea level data)','Amplified fsh (preferred scenario)')
+legend('Normalized (based on sea level data)','Amplified fsh (reference scenario)')
 
 return
 figure

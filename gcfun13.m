@@ -25,6 +25,19 @@ c13kurtz=load('dat/LPEEkurtz/Sim2/c13kurtz2.DAT');
 % alpha=[22    25    27    29    29    30.472    32.132   28    29    29    28    29    30    29    29 29    30    32    32    31    31    31    31    30    31    31    32    32    32    32 31    31    31    31    31    31    31    30    30    29    28    28    29    31    31 30    30    29    29    29    29    29    29    29    28    28    28    28];
 % myFBGV=[5.0000    4.9243    5.0554    5.1703    5.2641    5.3883    5.4987    5.4957    5.3363    5.1974    5.1363 5.1394    5.1720    5.2954    5.4644    5.5581    5.5874    5.5220    5.3945    5.3004    5.2778    5.2328 5.1947    5.0973    4.8754    4.6745    4.5711    4.4540    4.4440    4.4584    4.4590    4.4269    4.3984 4.3974    4.4347    4.3709    4.3631    4.3479    4.3523    4.3394    4.2826    4.2878    4.4076    4.5178 4.5609    4.5640    4.5244    4.5125    4.5733    4.6654    4.6622    4.2529    3.7638    3.7620    4.0784 4.8746    5.5573    5.9508    6.0300    5.7816    5.4080    5.0751    4.8874];
 % myFBGV=[5.0000    4.7606    4.8889    5.0030    5.0984    5.2217    5.3327    5.3399    5.2038    5.0844    5.0350  5.0461    5.0835    5.2018    5.3619    5.4558    5.4912    5.4402    5.3333    5.2567    5.2442    5.2270  5.2162    5.1546    4.9893    4.8467    4.7879    4.7165    4.7306    4.7634    4.7844    4.7507    4.7280  4.7277    4.7577    4.7051    4.6948    4.6767    4.6740    4.6563    4.6010    4.6529    4.7694    4.8779  4.9303    4.9499    4.9345    4.9418    5.0090    5.1020    5.1164    4.7911    4.4083    4.4309    4.7054  5.3541    5.9103    6.2350    6.3038    6.1044    5.8098    5.5252    5.3527];
+
+% Using Royer 1/4 og 2 sigma variance
+% at    0       10          20      30          40      50          60 Ma
+% t = 0 is forced to be 0 so that we don't have to change the modern steady-state
+efla = [0.0    0.2750    0.2722    0.3548    0.2753    0.2783    0.2783].*0.85;
+efd =  [0.0    0.1275    0.1300    0.1325    0.1350    0.1375    0.1437];
+efr =  [0.0    0.0192    0.0184    0.0176    0.0169    0.0163    0.0157];
+
+% interpolate at 1 million year steps
+efla = interp1(1:10:61,efla,1:61);
+efd = interp1(1:10:61,efd,1:61);
+efr = interp1(1:10:61,efr,1:61);
+
 nC=0.23;
 nS=0.26;
 geogt=XX(:,10)';
@@ -34,7 +47,7 @@ geogt=XX(:,10)';
 % dbc=GC(:,1)';
 % dbc=c13kurtz(2,:);
 fla=GC(:,2)';
-
+% fla(1:20) = 0.3;
 %Kump & Arthur 1997
 % 0 to 65 Ma
 % fla_k = [1.0000    0.9801    0.9604    0.9604    0.9991    1.1400    1.1625   1.0829    1.0304    1.0044    1.0904    1.1970    1.1592    1.1250];
@@ -145,7 +158,7 @@ dm = -70;
 fat=[1 1 1 1.5 0.6 1 1];
 tm=[1 49 51.5 54 59 63 75];
 fm = 1;
-fa = 1;%*interp1(tm,fat,myT);
+fa = 1*interp1(tm,fat,myT);
 Cap0 = 0;
 Cap(1)=Cap0+fmeth0-faom0;
 
@@ -255,12 +268,12 @@ if(myT>1)
 
     p=myT;
     dbck=d13c;
-    % interpolating values because time won't always be an integer
-    flak=(interp1(1:length(fla),fla,p));
+
+    flak=(interp1(1:length(fla),fla,p));%-efla(p);
 %     flak=(interp1([1:5:66],fla_k,p,'pchip'));
-    fdk=(interp1(1:length(fd),fd,p));
+    fdk=(interp1(1:length(fd),fd,p));%+efd(p);
     fgk=(interp1(1:length(fg),fg,p));
-    frk=(interp1(1:length(fr),fr,p));
+    frk=(interp1(1:length(fr),fr,p));% + efr(p);
     fek=(interp1(1:length(fe),fe,p));
     fck=(interp1(1:length(fc),fc,p));
     ac=(interp1(1:length(alpha),alpha,p));
@@ -360,6 +373,15 @@ if(myT>1)
     fwsv1(1)=fbc-fwc;
     fwsv2(1)=fws;%fwsi0*((pco2gca(p)/pco20)^nS)*frk*fek*fdk^0.65;
     myfws(1)=(rco2(1)/1)^nS*6.65;
+    if((fbgv || fbcv || fwgv || fmcv || fmgv || fwcv) < 0)
+        fbgv
+        fbcv
+        fwgv
+        fmcv
+        fmgv
+        fwcv
+        error("A FLUX IS NEGATIVE. ADJUST YOUR PARAMETERS")
+    end
 end
 %     dbcv(p)=z;
 % end

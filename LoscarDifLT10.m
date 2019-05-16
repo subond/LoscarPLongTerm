@@ -2045,7 +2045,7 @@ if myflag == 01;
 %                Qfac = (1/interp1([1 59],[1.5 3],53,'pchip'))^((TCv0(9)-2.0)/10);
 %             end
             % Q10 effect *1/3^((TCv(9)-TCv0(9))/10)
-            po4bf=po4bf0*(0.25+0.75*doxMeanI/O0)*ocbf/ocbf0; %*ocbf/ocbf0 fraction of PO4 rain that gets burried
+           
             % org PO4 burial needs to be
             % 260 times smaller than org C
             % burial. It is already 130
@@ -2093,8 +2093,19 @@ if myflag == 01;
                 Fpw = Fpw0*((FSi*beta+Fin*(beta-1))/(FSi0*beta+FiN0*(beta-1))); %Floegel, wallmann 2011
                 Fopb = 0;%zero because it is calculated
                 Ffep = Ffep0*doxMeanI/O0; %Ffep0
-                Fcap = capk0*((sum(PPLv)+PPH)/Aoc-((sum(PPLv)+PPH)/Aoc)*po4bf*(0.1+0.9*doxMeanI/O0)); %Fcap0 
+                 
 
+            end
+            
+            
+            
+            
+            
+            if(LTflag)            
+                po4bf=po4bf0*(0.25+0.75*doxMeanI/O0)*ocbf/ocbf0; %*ocbf/ocbf0 fraction of PO4 rain that gets burried
+                %total C burial fraction
+                ocbft = ocbf*((CPox*CPanox)/(doxMeanI/O0*CPanox+(1-doxMeanI/O0)*CPox))/CPox*po4bf/po4bf0;%*po4bf/po4bf0;
+                Fcap = capk0*((sum(PPLv)+PPH)/Aoc-((sum(PPLv)+PPH)/Aoc)*po4bf*(0.1+0.9*doxMeanI/O0)); %Fcap0
             end
             Ffepv(kt) = Ffep*Aoc;
             Fcapv(kt) = Fcap*Aoc;
@@ -2119,8 +2130,7 @@ if myflag == 01;
 %             oIo = oI;
             fbd = 1.0; %fraction of total fraction buried in the deep
             fbi = 1-fbd; %fraction of total fraction buried in intermediate
-            %total C burial fraction
-            ocbft = ocbf*((CPox*CPanox)/(doxMeanI/O0*CPanox+(1-doxMeanI/O0)*CPox))/CPox*po4bf/po4bf0;%*po4bf/po4bf0;
+           
             % C and P burial fraction in deep
             ocbfd = ocbft*fbd;  
             po4bfd = po4bf*fbd;

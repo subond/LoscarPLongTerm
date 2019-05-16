@@ -23,7 +23,7 @@ function nr = myNR(x0, h, t, fbg0)
     fbg = fbg0 + 10*h;
     
     while (abs(fbg0 - fbg)>h)
-        fbg = gcfun12(nextX, t);
+        fbg = gcfun13(nextX, t);
         lastX = nextX;
         nextX = lastX - (fbg-fbg0);% / myDer(@gcfun11, lastX, h);
     end

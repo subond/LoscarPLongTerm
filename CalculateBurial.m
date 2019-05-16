@@ -29,6 +29,7 @@ sig=(1/600)*1000;
 % Martin curve
 if (m)
     bur = @(x) ((fbetta).*(b1*exp(-b3*(-x)) + b2).*(3*ps1*x.^2 + 2*ps2*x + ps3).*((x/(-0.1)).^(-b)));
+% bur = @(x) ((3*ps1*x.^2 + 2*ps2*x + ps3).*((x/(-0.1)).^(-b)));
     rain = @(x) ((x/(-0.1)).^(-b));
 else
 % Shaffer curve (see Bjerrum et al., 2006)
