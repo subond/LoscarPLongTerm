@@ -141,7 +141,7 @@ hold off
 % % Atlantic (Van Andel ''75)','South Atlantic (Van Andel ''75)','Indic (Van Andel ''75)')
 legend('Campbel+, ''18','Pälike+ ''12','Van Andel ''75 P','Van Andel ''75 NA','Van Andel ''75 SA','Van Andel ''75 I','Slotnick+ ''15 I')
 ylabel('CCD (m)')
-xlabel('Year (Ma)')
+xlabel('Age (Ma)')
 text(0.02,0.98,'d)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'YDir','reverse')
 set(gca,'xlim',[0 60])
@@ -230,7 +230,7 @@ hold on
 % plot(timeN,co2N,'b*')
 % plot(timePal,co2Pal,'m.')
 % plot(timePhy,co2Phy,'kx')
-plot(timeSt,co2St,'g^')
+% plot(timeSt,co2St,'g^')
 
 plot(An16.Age,An16.CO2,'s','MarkerEdgeColor','k','MarkerFaceColor','r')
 plot(Ed15.Age,Ed15.CO2,'s','MarkerEdgeColor','k','MarkerFaceColor','w')
@@ -242,7 +242,7 @@ plot(Se10.Age,Se10.CO2,'d','MarkerEdgeColor','w','MarkerFaceColor','b')
 hold off
 % 
 % H = legend(['B/Ca';'Boron'; 'Liverworts';'Nacholite';'Paleosols';'Phytoplankton';'Stomata';lstrR],'Location','NorthEast');
-H = legend(['Stomata';lstrR],'Location','NorthEast');
+H = legend([lstrR],'Location','NorthEast');
 
 ylabel('pCO_2 (ppmv)')
 text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')

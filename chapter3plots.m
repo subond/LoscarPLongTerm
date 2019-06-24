@@ -149,7 +149,7 @@ gctl=59; %last year in Ma
 crit = 0.0001; % Newton-Raphson accuracy
 
 
-dir = 'dat/LoscarLT/LOSCAR/133/';
+dir = 'dat/LoscarLT/LOSCAR/121/';
 
 TCvt =  (importdata([dir 'TCvt.DAT']));
 V =  (importdata([dir 'V.DAT']));
@@ -811,7 +811,7 @@ hold off
 legend('Data: Range')
 text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 ylabel('Pacific CCD (m)')
-xlabel('Year (Ma)')
+xlabel('Age (Ma)')
 % text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'YDir','reverse')
 set(gca,'xlim',[0 60])
@@ -880,7 +880,7 @@ hold off
 legend('Model error envelope','Data: Range')
 text(0.02,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 ylabel('Pacific CCD (m)')
-xlabel('Year (Ma)')
+xlabel('Age (Ma)')
 % text(0.02,0.98,'e)','Units', 'Normalized', 'VerticalAlignment', 'Top','fontw','b')
 set(gca,'YDir','reverse')
 set(gca,'xlim',[0 60])
@@ -927,7 +927,7 @@ ylabel('fsh (dimensionless)')
 xlabel('Year (Ma)')
 legend('Normalized (based on sea level data)','Amplified fsh (reference scenario)')
 
-return
+% return
 figure
 box on
 hold on
